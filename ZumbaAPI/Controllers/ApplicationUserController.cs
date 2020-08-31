@@ -73,7 +73,7 @@ namespace ZumbaAPI.Controllers
 
                 if (result == null)
                 {
-                    return BadRequest($"Can't find user with the username {userName}");
+                    return NotFound($"Can't find user with the username {userName}");
                 }
 
                 return Ok(result);
@@ -97,7 +97,7 @@ namespace ZumbaAPI.Controllers
             {
                 var result = await _applicationUserRepository.RegisterUser(registerModel);
 
-                //Check if 201 response code 
+                //Check if its not 201 response code 
                 if(result.Code != 201)
                 {
                     return new ContentResult()

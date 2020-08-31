@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZumbaAPI.DBContext;
 
 namespace ZumbaAPI.Migrations
 {
     [DbContext(typeof(ZumbaDbContext))]
-    partial class ZumbaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200831041403_UpdatePriceAndActivityModel")]
+    partial class UpdatePriceAndActivityModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -230,9 +232,6 @@ namespace ZumbaAPI.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("PricingModelId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -252,8 +251,6 @@ namespace ZumbaAPI.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("PricingModelId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -333,13 +330,6 @@ namespace ZumbaAPI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ZumbaModels.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("ZumbaModels.Models.PricingModel", "PricingModel")
-                        .WithMany()
-                        .HasForeignKey("PricingModelId");
                 });
 #pragma warning restore 612, 618
         }

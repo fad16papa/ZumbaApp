@@ -67,7 +67,7 @@ namespace ZumbaApp.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
@@ -99,7 +99,7 @@ namespace ZumbaApp.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
     }

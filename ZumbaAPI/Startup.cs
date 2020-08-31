@@ -46,6 +46,7 @@ namespace ZumbaAPI
             #region Dependency Injection
             services.AddTransient<IApplicationUserRepository<ApplicationUser>, ApplicationUserManager>();
             services.AddTransient<IUserAccessorRepository, UserAccessorManager>();
+            services.AddTransient<IActivityRepository<ActivitiesModel>, ActivityManager>();
             #endregion
 
             // Change password policy

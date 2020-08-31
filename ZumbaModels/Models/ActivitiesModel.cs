@@ -17,6 +17,5 @@ namespace ZumbaModels.Models
         public string ActivityDescription { get; set; }
         public DateTime DateCreated { get; set; }
         public bool IsActive { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
     }
 }

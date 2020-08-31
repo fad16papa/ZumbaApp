@@ -12,11 +12,15 @@ namespace ZumbaModels.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+        [Required]
         public string PriceName { get; set; }
+        [Required]
         public string PriceDescription { get; set; }
+        [Required]
         public Decimal Price { get; set; }
+        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime DateCreated { get; set; }
         public bool IsActive { get; set; }
-        public ActivitiesModel ActivitiesModel { get; set; }
     }
 }

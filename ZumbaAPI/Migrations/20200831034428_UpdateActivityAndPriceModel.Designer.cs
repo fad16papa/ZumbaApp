@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZumbaAPI.DBContext;
 
 namespace ZumbaAPI.Migrations
 {
     [DbContext(typeof(ZumbaDbContext))]
-    partial class ZumbaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200831034428_UpdateActivityAndPriceModel")]
+    partial class UpdateActivityAndPriceModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -165,6 +167,9 @@ namespace ZumbaAPI.Migrations
                     b.Property<string>("ActivityName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
@@ -172,6 +177,8 @@ namespace ZumbaAPI.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("ActivitiesModels");
                 });
@@ -230,9 +237,6 @@ namespace ZumbaAPI.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("PricingModelId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -253,8 +257,6 @@ namespace ZumbaAPI.Migrations
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("PricingModelId");
-
                     b.ToTable("AspNetUsers");
                 });
 
@@ -262,6 +264,9 @@ namespace ZumbaAPI.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ActivitiesModelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -280,6 +285,8 @@ namespace ZumbaAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ActivitiesModelId");
 
                     b.ToTable("PricingModels");
                 });
@@ -335,11 +342,18 @@ namespace ZumbaAPI.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ZumbaModels.Models.ApplicationUser", b =>
+            modelBuilder.Entity("ZumbaModels.Models.ActivitiesModel", b =>
                 {
-                    b.HasOne("ZumbaModels.Models.PricingModel", "PricingModel")
+                    b.HasOne("ZumbaModels.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("PricingModelId");
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("ZumbaModels.Models.PricingModel", b =>
+                {
+                    b.HasOne("ZumbaModels.Models.ActivitiesModel", "ActivitiesModel")
+                        .WithMany()
+                        .HasForeignKey("ActivitiesModelId");
                 });
 #pragma warning restore 612, 618
         }

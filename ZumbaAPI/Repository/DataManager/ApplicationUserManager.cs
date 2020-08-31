@@ -8,9 +8,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using ZumbaAPI.DBContext;
+using ZumbaAPI.Helpers;
 using ZumbaAPI.Repository.Interface;
 using ZumbaModels.Models;
 using ZumbaModels.Models.ApiResponse;
@@ -59,7 +61,7 @@ namespace ZumbaAPI.Repository.DataManager
                 //check if the email of the user is correct
                 var checkEmail = await _userManager.FindByEmailAsync(loginModel.Email);
 
-                if(checkEmail == null)
+                if (checkEmail == null)
                 {
                     return new ResponseModel()
                     {
@@ -71,7 +73,7 @@ namespace ZumbaAPI.Repository.DataManager
                 //check if the password is correct 
                 var validPassword = await _userManager.CheckPasswordAsync(checkEmail, loginModel.Password);
 
-                if(!validPassword)
+                if (!validPassword)
                 {
                     return new ResponseModel()
                     {
@@ -94,8 +96,8 @@ namespace ZumbaAPI.Repository.DataManager
             {
                 return new ResponseModel()
                 {
-                   Message = string.Format($"Error encountered in ApplicationUserManager||AuthenticateUser Message:{ex.Message}"),
-                   Code = 500
+                    Message = string.Format($"Error encountered in ApplicationUserManager||AuthenticateUser Message:{ex.Message}"),
+                    Code = 500
                 };
             }
         }
@@ -112,7 +114,6 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -130,7 +131,6 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -147,7 +147,7 @@ namespace ZumbaAPI.Repository.DataManager
                 //Check if the user is already used 
                 var user = await _userManager.FindByNameAsync(registerModel.UserName);
 
-                if(user != null)
+                if (user != null)
                 {
                     return new ResponseModel()
                     {
@@ -159,7 +159,7 @@ namespace ZumbaAPI.Repository.DataManager
                 //Check if the email is already used
                 var email = await _userManager.FindByEmailAsync(registerModel.Email);
 
-                if(email != null)
+                if (email != null)
                 {
                     return new ResponseModel()
                     {
@@ -171,18 +171,18 @@ namespace ZumbaAPI.Repository.DataManager
                 //Create a new ApplicationUser object
                 var applicationUser = new ApplicationUser()
                 {
-                    UserName = registerModel.UserName, 
+                    UserName = registerModel.UserName,
                     Email = registerModel.Email,
                     FirstName = registerModel.FirstName,
-                    LastName = registerModel.LastName, 
+                    LastName = registerModel.LastName,
                     JoinDate = DateTime.Now,
-                    EmailConfirmed = true, 
+                    EmailConfirmed = true,
                 };
 
                 //Insert ApplicationUser object in IdetityCore 
                 var result = await _userManager.CreateAsync(applicationUser, registerModel.Password);
 
-                if(!result.Succeeded)
+                if (!result.Succeeded)
                 {
                     return new ResponseModel()
                     {
@@ -193,8 +193,8 @@ namespace ZumbaAPI.Repository.DataManager
 
                 return new ResponseModel()
                 {
-                   Message = "User successfully created",
-                   Code = 201
+                    Message = "User successfully created",
+                    Code = 201
                 };
             }
             catch (Exception ex)
@@ -220,7 +220,7 @@ namespace ZumbaAPI.Repository.DataManager
                 //get the current user via claimsPrincipal
                 var user = await _userManager.GetUserAsync(claimsPrincipal);
 
-                if(user == null)
+                if (user == null)
                 {
                     return new ResponseModel()
                     {
@@ -231,15 +231,15 @@ namespace ZumbaAPI.Repository.DataManager
 
                 //check the object updateUserProfile if the properties is not null change the value 
                 //if not retain the same old of the properties
-                if(updateUserProfile.FirstName != null)
+                if (updateUserProfile.FirstName != null)
                 {
                     user.FirstName = updateUserProfile.FirstName;
                 }
-                if(updateUserProfile.LastName != null)
+                if (updateUserProfile.LastName != null)
                 {
                     user.LastName = updateUserProfile.LastName;
                 }
-                if(updateUserProfile.Email != null)
+                if (updateUserProfile.Email != null)
                 {
                     user.Email = updateUserProfile.Email;
                 }
@@ -247,7 +247,7 @@ namespace ZumbaAPI.Repository.DataManager
                 //save the updated profile 
                 var result = await _userManager.UpdateAsync(user);
 
-                if(!result.Succeeded)
+                if (!result.Succeeded)
                 {
                     return new ResponseModel()
                     {

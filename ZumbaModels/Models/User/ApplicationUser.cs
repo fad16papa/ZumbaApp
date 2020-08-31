@@ -14,5 +14,6 @@ namespace ZumbaModels.Models
         public string LastName { get; set; }
         public DateTime JoinDate { get; set; }
         public DateTime MembershipValidity { get; set; }
+        public PricingModel PricingModel { get; set; }
     }
 }

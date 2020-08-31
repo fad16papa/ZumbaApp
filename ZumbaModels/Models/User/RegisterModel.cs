@@ -25,7 +25,7 @@ namespace ZumbaModels.Models
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [Required]  
+        [Required]
         [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in Last Name")]
         [StringLength(50)]
         [Display(Name = "Last Name")]
