@@ -1,0 +1,101 @@
+﻿@model ZumbaModels.Models.RegisterModel
+
+@{
+    ViewData["Title"] = "Sign up";
+    Layout = "_Layout";
+}
+
+<div class="main-container">
+    <section class="fullwidth-split">
+        <div class="container-fluid">
+            <div class="row no-gutters height-100 justify-content-center">
+                <div class="col-12 col-lg-6 fullwidth-split-image bg-dark d-flex justify-content-center align-items-center">
+                    <img alt="Image" src="~/assets/img/zamora/10-1.jpg" class="bg-image position-absolute opacity-30" />
+                    <div class="col-12 col-sm-8 col-lg-9 text-center pt-5 pb-5"></div>
+                    <!--end of col-->
+                </div>
+                <!--end of col-->
+                <div class="col-12 col-sm-8 col-lg-6 fullwidth-split-text">
+                    <div class="col-12 col-lg-8 align-self-center">
+                        <div class="text-center mb-5">
+                            <h1 class="h2 mb-2">Get started</h1>
+                            <span>Start creating beautiful products immediately</span>
+                        </div>
+                        <form class="mb-4" method="post">
+                            <div><span class="text-danger">@ViewBag.ErrorMessage</span></div>
+                            <div class="row">
+                                <div class="col">   
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.UserName" class="text-danger"></span></div>
+                                        <label asp-for="@Model.UserName" for="signup-email"></label>
+                                        <input asp-for="@Model.UserName" class="form-control form-control-lg" type="text" id="username" placeholder="User Name" autocomplete="off" required />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
+                                        <label asp-for="@Model.Email" for="signup-email"></label>
+                                        <input asp-for="@Model.Email" class="form-control form-control-lg" type="email" id="signup-email" placeholder="Email Address" autocomplete="off" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.FirstName" class="text-danger"></span></div>
+                                        <label asp-for="@Model.FirstName" for="signup-email"></label>
+                                        <input asp-for="@Model.FirstName" class="form-control form-control-lg" type="text" id="firstname" placeholder="First Name" autocomplete="off" required />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.LastName" class="text-danger"></span></div>
+                                        <label asp-for="@Model.LastName" for="signup-email"></label>
+                                        <input asp-for="@Model.LastName" class="form-control form-control-lg" type="text" id="lastName" placeholder="Last Name" autocomplete="off" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.Password" class="text-danger"></span></div>
+                                        <label asp-for="@Model.Password" for="signup-password"></label>
+                                        <input asp-for="@Model.Password" class="form-control form-control-lg" type="password" id="signup-password" placeholder="Enter a password" autocomplete="off" required />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span></div>
+                                        <label asp-for="@Model.ConfirmPassword" for="signup-password"></label>
+                                        <input asp-for="@Model.ConfirmPassword"class="form-control form-control-lg" type="password" id="confirmpassword" placeholder="Confirm Password" autocomplete="off" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" value="agree" name="agree-terms" id="check-agree" required>
+                                    <label class="custom-control-label text-small" for="check-agree">
+                                        I agree to the <a href="#">Terms &amp; Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-lg btn-success" asp-controller="User" asp-action="RegisterPage">Create Account</button>
+                            </div>
+                        </form>
+                        <div class="text-center">
+                            <span class="text-small">
+                                Already have an account? <a asp-controller="User" asp-action="Login">Log in here</a>
+                            </span>
+                        </div>
+                    </div>
+                    <!--end of col-->
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <!--end of section-->
+</div>

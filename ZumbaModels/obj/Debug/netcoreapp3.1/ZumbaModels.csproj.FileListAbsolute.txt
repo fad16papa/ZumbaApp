@@ -1,0 +1,9 @@
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.1\ZumbaModels.csprojAssemblyReference.cache
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.1\ZumbaModels.AssemblyInfoInputs.cache
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.1\ZumbaModels.AssemblyInfo.cs
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.1\ZumbaModels.csproj.CoreCompileInputs.cache
+D:\.NetCore\ZumbaApp\ZumbaModels\bin\Debug\netcoreapp3.1\ZumbaModels.deps.json
+D:\.NetCore\ZumbaApp\ZumbaModels\bin\Debug\netcoreapp3.1\ZumbaModels.dll
+D:\.NetCore\ZumbaApp\ZumbaModels\bin\Debug\netcoreapp3.1\ZumbaModels.pdb
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.1\ZumbaModels.dll
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.1\ZumbaModels.pdb

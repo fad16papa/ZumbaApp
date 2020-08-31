@@ -1,0 +1,70 @@
+﻿@model ZumbaModels.Models.LoginModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="main-container">
+    <section class="space-sm">
+        <div class="container align-self-start">
+            <div class="row mb-5">
+                <div class="col text-center">
+                    <a href="#">
+                        <img alt="Image" src="~/assets/img/logo-gray.svg" />
+                    </a>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-7">
+                    <div class="card card-lg text-center">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <h1 class="h2 mb-2">Hello again</h1>
+                                <span>Sign in to your account to continue</span>
+                            </div>
+                            <div class="row no-gutters justify-content-center">
+                                <form class="text-left col-lg-8" method="post">
+                                    <div><span class="text-danger">@ViewBag.ErrorMessage</span></div>
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
+                                        <label asp-for="@Model.Email" for="login-email"></label>
+                                        <input asp-for="@Model.Email" class="form-control form-control-lg" type="email" name="email" id="login-email" placeholder="Email Address" autocomplete="off" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <div><span asp-validation-for="@Model.Password" class="text-danger"></span></div>
+                                        <label asp-for="@Model.Password" for="login-password"></label>
+                                        <input asp-for="@Model.Password" class="form-control form-control-lg" type="password" name="password" id="login-password" placeholder="Enter a password" autocomplete="off" required />
+                                        <small>
+                                            Forgot password? <a asp-controller="User" asp-action="ResetPassword">Reset here</a>
+                                        </small>
+                                    </div>
+                                    <div>
+                                        <div class="custom-control custom-checkbox align-items-center">
+                                            <input type="checkbox" class="custom-control-input" value="box-1" name="box-1" checked id="check-remember">
+                                            <label class="custom-control-label text-small" for="check-remember">Remember me next time</label>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <button type="submit" class="btn btn-lg btn-primary" asp-controller="User" asp-action="Login">Log in</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--end of row-->
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-small">
+                            Don't have an account yet? <a asp-controller="User" asp-action="RegisterPage">Create one</a>
+                        </span>
+                    </div>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <!--end of section-->
+</div>
