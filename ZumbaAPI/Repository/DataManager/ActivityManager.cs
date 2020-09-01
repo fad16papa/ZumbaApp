@@ -48,6 +48,7 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (activity != null)
                 {
+                    _logger.LogError($"Activity name {activitiesModel.ActivityName} is already exist");
                     return new ResponseModel()
                     {
                         Message = string.Format($"Activity name {activitiesModel.ActivityName} is already exist"),
@@ -71,13 +72,15 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (!result)
                 {
+                    _logger.LogError($"Activity not successfully created");
                     return new ResponseModel()
                     {
-                        Message = "Activity not successfully created",
+                        Message = string.Format($"Activity not successfully created"),
                         Code = 500
                     };
                 }
 
+                _logger.LogInformation($"Activity {activitiesModel.ActivityName} succesfully created.");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Activity {activitiesModel.ActivityName} succesfully created."),
@@ -86,6 +89,7 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error encountered in ActivityManager||CreateActivity Message:{ex.Message}");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Error encountered in ActivityManager||CreateActivity Message:{ex.Message}"),
@@ -109,6 +113,7 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (activity == null)
                 {
+                    _logger.LogError($"Activity name {activityName} is not exist");
                     return new ResponseModel()
                     {
                         Message = string.Format($"Activity name {activityName} is not exist"),
@@ -122,13 +127,15 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (!result)
                 {
+                    _logger.LogError($"Activity {activityName} not successfully deleted");
                     return new ResponseModel()
                     {
-                        Message = "Activity not successfully deleted",
+                        Message = string.Format($"Activity {activityName} not successfully deleted"),
                         Code = 500
                     };
                 }
 
+                _logger.LogInformation($"Activity {activityName} successfully deleted");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Activity {activityName} succesfully deleted."),
@@ -138,6 +145,7 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error encountered in ActivityManager||DeleteActivity Message:{ex.Message}");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Error encountered in ActivityManager||DeleteActivity Message:{ex.Message}"),
@@ -159,6 +167,7 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error encountered in ActivityManager||GetActivity Message:{ex.Message}");
                 throw ex;
             }
         }
@@ -176,7 +185,7 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
-
+                _logger.LogError($"Error encountered in ActivityManager||GetAll Message:{ex.Message}");
                 throw ex;
             }
         }
@@ -195,9 +204,10 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (activity == null)
                 {
+                    _logger.LogError($"Activity {activitiesModel.ActivityName} is not exist");
                     return new ResponseModel()
                     {
-                        Message = "Activity is not exist",
+                        Message = string.Format($"Activity {activitiesModel.ActivityName} is not exist"),
                         Code = 400
                     };
                 }
@@ -225,21 +235,24 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (!result)
                 {
+                    _logger.LogError($"Activity not successfully updated");
                     return new ResponseModel()
                     {
-                        Message = "Activity not successfully updated",
+                        Message = string.Format($"Activity not successfully updated"),
                         Code = 500
                     };
                 }
 
+                _logger.LogInformation($"Activity successfully updated");
                 return new ResponseModel()
                 {
-                    Message = "Activity successfully updated",
+                    Message = string.Format($"Activity successfully updated"),
                     Code = 200
                 };
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error encountered in ActivityManager||UpdateActivity Message:{ex.Message}");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Error encountered in ActivityManager||UpdateActivity Message:{ex.Message}"),

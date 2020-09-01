@@ -63,6 +63,7 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (checkEmail == null)
                 {
+                    _logger.LogError($"Invalid Credentials for user {loginModel.Email}.");
                     return new ResponseModel()
                     {
                         Message = string.Format($"Invalid Credentials for user {loginModel.Email}."),
@@ -75,6 +76,7 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (!validPassword)
                 {
+                    _logger.LogError($"Invalid Credentials for user {loginModel.Email}.");
                     return new ResponseModel()
                     {
                         Message = string.Format($"Invalid Credentials for user {loginModel.Email}."),
@@ -84,7 +86,6 @@ namespace ZumbaAPI.Repository.DataManager
 
                 //user successfully login
                 _logger.LogInformation($"User {loginModel.Email} successfully login.");
-
                 return new ResponseModel()
                 {
                     Message = string.Format($"User {loginModel.Email} successfully login."),
@@ -94,6 +95,7 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error encountered in ApplicationUserManager||AuthenticateUser Message:{ex.Message}");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Error encountered in ApplicationUserManager||AuthenticateUser Message:{ex.Message}"),
@@ -149,9 +151,10 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (user != null)
                 {
+                    _logger.LogError($"UserName {registerModel.UserName} already exist");
                     return new ResponseModel()
                     {
-                        Message = "UserName Already exist",
+                        Message = string.Format($"UserName {registerModel.UserName} already exist"),
                         Code = 900
                     };
                 }
@@ -161,9 +164,10 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (email != null)
                 {
+                    _logger.LogError($"Email {registerModel.Email} already exist");
                     return new ResponseModel()
                     {
-                        Message = "Email Already exist",
+                        Message = string.Format($"Email {registerModel.Email} already exist"),
                         Code = 901
                     };
                 }
@@ -184,21 +188,24 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (!result.Succeeded)
                 {
+                    _logger.LogError($"User not successfully created");
                     return new ResponseModel()
                     {
-                        Message = "User not successfully created",
+                        Message = string.Format($"User not successfully created"),
                         Code = 500
                     };
                 }
 
+                _logger.LogInformation($"User successfully created");
                 return new ResponseModel()
                 {
-                    Message = "User successfully created",
+                    Message = string.Format($"User successfully created"),
                     Code = 201
                 };
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error encountered in ApplicationUserManager||RegisterUser Message:{ex.Message}");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Error encountered in ApplicationUserManager||RegisterUser Message:{ex.Message}"),
@@ -222,9 +229,10 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (user == null)
                 {
+                    _logger.LogError($"User {updateUserProfile.Email} not found");
                     return new ResponseModel()
                     {
-                        Message = string.Format($"User not found"),
+                        Message = string.Format($"User {updateUserProfile.Email} not found"),
                         Code = 400
                     };
                 }
@@ -249,6 +257,7 @@ namespace ZumbaAPI.Repository.DataManager
 
                 if (!result.Succeeded)
                 {
+                    _logger.LogError($"Not successfully update user profile");
                     return new ResponseModel()
                     {
                         Message = string.Format($"Not successfully update user profile"),
@@ -256,6 +265,7 @@ namespace ZumbaAPI.Repository.DataManager
                     };
                 }
 
+                _logger.LogInformation($"Successfully update user profile");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Successfully update user profile"),
@@ -264,6 +274,7 @@ namespace ZumbaAPI.Repository.DataManager
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error encountered in ApplicationUserManager||UpdateUser Message:{ex.Message}");
                 return new ResponseModel()
                 {
                     Message = string.Format($"Error encountered in ApplicationUserManager||UpdateUser Message:{ex.Message}"),
