@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AKtJqSwMbfqqhf4NKwmoFXlIPHKHG7cg2umyFo3ILIJ9d1A5a4C4E8bduP5IMvgw8MJk+dIi02VB3y7f4FxU7A==",
+  "success": true,
+  "projectFilePath": "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/francisdecena/.nuget/packages/microsoft.aspnetcore.app.ref/3.0.1/microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

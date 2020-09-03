@@ -1,0 +1,12 @@
+/Users/francisdecena/project/ZumbaApp/Persistence/bin/Debug/netstandard2.0/Persistence.deps.json
+/Users/francisdecena/project/ZumbaApp/Persistence/bin/Debug/netstandard2.0/Persistence.dll
+/Users/francisdecena/project/ZumbaApp/Persistence/bin/Debug/netstandard2.0/Persistence.pdb
+/Users/francisdecena/project/ZumbaApp/Persistence/obj/Debug/netstandard2.0/Persistence.csprojAssemblyReference.cache
+/Users/francisdecena/project/ZumbaApp/Persistence/obj/Debug/netstandard2.0/Persistence.AssemblyInfoInputs.cache
+/Users/francisdecena/project/ZumbaApp/Persistence/obj/Debug/netstandard2.0/Persistence.AssemblyInfo.cs
+/Users/francisdecena/project/ZumbaApp/Persistence/obj/Debug/netstandard2.0/Persistence.csproj.CoreCompileInputs.cache
+/Users/francisdecena/project/ZumbaApp/Persistence/obj/Debug/netstandard2.0/Persistence.dll
+/Users/francisdecena/project/ZumbaApp/Persistence/obj/Debug/netstandard2.0/Persistence.pdb
+/Users/francisdecena/project/ZumbaApp/Persistence/bin/Debug/netstandard2.0/Domain.dll
+/Users/francisdecena/project/ZumbaApp/Persistence/bin/Debug/netstandard2.0/Domain.pdb
+/Users/francisdecena/project/ZumbaApp/Persistence/obj/Debug/netstandard2.0/Persistence.csproj.CopyComplete

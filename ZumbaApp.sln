@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZumbaApp", "ZumbaApp\ZumbaApp.csproj", "{592B510D-09E4-42FD-9017-14FEA8EF086A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZumbaAPI", "ZumbaAPI\ZumbaAPI.csproj", "{F7C8993C-BE93-4E9A-88E0-E7EEE1BA47B3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZumbaModels", "ZumbaModels\ZumbaModels.csproj", "{DD3B6A4A-1CED-4506-84A0-4A73B114935D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{0E08E5A0-38F2-4258-BC78-28BD6E6BFE3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{5D3E7B3F-016C-4318-94ED-95A0589E0B13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{7F5389BC-8CDC-4840-AF9E-10BD8D513FFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZumbaAPI", "ZumbaAPI\ZumbaAPI.csproj", "{999B4F06-4C16-461C-9445-A91120FEB5AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,22 @@ Global
 		{DD3B6A4A-1CED-4506-84A0-4A73B114935D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD3B6A4A-1CED-4506-84A0-4A73B114935D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD3B6A4A-1CED-4506-84A0-4A73B114935D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E08E5A0-38F2-4258-BC78-28BD6E6BFE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E08E5A0-38F2-4258-BC78-28BD6E6BFE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E08E5A0-38F2-4258-BC78-28BD6E6BFE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E08E5A0-38F2-4258-BC78-28BD6E6BFE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3E7B3F-016C-4318-94ED-95A0589E0B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3E7B3F-016C-4318-94ED-95A0589E0B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3E7B3F-016C-4318-94ED-95A0589E0B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3E7B3F-016C-4318-94ED-95A0589E0B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F5389BC-8CDC-4840-AF9E-10BD8D513FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F5389BC-8CDC-4840-AF9E-10BD8D513FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F5389BC-8CDC-4840-AF9E-10BD8D513FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F5389BC-8CDC-4840-AF9E-10BD8D513FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999B4F06-4C16-461C-9445-A91120FEB5AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999B4F06-4C16-461C-9445-A91120FEB5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999B4F06-4C16-461C-9445-A91120FEB5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999B4F06-4C16-461C-9445-A91120FEB5AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
