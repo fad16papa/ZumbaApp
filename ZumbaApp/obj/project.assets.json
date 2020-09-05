@@ -2653,6 +2653,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
       "ZumbaModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -8595,6 +8608,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "ZumbaModels/1.0.0": {
       "type": "project",
       "path": "../ZumbaModels/ZumbaModels.csproj",
@@ -8604,6 +8622,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "AspNetCore.Http.Extensions >= 1.0.1",
+      "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.7",
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
@@ -8635,6 +8654,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj": {
+              "projectPath": "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj"
+            },
             "/Users/francisdecena/project/ZumbaApp/ZumbaModels/ZumbaModels.csproj": {
               "projectPath": "/Users/francisdecena/project/ZumbaApp/ZumbaModels/ZumbaModels.csproj"
             }

@@ -86,7 +86,7 @@ namespace ZumbaApp.Controllers
 
                     //check the result 
                     //return the view with the error message from the server side
-                    if (result.Code != 201)
+                    if (result.Code != 200)
                     {
                         _logger.LogError($"Error encountered in UserController||Register Error Message {result.Message}");
                         ViewBag.ErrorMessage = result.Message;
@@ -94,7 +94,7 @@ namespace ZumbaApp.Controllers
                     }
                 }
 
-                return View();
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {

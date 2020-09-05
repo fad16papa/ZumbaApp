@@ -38,7 +38,7 @@ namespace ZumbaApp.Repository.Services
             {
                 var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
 
-                var result = await responseClient.PostAsJsonAsync<LoginModel>("api/User/Authenticate", loginModel);
+                var result = await responseClient.PostAsJsonAsync<LoginModel>("api/User/login", loginModel);
 
                 if(!result.IsSuccessStatusCode)
                 {
@@ -77,7 +77,7 @@ namespace ZumbaApp.Repository.Services
             {
                 var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
 
-                var result = await responseClient.PostAsJsonAsync<RegisterModel>("api/ApplicationUser/Register", registerModel);
+                var result = await responseClient.PostAsJsonAsync<RegisterModel>("api/User/register", registerModel);
 
                 if (!result.IsSuccessStatusCode)
                 {
