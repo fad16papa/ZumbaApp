@@ -7,7 +7,7 @@ namespace Domain
         public Guid Id { get; set; }
         public string PlanName { get; set; }
         public string PlanDescription { get; set; }
-        public decimal Price { get; set; }
+        public string Price { get; set; }
         public bool IsActive { get; set; }
         public DateTime DateCreated { get; set; }
     }
