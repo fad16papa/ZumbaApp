@@ -10185,6 +10185,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/User/UserSetting.cshtml",
+      "TargetPath": "Views\\User\\UserSetting.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/User/UserProfile.cshtml",
       "TargetPath": "Views\\User\\UserProfile.cshtml",
       "FileKind": "mvc"

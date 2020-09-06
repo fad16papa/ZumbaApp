@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Domain
 {
@@ -10,5 +12,7 @@ namespace Domain
         public string Price { get; set; }
         public bool IsActive { get; set; }
         public DateTime DateCreated { get; set; }
+        public DateTime DateEnd { get; set; }
+        public ICollection<UserPlan> UserPlans { get; set; }
     }
 }

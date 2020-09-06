@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application.User;
 using Domain;
@@ -22,6 +23,12 @@ namespace ZumbaAPI.Controllers
         public async Task<ActionResult<User>> Register(Register.Command command)
         {
             return await Mediator.Send(command);
+        }
+
+        [HttpGet("list")]
+        public async Task<ActionResult<List<AppUser>>> List()
+        {
+            return await Mediator.Send(new List.Query());
         }
 
         [HttpGet]

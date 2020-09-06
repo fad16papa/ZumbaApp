@@ -281,8 +281,10 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.MvcApplicationPar
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Domain.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/ZumbaModels.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/ZumbaModels.pdb
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Domain.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.csprojAssemblyReference.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.AssemblyInfoInputs.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.AssemblyInfo.cs
@@ -294,6 +296,7 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.MvcApplicationPar
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.TagHelpers.output.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.RazorCoreGenerate.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Home/Index.cshtml.g.cs
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Plan/Index.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Shared/Error.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_Layout.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
@@ -311,7 +314,5 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.MvcApplicationPar
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.cache
-/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Domain.dll
-/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Domain.pdb
-/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Plan/Index.cshtml.g.cs
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserSetting.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserProfile.cshtml.g.cs

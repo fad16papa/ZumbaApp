@@ -45,6 +45,19 @@ namespace ZumbaApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            //TODO: Delete all cookies from ZumbaApp
+            return View("Login");
+        }
+
+        [HttpGet]
+        public IActionResult UserSetting()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel loginModel)
         {

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Domain
 {
@@ -11,5 +13,6 @@ namespace Domain
         public string ActivityVenue { get; set; }
         public bool IsActive { get; set; }
         public DateTime DateCreated { get; set; }
+        public ICollection<UserActivity> UserActivities { get; set; }
     }
 }
