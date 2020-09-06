@@ -62,7 +62,7 @@ namespace Application.User
                     };
                 }
 
-                throw new RestException(HttpStatusCode.Unauthorized, "Unauthorized");
+                throw new RestException(HttpStatusCode.Unauthorized, "Unauthorize");
             }
         }
     }

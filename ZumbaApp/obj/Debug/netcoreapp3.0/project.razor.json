@@ -10185,6 +10185,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/User/UserProfile.cshtml",
+      "TargetPath": "Views\\User\\UserProfile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/User/ResetPassword.cshtml",
       "TargetPath": "Views\\User\\ResetPassword.cshtml",
       "FileKind": "mvc"
@@ -10197,6 +10202,11 @@
     {
       "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/Plan/Index.cshtml",
+      "TargetPath": "Views\\Plan\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

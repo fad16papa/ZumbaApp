@@ -39,6 +39,12 @@ namespace ZumbaApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult UserProfile()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel loginModel)
         {
@@ -54,15 +60,15 @@ namespace ZumbaApp.Controllers
 
                     //check the result 
                     //return the view with the error message from the server side
-                    if (result.Code != 200)
+                    if (result.Code == 401)
                     {
                         _logger.LogError($"Error encountered in UserController||Login Error Message {result.Message}");
-                        ViewBag.ErrorMessage = result.Message;
+                        ViewBag.ErrorMessage = "Wrong credentials kindly provide valid your valid email or password";
                         return View();
                     }
                 }
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("UserProfile", "User");
             }
             catch (Exception ex)
             {
@@ -86,15 +92,23 @@ namespace ZumbaApp.Controllers
 
                     //check the result 
                     //return the view with the error message from the server side
-                    if (result.Code != 200)
+                    if (result.Code == 409)
                     {
                         _logger.LogError($"Error encountered in UserController||Register Error Message {result.Message}");
-                        ViewBag.ErrorMessage = result.Message;
+                        if(result.Message.Contains("Email"))
+                        {
+                            ViewBag.ErrorMessage = string.Format($"Email {registerModel.Email} already exist.");
+                        }
+                        else
+                        {
+                            ViewBag.ErrorMessage = string.Format($"UserName {registerModel.UserName} already exist.");
+                        }
+                        
                         return View();
                     }
                 }
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Plan");
             }
             catch (Exception ex)
             {

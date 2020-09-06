@@ -36,7 +36,7 @@ namespace Application.Plans
 
                 if(plan == null)
                 {
-                    throw new RestException(HttpStatusCode.NotFound, new { Activity = "Not found" });
+                    throw new RestException(HttpStatusCode.NotFound, "Not found" );
                 }
 
                 plan.PlanName = request.PlanName ?? plan.PlanName;

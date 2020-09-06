@@ -1,0 +1,374 @@
+@model ZumbaModels.Models.PricingModel
+
+@{
+Layout = "_Layout";
+}
+
+<div class="navbar-container">
+    <div class="bg-dark navbar-dark" data-sticky="top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="Wingman" src="~/assets/img/logo-white.svg" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="icon-menu h4"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Overview</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button"
+                                data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+                                <a class="dropdown-item" href="pages-landing.html">
+                                    <span class="h6 mb-0">Landing Pages</span>
+                                    <p class="text-small text-muted">Showcase your product in style</p>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="pages-app.html">
+                                    <span class="h6 mb-0">App Pages</span>
+                                    <p class="text-small text-muted">Build detailed, functional web apps</p>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="pages-inner.html">
+                                    <span class="h6 mb-0">Inner Pages</span>
+                                    <p class="text-small text-muted">Complete your online presence</p>
+                                </a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="componentsDropdown" role="button"
+                                data-toggle="dropdown">Components</a>
+                            <div class="dropdown-menu" aria-labelledby="componentsDropdown">
+
+                                <a class="dropdown-item" href="components-bootstrap.html">Bootstrap</a>
+
+                                <a class="dropdown-item" href="components-wingman.html">Wingman</a>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a asp-controller="User" asp-action="RegisterPage">Sign up</a>
+                            <span>&nbsp;or&nbsp;</span><a asp-controller="User" asp-action="Login">Sign in</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!--end nav collapse-->
+            </nav>
+        </div>
+        <!--end of container-->
+    </div>
+</div>
+<div class="main-container">
+    <section>
+        <div class="container">
+            <div class="row justify-content-center text-center section-intro">
+                <div class="col-12 col-md-9 col-lg-8">
+                    <span class="title-decorative" data-aos="fade-up" data-aos-delay="10">Simple Pricing</span>
+                    <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">A plan for all occasions</h2>
+                    <span class="lead" data-aos="fade-up" data-aos-delay="200">All our plans include a 30 day free trial
+                        - No credit card required. Money-back guarantee, cancel at any time.</span>
+
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+
+            <div class="row justify-content-center">
+                <div class="col">
+                    <table class="table table-bordered table-responsive pricing">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">
+                                    <span class="h5">Personal</span>
+                                </th>
+                                <th scope="col">
+                                    <span class="h5">Agency</span>
+                                </th>
+                                <th scope="col">
+                                    <span class="h5">Professional</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Price</th>
+                                <td>
+                                    <span class="display-4">$9</span>
+                                    <span class="text-small">per user / month</span>
+                                </td>
+                                <td>
+                                    <span class="display-4">$39</span>
+                                    <span class="text-small">per user / month</span>
+                                </td>
+                                <td>
+                                    <span class="display-4">$79</span>
+                                    <span class="text-small">per user / month</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Includes Hosting</th>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-right">Bandwidth</th>
+                                <td>10GB</td>
+                                <td>100GB</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-right">Support</th>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-right">Billing</th>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-right">Invoicing</th>
+                                <td><i class="icon-circle-with-cross text-red"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-right">CRM</th>
+                                <td><i class="icon-circle-with-cross text-red"></i>
+                                </td>
+                                <td><i class="icon-circle-with-cross text-red"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-right">Priority Service</th>
+                                <td><i class="icon-circle-with-cross text-red"></i>
+                                </td>
+                                <td><i class="icon-circle-with-cross text-red"></i>
+                                </td>
+                                <td><i class="icon-check text-green"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>
+                                    <a class="btn btn-link" href="#">Select this plan</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-link" href="#">Select this plan</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-link" href="#">Select this plan</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span>Looking for bulk pricing? <a href="#">Contact us &rsaquo;</a>
+                    </span>
+                </div>
+                <!--end of col-->
+                <hr>
+            </div>
+            <!--end of row-->
+            <div class="row section-outro justify-content-center mb-5">
+                <div class="col-auto">
+                    <h4>Hear it from our satisfied customers</h4>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+            <ul class="row feature-list justify-content-center">
+
+                <li class="col-12 col-md-6 col-lg-5">
+                    <div class="media">
+                        <img alt="Image" src="~/assets/img/avatar-male-1.jpg" class="avatar" />
+                        <div class="media-body">
+                            <p class="mb-1">
+                                “Let’s get one thing straight, this theme’s a straight-up winner. No posers here, just
+                                beautiful design and code.”
+                            </p>
+                            <small>Daniel Cameron</small>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-5">
+                    <div class="media">
+                        <img alt="Image" src="~/assets/img/avatar-female-1.jpg" class="avatar" />
+                        <div class="media-body">
+                            <p class="mb-1">
+                                “With Wingman, we were able to turn out a stunning landing page and compelling MVP for
+                                our SaaS web app in no time.”
+                            </p>
+                            <small>Caitlyn Halsy, Bench</small>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-5">
+                    <div class="media">
+                        <img alt="Image" src="~/assets/img/avatar-male-2.jpg" class="avatar" />
+                        <div class="media-body">
+                            <p class="mb-1">
+                                “Not only has it allowed us to get our product into the hands of customers quickly -
+                                it’s also saved us a ton of money.”
+                            </p>
+                            <small>Toby Marsh, Movend</small>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-5">
+                    <div class="media">
+                        <img alt="Image" src="~/assets/img/avatar-female-2.jpg" class="avatar" />
+                        <div class="media-body">
+                            <p class="mb-1">
+                                “Using other templates just doesn’t feel the same anymore - none have the polish and
+                                intuitive design of Wingman”
+                            </p>
+                            <small>Lucille Freebody, Product Designer</small>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+            </ul>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <!--end of section-->
+    <footer class="bg-gray text-light footer-long">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <img alt="Image" src="~/assets/img/logo-white.svg" class="mb-4" />
+                    <p class="text-muted">
+                        &copy; 2020 Creativo Rare
+                       <br />This project is for <br />clients view only!
+                    </p>
+                </div>
+                <!--end of col-->
+                <div class="col-12 col-md-9">
+                    <span class="h5">A robust suite of styled components for Bootstrap 4</span>
+                    <div class="row no-gutters">
+                        <div class="col-6 col-lg-3">
+                            <h6>Navigate</h6>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="index.html">Overview</a>
+                                </li>
+                                <li>
+                                    <a href="pages-landing.html">Landing Pages</a>
+                                </li>
+                                <li>
+                                    <a href="pages-app.html">App Pages</a>
+                                </li>
+                                <li>
+                                    <a href="pages-inner.html">Inner Pages</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--end of col-->
+                        <div class="col-6 col-lg-3">
+                            <h6>Platform</h6>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#">Mac OS &amp; iOS</a>
+                                </li>
+                                <li>
+                                    <a href="#">Android &amp; Chrome OS</a>
+                                </li>
+                                <li>
+                                    <a href="#">Windows</a>
+                                </li>
+                                <li>
+                                    <a href="#">Linux</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--end of col-->
+                        <div class="col-6 col-lg-3">
+                            <h6>Community</h6>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="#">Knowledgebase</a>
+                                </li>
+                                <li>
+                                    <a href="#">Hire an expert</a>
+                                </li>
+                                <li>
+                                    <a href="#">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--end of col-->
+                        <div class="col-6 col-lg-3">
+                            <h6>Company</h6>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#">About company</a>
+                                </li>
+                                <li>
+                                    <a href="#">History</a>
+                                </li>
+                                <li>
+                                    <a href="#">Team</a>
+                                </li>
+                                <li>
+                                    <a href="#">Investment</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </footer>
+</div>

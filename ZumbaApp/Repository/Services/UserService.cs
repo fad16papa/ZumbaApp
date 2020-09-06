@@ -1,10 +1,13 @@
 ﻿using AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
+using ZumbaApp.Helper;
 using ZumbaApp.Repository.Interfaces;
 using ZumbaModels.Models;
 using ZumbaModels.Models.ApiResponse;
@@ -40,15 +43,6 @@ namespace ZumbaApp.Repository.Services
 
                 var result = await responseClient.PostAsJsonAsync<LoginModel>("api/User/login", loginModel);
 
-                if(!result.IsSuccessStatusCode)
-                {
-                    return new ResponseModel()
-                    {
-                        Message = result.ReasonPhrase,
-                        Code = Convert.ToInt32(result.StatusCode)
-                    };
-                }
-
                 return new ResponseModel()
                 {
                     Message = result.ReasonPhrase,
@@ -75,22 +69,15 @@ namespace ZumbaApp.Repository.Services
         {
             try
             {
+                ConvertAPIResponse convertAPIResponse = new ConvertAPIResponse();
+
                 var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
 
                 var result = await responseClient.PostAsJsonAsync<RegisterModel>("api/User/register", registerModel);
 
-                if (!result.IsSuccessStatusCode)
-                {
-                    return new ResponseModel()
-                    {
-                        Message = result.ReasonPhrase,
-                        Code = Convert.ToInt32(result.StatusCode)
-                    };
-                }
-
                 return new ResponseModel()
                 {
-                    Message = result.ReasonPhrase,
+                    Message = JsonConvert.DeserializeObject<object>(await result.Content.ReadAsStringAsync()).ToString(),
                     Code = Convert.ToInt32(result.StatusCode)
                 };
             }

@@ -31,7 +31,7 @@ namespace Application.Plans
 
                 if(plan == null)
                 {
-                    throw new RestException(HttpStatusCode.NotFound, new { Plan = "Not found" });
+                    throw new RestException(HttpStatusCode.NotFound,  "Not found" );
                 }
 
                 _context.Remove(plan);

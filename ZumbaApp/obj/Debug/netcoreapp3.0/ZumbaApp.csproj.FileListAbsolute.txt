@@ -313,3 +313,5 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.MvcApplicationPar
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Domain.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Domain.pdb
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Plan/Index.cshtml.g.cs
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserProfile.cshtml.g.cs
