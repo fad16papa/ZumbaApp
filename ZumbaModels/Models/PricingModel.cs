@@ -17,6 +17,16 @@ namespace ZumbaModels.Models
         [Required]
         public string PriceDescription { get; set; }
         [Required]
+        public bool UnlimitedSession { get; set; }
+        [Required]
+        public bool VIPAccess { get; set; }
+        [Required]
+        public bool Mentorship { get; set; }
+        [Required]
+        public bool Billing { get; set; }
+        [Required]
+        public bool Invoicing { get; set; }
+        [Required]
         public Decimal Price { get; set; }
         [Required]
         [DataType(DataType.DateTime)]

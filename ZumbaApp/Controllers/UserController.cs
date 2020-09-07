@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
@@ -76,17 +77,28 @@ namespace ZumbaApp.Controllers
                     if (result.Code == 401)
                     {
                         _logger.LogError($"Error encountered in UserController||Login Error Message {result.Message}");
-                        ViewBag.ErrorMessage = "Wrong credentials kindly provide valid your valid email or password";
+                        ViewBag.ErrorMessage = result.Message;
                         return View();
                     }
+
+                    //TODO: Save the return JWT to sessionStorage
+                    var cookieOptions = new CookieOptions();
+                    cookieOptions.Expires = DateTime.Now.AddHours(2);
+                    cookieOptions.SameSite = SameSiteMode.Strict;
+                    cookieOptions.Secure = true;
+                    cookieOptions.HttpOnly = true;
+                    //cookieOptions.SecurePolicy = CookieSecurePolicy.Always;
+                    cookieOptions.IsEssential = true;
+                    Response.Cookies.Append("ZumbaReference", result.Token, cookieOptions);
+
                 }
 
                 return RedirectToAction("UserProfile", "User");
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                _logger.LogError($"Error encountered in UserController||Login ErrorMessage: {ex.Message}");
+                return RedirectToAction("Index", "Error");
             }
         }
 
@@ -108,15 +120,8 @@ namespace ZumbaApp.Controllers
                     if (result.Code == 409)
                     {
                         _logger.LogError($"Error encountered in UserController||Register Error Message {result.Message}");
-                        if(result.Message.Contains("Email"))
-                        {
-                            ViewBag.ErrorMessage = string.Format($"Email {registerModel.Email} already exist.");
-                        }
-                        else
-                        {
-                            ViewBag.ErrorMessage = string.Format($"UserName {registerModel.UserName} already exist.");
-                        }
-                        
+                        ViewBag.ErrorMessage = result.Message;
+
                         return View();
                     }
                 }
@@ -125,8 +130,8 @@ namespace ZumbaApp.Controllers
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                _logger.LogError($"Error encountered in UserController||RegisterPage ErrorMessage: {ex.Message}");
+                return RedirectToAction("Index", "Error");
             }
         }
     }

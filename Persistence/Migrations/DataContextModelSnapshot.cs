@@ -53,8 +53,17 @@ namespace Persistence.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DisplayName")
@@ -124,13 +133,19 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("Billing")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DateEnd")
-                        .HasColumnType("TEXT");
+                    b.Property<bool>("Invoicing")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsActive")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Mentorship")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PlanDescription")
@@ -141,6 +156,12 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Price")
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("UnlimitedSession")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("VIPAccess")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

@@ -11,6 +11,9 @@ using ZumbaApp.Helper;
 using ZumbaApp.Repository.Interfaces;
 using ZumbaModels.Models;
 using ZumbaModels.Models.ApiResponse;
+using Application.Errors;
+using System.Net;
+using Application.User;
 
 namespace ZumbaApp.Repository.Services
 {
@@ -35,7 +38,7 @@ namespace ZumbaApp.Repository.Services
         /// </summary>
         /// <param name="loginModel"></param>
         /// <returns></returns>
-        public async Task<ResponseModel> LoginUser(LoginModel loginModel)
+        public async Task<LoginResponseModel> LoginUser(LoginModel loginModel)
         {
             try
             {
@@ -43,20 +46,30 @@ namespace ZumbaApp.Repository.Services
 
                 var result = await responseClient.PostAsJsonAsync<LoginModel>("api/User/login", loginModel);
 
-                return new ResponseModel()
+                if (result.StatusCode != HttpStatusCode.OK)
                 {
-                    Message = result.ReasonPhrase,
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new LoginResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                var successResponse = await result.Content.ReadAsJsonAsync<User>();
+                return new LoginResponseModel()
+                {
+                    DisplayName = successResponse.DisplayName,
+                    UserName = successResponse.UserName,
+                    Token = successResponse.Token,
+                    Image = successResponse.Image,
                     Code = Convert.ToInt32(result.StatusCode)
                 };
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserService||LoginUser ErrorMessage: {ex.Message}");
-                return new ResponseModel()
-                {
-                    Message = string.Format($"Error encountered in UserService||LoginUser ErrorMessage: {ex.Message}"),
-                    Code = 500
-                };
+                throw ex;
             }
         }
 
@@ -69,26 +82,22 @@ namespace ZumbaApp.Repository.Services
         {
             try
             {
-                ConvertAPIResponse convertAPIResponse = new ConvertAPIResponse();
-
                 var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
 
                 var result = await responseClient.PostAsJsonAsync<RegisterModel>("api/User/register", registerModel);
 
+                var user = await result.Content.ReadAsJsonAsync<RestException>();
+
                 return new ResponseModel()
                 {
-                    Message = JsonConvert.DeserializeObject<object>(await result.Content.ReadAsStringAsync()).ToString(),
+                    Message = user.Errors.ToString(),
                     Code = Convert.ToInt32(result.StatusCode)
                 };
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserService||RegisterUser ErrorMessage: {ex.Message}");
-                return new ResponseModel()
-                {
-                    Message = string.Format($"Error encountered in UserService||RegisterUser ErrorMessage: {ex.Message}"),
-                    Code = 500
-                };
+                throw ex;
             }
         }
     }

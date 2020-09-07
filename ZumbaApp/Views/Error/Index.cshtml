@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="main-container">
+    <section class="space-sm">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img alt="Image" src="~/assets/img/logo-gray.svg" />
+                    </a>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <nav aria-label="breadcrumb" role="navigation"></nav>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="card card-lg">
+                        <div class="card-body">
+                            <form class="wizard">
+                                <ul class="nav nav-tabs text-center row justify-content-center">
+                                    <li class="col-3 col-md-2">
+                                        <a href="#first" class="step-circle step-circle-sm" hidden>1</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="first">
+                                        <div class="row justify-content-around align-items-center">
+                                            <div class="col-8 col-md-6 col-lg-4 mb-4">
+                                                <img alt="Image" src="~/assets/img/graphic-man-box.svg" class="w-100" />
+                                            </div>
+                                            <!--end of col-->
+                                            <div class="col-12 col-md-6 col-lg-5 mb-4">
+                                                <div>
+                                                    <h6 class="title-decorative mb-2">Sorrry We encountered an system error!</h6>
+                                                    <h1 class="mb-2">500 System Error</h1>
+                                                    <p>Kindly contact the system owner</p>
+                                                </div>
+                                            </div>
+                                            <!--end of col-->
+                                        </div>
+                                        <!--end of row-->
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <!--end of section-->
+</div>

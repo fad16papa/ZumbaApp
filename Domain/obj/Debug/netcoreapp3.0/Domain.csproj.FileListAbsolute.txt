@@ -7,3 +7,11 @@
 /Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.dll
 /Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.pdb
 /Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.csprojAssemblyReference.cache
+D:\.NetCore\ZumbaApp\Domain\bin\Debug\netcoreapp3.0\Domain.deps.json
+D:\.NetCore\ZumbaApp\Domain\bin\Debug\netcoreapp3.0\Domain.dll
+D:\.NetCore\ZumbaApp\Domain\bin\Debug\netcoreapp3.0\Domain.pdb
+D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.AssemblyInfoInputs.cache
+D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.AssemblyInfo.cs
+D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.csproj.CoreCompileInputs.cache
+D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.dll
+D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.pdb

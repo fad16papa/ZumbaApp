@@ -15,6 +15,11 @@ namespace Application.Plans
             public Guid Id { get; set; }
             public string PlanName { get; set; }
             public string PlanDescription { get; set; }
+            public bool UnlimitedSession { get; set; }
+            public bool VIPAccess { get; set; }
+            public bool Mentorship { get; set; }
+            public bool Billing { get; set; }
+            public bool Invoicing { get; set; }
             public string Price { get; set; }
             public bool IsActive { get; set; }
             public DateTime DateCreated { get; set; }
@@ -26,9 +31,13 @@ namespace Application.Plans
             {
                 RuleFor(x => x.PlanName).NotEmpty();
                 RuleFor(x => x.PlanDescription).NotEmpty();
+                RuleFor(x => x.UnlimitedSession).NotEmpty();
+                RuleFor(x => x.VIPAccess).NotEmpty();
+                RuleFor(x => x.Mentorship).NotEmpty();
+                RuleFor(x => x.Billing).NotEmpty();
+                RuleFor(x => x.Invoicing).NotEmpty();
                 RuleFor(x => x.Price).NotEmpty();
                 RuleFor(x => x.IsActive).NotEmpty();
-                RuleFor(x => x.DateCreated).NotEmpty();
             }
         }
 
@@ -49,9 +58,14 @@ namespace Application.Plans
                     Id = request.Id,
                     PlanName = request.PlanName,
                     PlanDescription = request.PlanDescription,
+                    UnlimitedSession = request.UnlimitedSession,
+                    VIPAccess = request.VIPAccess,
+                    Mentorship = request.Mentorship,
+                    Billing = request.Billing,
+                    Invoicing = request.Invoicing,
                     Price = request.Price,
                     IsActive = request.IsActive,
-                    DateCreated = request.DateCreated
+                    DateCreated = DateTime.Now
                 };
 
                 _context.Plans.Add(plan);
