@@ -76,7 +76,7 @@ namespace ZumbaApp.Controllers
                     if (result.Code == 401)
                     {
                         _logger.LogError($"Error encountered in UserController||Login Error Message {result.Message}");
-                        ViewBag.ErrorMessage = "Wrong credentials kindly provide valid your valid email or password";
+                        ViewBag.ErrorMessage = result.Message;
                         return View();
                     }
                 }
@@ -85,8 +85,8 @@ namespace ZumbaApp.Controllers
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                _logger.LogError($"Error encountered in UserController||Login ErrorMessage: {ex.Message}");
+                return RedirectToAction("Index", "Error");
             }
         }
 
@@ -108,15 +108,8 @@ namespace ZumbaApp.Controllers
                     if (result.Code == 409)
                     {
                         _logger.LogError($"Error encountered in UserController||Register Error Message {result.Message}");
-                        if(result.Message.Contains("Email"))
-                        {
-                            ViewBag.ErrorMessage = string.Format($"Email {registerModel.Email} already exist.");
-                        }
-                        else
-                        {
-                            ViewBag.ErrorMessage = string.Format($"UserName {registerModel.UserName} already exist.");
-                        }
-                        
+                        ViewBag.ErrorMessage = result.Message;
+
                         return View();
                     }
                 }
@@ -125,8 +118,8 @@ namespace ZumbaApp.Controllers
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                _logger.LogError($"Error encountered in UserController||RegisterPage ErrorMessage: {ex.Message}");
+                return RedirectToAction("Index", "Error");
             }
         }
     }

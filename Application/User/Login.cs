@@ -12,7 +12,7 @@ namespace Application.User
 {
     public class Login
     {
-       public class Query : IRequest<User>
+        public class Query : IRequest<User>
         {
             public string Email { get; set; }
             public string Password { get; set; }
@@ -45,7 +45,7 @@ namespace Application.User
                 var user = await _userManager.FindByEmailAsync(request.Email);
 
                 if (user == null)
-                    throw new RestException(HttpStatusCode.Unauthorized, "Unauthorized");
+                    throw new RestException(HttpStatusCode.Unauthorized, "Unauthorized, Wrong Email or Password");
 
                 var result = await _signInManager
                     .CheckPasswordSignInAsync(user, request.Password, false);
@@ -62,7 +62,7 @@ namespace Application.User
                     };
                 }
 
-                throw new RestException(HttpStatusCode.Unauthorized, "Unauthorize");
+                throw new RestException(HttpStatusCode.Unauthorized, "Unauthorized, Wrong Email or Password");
             }
         }
     }

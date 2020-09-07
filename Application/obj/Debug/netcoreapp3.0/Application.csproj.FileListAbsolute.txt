@@ -12,3 +12,17 @@
 /Users/francisdecena/project/ZumbaApp/Application/obj/Debug/netcoreapp3.0/Application.csproj.CopyComplete
 /Users/francisdecena/project/ZumbaApp/Application/obj/Debug/netcoreapp3.0/Application.dll
 /Users/francisdecena/project/ZumbaApp/Application/obj/Debug/netcoreapp3.0/Application.pdb
+D:\.NetCore\ZumbaApp\Application\bin\Debug\netcoreapp3.0\Application.deps.json
+D:\.NetCore\ZumbaApp\Application\bin\Debug\netcoreapp3.0\Application.dll
+D:\.NetCore\ZumbaApp\Application\bin\Debug\netcoreapp3.0\Application.pdb
+D:\.NetCore\ZumbaApp\Application\bin\Debug\netcoreapp3.0\Domain.dll
+D:\.NetCore\ZumbaApp\Application\bin\Debug\netcoreapp3.0\Persistence.dll
+D:\.NetCore\ZumbaApp\Application\bin\Debug\netcoreapp3.0\Domain.pdb
+D:\.NetCore\ZumbaApp\Application\bin\Debug\netcoreapp3.0\Persistence.pdb
+D:\.NetCore\ZumbaApp\Application\obj\Debug\netcoreapp3.0\Application.csprojAssemblyReference.cache
+D:\.NetCore\ZumbaApp\Application\obj\Debug\netcoreapp3.0\Application.AssemblyInfoInputs.cache
+D:\.NetCore\ZumbaApp\Application\obj\Debug\netcoreapp3.0\Application.AssemblyInfo.cs
+D:\.NetCore\ZumbaApp\Application\obj\Debug\netcoreapp3.0\Application.csproj.CoreCompileInputs.cache
+D:\.NetCore\ZumbaApp\Application\obj\Debug\netcoreapp3.0\Application.csproj.CopyComplete
+D:\.NetCore\ZumbaApp\Application\obj\Debug\netcoreapp3.0\Application.dll
+D:\.NetCore\ZumbaApp\Application\obj\Debug\netcoreapp3.0\Application.pdb
