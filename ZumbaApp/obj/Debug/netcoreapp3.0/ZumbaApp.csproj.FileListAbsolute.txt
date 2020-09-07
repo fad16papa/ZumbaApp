@@ -159,6 +159,17 @@
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserSetting.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserProfile.cshtml.g.cs
+<<<<<<< HEAD
+=======
+>>>>>>> dbe9072b66f2a94c5c5ae5444997ea7c19550901
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.csprojAssemblyReference.cache
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.AssemblyInfoInputs.cache
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.AssemblyInfo.cs
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.csproj.CoreCompileInputs.cache
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.MvcApplicationPartsAssemblyInfo.cs
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.MvcApplicationPartsAssemblyInfo.cache
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.RazorAssemblyInfo.cache
+D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.RazorAssemblyInfo.cs
 D:\.NetCore\ZumbaApp\ZumbaApp\bin\Debug\netcoreapp3.0\appsettings.Development.json
 D:\.NetCore\ZumbaApp\ZumbaApp\bin\Debug\netcoreapp3.0\appsettings.json
 D:\.NetCore\ZumbaApp\ZumbaApp\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
@@ -319,14 +330,6 @@ D:\.NetCore\ZumbaApp\ZumbaApp\bin\Debug\netcoreapp3.0\ZumbaModels.pdb
 D:\.NetCore\ZumbaApp\ZumbaApp\bin\Debug\netcoreapp3.0\Domain.pdb
 D:\.NetCore\ZumbaApp\ZumbaApp\bin\Debug\netcoreapp3.0\Application.pdb
 D:\.NetCore\ZumbaApp\ZumbaApp\bin\Debug\netcoreapp3.0\Persistence.pdb
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.csprojAssemblyReference.cache
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.AssemblyInfoInputs.cache
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.AssemblyInfo.cs
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.csproj.CoreCompileInputs.cache
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.MvcApplicationPartsAssemblyInfo.cs
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.MvcApplicationPartsAssemblyInfo.cache
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.RazorAssemblyInfo.cache
-D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.RazorAssemblyInfo.cs
 D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.TagHelpers.input.cache
 D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.TagHelpers.output.cache
 D:\.NetCore\ZumbaApp\ZumbaApp\obj\Debug\netcoreapp3.0\ZumbaApp.RazorCoreGenerate.cache
