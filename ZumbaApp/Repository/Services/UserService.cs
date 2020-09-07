@@ -43,6 +43,8 @@ namespace ZumbaApp.Repository.Services
 
                 var result = await responseClient.PostAsJsonAsync<LoginModel>("api/User/login", loginModel);
 
+                var user = await result.Content.ReadAsJsonAsync<UserModel>();
+
                 return new ResponseModel()
                 {
                     Message = result.ReasonPhrase,

@@ -21,5 +21,16 @@ namespace ZumbaModels.Models.User
         [EmailAddress(ErrorMessage = "Kindly provide valid email address")]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [StringLength(10)]
+        [Display(Name  = "UserName")]
+        public string UserName { get; set; }
+
+        [Display(Name = "City")]
+        public string City { get; set; }
+
+        [Display(Name = "Country")]
+        public string Country { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

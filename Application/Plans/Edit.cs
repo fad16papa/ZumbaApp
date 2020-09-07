@@ -15,6 +15,11 @@ namespace Application.Plans
             public Guid Id { get; set; }
             public string PlanName { get; set; }
             public string PlanDescription { get; set; }
+            public bool UnlimitedSession { get; set; }
+            public bool VIPAccess { get; set; }
+            public bool Mentorship { get; set; }
+            public bool Billing { get; set; }
+            public bool Invoicing { get; set; }
             public string Price { get; set; }
             public bool IsActive { get; set; }
             public DateTime DateCreated { get; set; }
@@ -34,13 +39,18 @@ namespace Application.Plans
                 //logic goes here
                 var plan = await _context.Plans.FindAsync(request.Id);
 
-                if(plan == null)
+                if (plan == null)
                 {
-                    throw new RestException(HttpStatusCode.NotFound, "Not found" );
+                    throw new RestException(HttpStatusCode.NotFound, "Not found");
                 }
 
                 plan.PlanName = request.PlanName ?? plan.PlanName;
                 plan.PlanDescription = request.PlanDescription ?? plan.PlanDescription;
+                plan.UnlimitedSession = request.UnlimitedSession;
+                plan.VIPAccess = request.VIPAccess;
+                plan.Mentorship = request.Mentorship;
+                plan.Billing = request.Billing;
+                plan.Invoicing = request.Invoicing;
                 plan.Price = request.Price;
                 plan.IsActive = request.IsActive;
 
