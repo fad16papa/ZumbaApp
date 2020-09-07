@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ZumbaApp.Repository.Interfaces;
 using ZumbaModels.Models;
@@ -15,9 +15,11 @@ namespace ZumbaApp.Controllers
     {
         private readonly IUserInterface _userInterface;
         private readonly ILogger<UserController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public UserController(IUserInterface userInterface, ILogger<UserController> logger)
+        public UserController(IUserInterface userInterface, ILogger<UserController> logger, IConfiguration configuration)
         {
+            _configuration = configuration;
             _userInterface = userInterface;
             _logger = logger;
         }
@@ -49,7 +51,8 @@ namespace ZumbaApp.Controllers
         [HttpGet]
         public IActionResult Logout()
         {
-            //TODO: Delete all cookies from ZumbaApp
+            //Delete all cookies from ZumbaApp
+            Response.Cookies.Delete(_configuration["ZumbaCookies:ZumbaJwt"]);
             return View("Login");
         }
 
@@ -81,16 +84,14 @@ namespace ZumbaApp.Controllers
                         return View();
                     }
 
-                    //TODO: Save the return JWT to sessionStorage
-                    var cookieOptions = new CookieOptions();
-                    cookieOptions.Expires = DateTime.Now.AddHours(2);
-                    cookieOptions.SameSite = SameSiteMode.Strict;
-                    cookieOptions.Secure = true;
-                    cookieOptions.HttpOnly = true;
-                    //cookieOptions.SecurePolicy = CookieSecurePolicy.Always;
-                    cookieOptions.IsEssential = true;
-                    Response.Cookies.Append("ZumbaReference", result.Token, cookieOptions);
+                    //Save the return JWT to sessionStorage
+                    var cookieOptions = new CookieOptions()
+                    {
+                        Expires = DateTime.Now.AddHours(2),
+                        IsEssential = true
+                    };
 
+                    Response.Cookies.Append(_configuration["ZumbaCookies:ZumbaJwt"], result.Token, cookieOptions);
                 }
 
                 return RedirectToAction("UserProfile", "User");
@@ -124,6 +125,15 @@ namespace ZumbaApp.Controllers
 
                         return View();
                     }
+
+                    //Save the return JWT to sessionStorage
+                    var cookieOptions = new CookieOptions()
+                    {
+                        Expires = DateTime.Now.AddHours(2),
+                        IsEssential = true
+                    };
+
+                    Response.Cookies.Append(_configuration["ZumbaCookies:ZumbaJwt"], result.Token, cookieOptions);
                 }
 
                 return RedirectToAction("Index", "Plan");

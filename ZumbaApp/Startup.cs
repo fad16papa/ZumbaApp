@@ -44,12 +44,11 @@ namespace ZumbaApp
                 options.Timeout = TimeSpan.FromHours(2);
             });
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            .AddCookie(options =>
+            services.Configure<CookiePolicyOptions>(options =>
             {
-                options.Cookie.SameSite = SameSiteMode.Strict;
-                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-                options.Cookie.IsEssential = true;
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.Strict;
             });
 
             services.AddControllersWithViews();

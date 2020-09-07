@@ -78,7 +78,7 @@ namespace ZumbaApp.Repository.Services
         /// </summary>
         /// <param name="registerModel"></param>
         /// <returns></returns>
-        public async Task<ResponseModel> RegisterUser(RegisterModel registerModel)
+        public async Task<LoginResponseModel> RegisterUser(RegisterModel registerModel)
         {
             try
             {
@@ -88,9 +88,23 @@ namespace ZumbaApp.Repository.Services
 
                 var user = await result.Content.ReadAsJsonAsync<RestException>();
 
-                return new ResponseModel()
+                if (result.StatusCode != HttpStatusCode.OK)
                 {
-                    Message = user.Errors.ToString(),
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new LoginResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                var successResponse = await result.Content.ReadAsJsonAsync<User>();
+                return new LoginResponseModel()
+                {
+                    DisplayName = successResponse.DisplayName,
+                    UserName = successResponse.UserName,
+                    Token = successResponse.Token,
+                    Image = successResponse.Image,
                     Code = Convert.ToInt32(result.StatusCode)
                 };
             }

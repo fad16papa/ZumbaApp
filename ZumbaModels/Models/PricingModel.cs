@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ZumbaModels.Models
 {
-    public class PricingModel
+    public class PlanModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

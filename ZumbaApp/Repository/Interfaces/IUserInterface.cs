@@ -9,7 +9,7 @@ namespace ZumbaApp.Repository.Interfaces
 {
     public interface IUserInterface
     {
-        Task<ResponseModel> RegisterUser(RegisterModel registerModel);
+        Task<LoginResponseModel> RegisterUser(RegisterModel registerModel);
 
         Task<LoginResponseModel> LoginUser(LoginModel loginModel);
     }

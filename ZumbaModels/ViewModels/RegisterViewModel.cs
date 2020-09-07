@@ -5,6 +5,6 @@ namespace ZumbaModels.ViewModels
     public class RegisterViewModel
     {
         public RegisterModel RegisterModel { get; set; }
-        public PricingModel PricingModel { get; set; }
+        public PlanModel PricingModel { get; set; }
     }
 }
