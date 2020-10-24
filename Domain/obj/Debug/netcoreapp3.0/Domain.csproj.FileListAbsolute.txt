@@ -17,3 +17,4 @@ D:/.NetCore/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.pdb
 /Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.csproj.CoreCompileInputs.cache
 /Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.dll
 /Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.pdb
+/Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.csprojAssemblyReference.cache
