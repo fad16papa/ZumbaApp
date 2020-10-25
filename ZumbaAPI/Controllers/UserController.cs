@@ -37,7 +37,7 @@ namespace ZumbaAPI.Controllers
         }
 
         [HttpGet("{email}")]
-        public async Task<ActionResult<UserDetials>> GetUserDetails(string email)
+        public async Task<ActionResult<AppUser>> GetUserDetails(string email)
         {
             return await Mediator.Send(new GetUserDetails.Query { Email = email });
         }
