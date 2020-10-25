@@ -1,5 +1,7 @@
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Errors;
 using Application.Interfaces;
 using Domain;
 using MediatR;
@@ -33,10 +35,15 @@ namespace Application.User
                 //handler logic goes here
                 var user = await _userManager.FindByNameAsync(_userAccessor.GetCurrentUserName());
 
+                if (user == null)
+                {
+                    throw new RestException(HttpStatusCode.NotFound, string.Format($"The user cannot be found"));
+                }
+
                 return new User
                 {
                     DisplayName = user.DisplayName,
-                    UserName = user.UserName, 
+                    UserName = user.UserName,
                     Token = _jwtGenerator.CreateToken(user),
                     Image = null,
                 };

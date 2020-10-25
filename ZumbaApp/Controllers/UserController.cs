@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ZumbaApp.Repository.Interfaces;
 using ZumbaModels.Models;
+using ZumbaModels.Models.User;
 
 namespace ZumbaApp.Controllers
 {
