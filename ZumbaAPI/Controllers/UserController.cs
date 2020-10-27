@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ZumbaAPI.Controllers
 {
-
     public class UserController : BaseController
     {
         [AllowAnonymous]
@@ -36,7 +35,6 @@ namespace ZumbaAPI.Controllers
         {
             return await Mediator.Send(new CurrentUser.Query());
         }
-
         [HttpGet("{userName}")]
         public async Task<ActionResult<AppUser>> Details(string userName)
         {

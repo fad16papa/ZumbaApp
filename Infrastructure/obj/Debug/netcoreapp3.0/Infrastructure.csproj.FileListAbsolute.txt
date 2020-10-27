@@ -23,10 +23,10 @@ D:\.NetCore\ZumbaApp\Infrastructure\bin\Debug\netcoreapp3.0\Persistence.dll
 D:\.NetCore\ZumbaApp\Infrastructure\bin\Debug\netcoreapp3.0\Application.pdb
 D:\.NetCore\ZumbaApp\Infrastructure\bin\Debug\netcoreapp3.0\Domain.pdb
 D:\.NetCore\ZumbaApp\Infrastructure\bin\Debug\netcoreapp3.0\Persistence.pdb
-D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.csprojAssemblyReference.cache
 D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.AssemblyInfoInputs.cache
 D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.AssemblyInfo.cs
 D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.csproj.CoreCompileInputs.cache
 D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.csproj.CopyComplete
 D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.dll
 D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.pdb
+D:\.NetCore\ZumbaApp\Infrastructure\obj\Debug\netcoreapp3.0\Infrastructure.csprojAssemblyReference.cache

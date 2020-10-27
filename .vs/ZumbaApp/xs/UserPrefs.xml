@@ -1,11 +1,8 @@
-﻿<Properties StartupConfiguration="{F7C8993C-BE93-4E9A-88E0-E7EEE1BA47B3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ZumbaAPI/Repository/DataManager/ApplicationUserManager.cs">
+﻿<Properties StartupConfiguration="{592B510D-09E4-42FD-9017-14FEA8EF086A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ZumbaAPI/Startup.cs">
     <Files>
-      <File FileName="ZumbaAPI/Startup.cs" Line="13" Column="31" />
-      <File FileName="ZumbaAPI/Controllers/ApplicationUserController.cs" Line="51" Column="1" />
-      <File FileName="ZumbaAPI/Repository/DataManager/ApplicationUserManager.cs" Line="109" Column="23" />
-      <File FileName="ZumbaAPI/appsettings.json" />
-      <File FileName="ZumbaAPI/Controllers/ActivityController.cs" Line="145" Column="34" />
+      <File FileName="ZumbaAPI/Startup.cs" Line="88" Column="77" />
+      <File FileName="ZumbaAPI/appsettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,11 +10,7 @@
           <Node name="ZumbaApp" expanded="True">
             <Node name="ZumbaAPI" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Repository" expanded="True">
-                <Node name="DataManager" expanded="True">
-                  <Node name="ApplicationUserManager.cs" selected="True" />
-                </Node>
-              </Node>
+              <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="ZumbaApp" expanded="True" />
             <Node name="ZumbaModels" expanded="True" />
