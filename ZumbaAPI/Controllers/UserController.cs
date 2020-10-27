@@ -42,7 +42,7 @@ namespace ZumbaAPI.Controllers
             return await Mediator.Send(new List.Query());
         }
 
-        [HttpPut]
+        [HttpPost]
         public async Task<ActionResult<Unit>> Edit(Edit.Command command)
         {
             return await Mediator.Send(command);

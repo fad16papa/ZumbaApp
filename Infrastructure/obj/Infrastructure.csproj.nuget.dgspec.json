@@ -1,40 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.NetCore\\ZumbaApp\\Infrastructure\\Infrastructure.csproj": {}
+    "/Users/francisdecena/project/ZumbaApp/Infrastructure/Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\.NetCore\\ZumbaApp\\Application\\Application.csproj": {
+    "/Users/francisdecena/project/ZumbaApp/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NetCore\\ZumbaApp\\Application\\Application.csproj",
+        "projectUniqueName": "/Users/francisdecena/project/ZumbaApp/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\.NetCore\\ZumbaApp\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Francis.Decena\\.nuget\\packages\\",
-        "outputPath": "D:\\.NetCore\\ZumbaApp\\Application\\obj\\",
+        "projectPath": "/Users/francisdecena/project/ZumbaApp/Application/Application.csproj",
+        "packagesPath": "/Users/francisdecena/.nuget/packages/",
+        "outputPath": "/Users/francisdecena/project/ZumbaApp/Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Francis.Decena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/francisdecena/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\.NetCore\\ZumbaApp\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\.NetCore\\ZumbaApp\\Domain\\Domain.csproj"
+              "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj": {
+                "projectPath": "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj"
               },
-              "D:\\.NetCore\\ZumbaApp\\Persistence\\Persistence.csproj": {
-                "projectPath": "D:\\.NetCore\\ZumbaApp\\Persistence\\Persistence.csproj"
+              "/Users/francisdecena/project/ZumbaApp/Persistence/Persistence.csproj": {
+                "projectPath": "/Users/francisdecena/project/ZumbaApp/Persistence/Persistence.csproj"
               }
             }
           }
@@ -67,36 +62,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\.NetCore\\ZumbaApp\\Domain\\Domain.csproj": {
+    "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NetCore\\ZumbaApp\\Domain\\Domain.csproj",
+        "projectUniqueName": "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\.NetCore\\ZumbaApp\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Francis.Decena\\.nuget\\packages\\",
-        "outputPath": "D:\\.NetCore\\ZumbaApp\\Domain\\obj\\",
+        "projectPath": "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj",
+        "packagesPath": "/Users/francisdecena/.nuget/packages/",
+        "outputPath": "/Users/francisdecena/project/ZumbaApp/Domain/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Francis.Decena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/francisdecena/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -128,43 +124,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\.NetCore\\ZumbaApp\\Infrastructure\\Infrastructure.csproj": {
+    "/Users/francisdecena/project/ZumbaApp/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NetCore\\ZumbaApp\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "/Users/francisdecena/project/ZumbaApp/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\.NetCore\\ZumbaApp\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Francis.Decena\\.nuget\\packages\\",
-        "outputPath": "D:\\.NetCore\\ZumbaApp\\Infrastructure\\obj\\",
+        "projectPath": "/Users/francisdecena/project/ZumbaApp/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/Users/francisdecena/.nuget/packages/",
+        "outputPath": "/Users/francisdecena/project/ZumbaApp/Infrastructure/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Francis.Decena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/francisdecena/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\.NetCore\\ZumbaApp\\Application\\Application.csproj": {
-                "projectPath": "D:\\.NetCore\\ZumbaApp\\Application\\Application.csproj"
+              "/Users/francisdecena/project/ZumbaApp/Application/Application.csproj": {
+                "projectPath": "/Users/francisdecena/project/ZumbaApp/Application/Application.csproj"
               }
             }
           }
@@ -193,43 +190,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\.NetCore\\ZumbaApp\\Persistence\\Persistence.csproj": {
+    "/Users/francisdecena/project/ZumbaApp/Persistence/Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NetCore\\ZumbaApp\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "/Users/francisdecena/project/ZumbaApp/Persistence/Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "D:\\.NetCore\\ZumbaApp\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\Francis.Decena\\.nuget\\packages\\",
-        "outputPath": "D:\\.NetCore\\ZumbaApp\\Persistence\\obj\\",
+        "projectPath": "/Users/francisdecena/project/ZumbaApp/Persistence/Persistence.csproj",
+        "packagesPath": "/Users/francisdecena/.nuget/packages/",
+        "outputPath": "/Users/francisdecena/project/ZumbaApp/Persistence/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Francis.Decena\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/francisdecena/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\.NetCore\\ZumbaApp\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\.NetCore\\ZumbaApp\\Domain\\Domain.csproj"
+              "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj": {
+                "projectPath": "/Users/francisdecena/project/ZumbaApp/Domain/Domain.csproj"
               }
             }
           }
@@ -262,12 +260,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }

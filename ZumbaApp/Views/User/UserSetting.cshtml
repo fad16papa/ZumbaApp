@@ -132,7 +132,7 @@ class="avatar avatar-lg mb-3 mb-md-0" />
                         </div>
                         <!--end of col-->
                         <div class="col-12 col-md-8 order-md-1">
-                            <form class="row">
+                            <form class="row" method="POST">
                                 <div class="col-12">
                                     <div class="form-group">
                                         <span asp-validation-for="UserName" class="text-danger"></span>
@@ -175,52 +175,19 @@ autocomplete="off" />
 autocomplete="off" />
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <button class="btn btn-secondary" type="submit" disabled>Save changes</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--end of col-->
-                    </div>
-                    <!--end of row-->
-                    <hr>
-                    <div class="row mb-4">
-                        <div class="col">
-                            <h5>Profile Information</h5>
-                        </div>
-                        <!--end of col-->
-                    </div>
-                    <!--end of row-->
-                    <div class="row">
-                        <div class="col-12 col-md-4 order-md-2">
-                            <div class="alert alert-info text-small" role="alert" hidden>
-                                <i class="icon-user"></i>
-                                <span>
-                                    Some of this information will appear on your public profile. A detailed public
-                                    profile helps users with similar professional interests and location to connect
-                                    with you.
-                                </span>
-                                <a href="#">View your public profile</a>
-                            </div>
-                        </div>
-                        <!--end of col-->
-                        <div class="col-12 col-md-8 order-md-1">
-                            <form class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <span asp-validation-for="City" class="text-danger"></span>
-                                        <label asp-for="City"></label>City:
-                                        <input asp-for="City" class="form-control form-control-lg" type="text"
-autocomplete="off" />
-                                    </div>
-                                </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <span asp-validation-for="Country" class="text-danger"></span>
                                         <label asp-for="Country">Country:</label>
                                         <input asp-for="Country" class="form-control form-control-lg" type="text"
+autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <span asp-validation-for="City" class="text-danger"></span>
+                                        <label asp-for="City">City:</label>
+                                        <input asp-for="City" class="form-control form-control-lg" type="text"
 autocomplete="off" />
                                     </div>
                                 </div>
@@ -235,7 +202,8 @@ placeholder="Select a date" data-flatpickr data-alt-input="true" />
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <button class="btn btn-secondary" type="submit" disabled>Save changes</button>
+                                        <button asp-controller="User" asp-action="UserSetting" class="btn btn-secondary"
+type="submit">Save changes</button>
                                     </div>
                                 </div>
                             </form>

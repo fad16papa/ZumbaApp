@@ -71,7 +71,7 @@ namespace ZumbaApp.Repository.Services
             }
         }
 
-        public async Task<Object> GetUserDetails(string userName, string token)
+        public async Task<UserDetailsResponseModel> GetUserDetails(string userName, string token)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace ZumbaApp.Repository.Services
                 if (result.StatusCode != HttpStatusCode.OK)
                 {
                     var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
-                    return new ResponseModel()
+                    return new UserDetailsResponseModel()
                     {
                         Message = faliedResponse.Errors.ToString(),
                         Code = Convert.ToInt32(result.StatusCode)
@@ -165,8 +165,6 @@ namespace ZumbaApp.Repository.Services
 
                 var result = await responseClient.PostAsJsonAsync<RegisterModel>("api/User/register", registerModel);
 
-                var user = await result.Content.ReadAsJsonAsync<RestException>();
-
                 if (result.StatusCode != HttpStatusCode.OK)
                 {
                     var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
@@ -190,6 +188,37 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserService||RegisterUser ErrorMessage: {ex.Message}");
+                throw ex;
+            }
+        }
+
+        public async Task<UserDetailsResponseModel> UpdateUserDetails(UserDetailsResponseModel model, string token)
+        {
+            try
+            {
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+
+                responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var result = await responseClient.PostAsJsonAsync<UserDetailsResponseModel>("api/User", model);
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new UserDetailsResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                model.Code = Convert.ToInt32(result.StatusCode);
+
+                return model;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in UserService||UpdateUserDetails ErrorMessage: {ex.Message}");
                 throw ex;
             }
         }

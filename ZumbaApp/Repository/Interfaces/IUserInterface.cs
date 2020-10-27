@@ -12,7 +12,9 @@ namespace ZumbaApp.Repository.Interfaces
     {
         Task<LoginResponseModel> RegisterUser(RegisterModel registerModel);
         Task<LoginResponseModel> LoginUser(LoginModel loginModel);
-        Task<Object> GetUserDetails(string userName, string token);
+        Task<UserDetailsResponseModel> GetUserDetails(string userName, string token);
         Task<UserResponseModel> GetCurrentUser(string token);
+
+        Task<UserDetailsResponseModel> UpdateUserDetails(UserDetailsResponseModel model, string token);
     }
 }

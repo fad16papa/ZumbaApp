@@ -75,6 +75,13 @@ namespace ZumbaApp.Controllers
 
                 var userDetails = await _userInterface.GetUserDetails(currentUser.UserName, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]));
 
+                if (currentUser.Code != 200)
+                {
+                    _logger.LogError($"Error encountered in UserController||UserSetting Error Message {currentUser.Message}");
+                    ViewBag.ErrorMessage = currentUser.Message;
+                    return RedirectToAction("Index", "Error");
+                }
+
                 return View(userDetails);
             }
             catch (Exception ex)
@@ -84,18 +91,27 @@ namespace ZumbaApp.Controllers
             }
         }
 
-        // [HttpPost]
-        // public async Task<IActionResult> UpdateUserSettings(UserDetailsResponseModel model)
-        // {
-        //     try
-        //     {
-        //         return View();
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         throw ex;
-        //     }
-        // }
+        [HttpPost]
+        public async Task<IActionResult> UserSetting(UserDetailsResponseModel model)
+        {
+            try
+            {
+                var result = await _userInterface.UpdateUserDetails(model, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]));
+
+                if (result.Code != 200)
+                {
+                    _logger.LogError($"Error encountered in UserController||UpdateUserSettings Error Message {result.Message}");
+                    ViewBag.ErrorMessage = result.Message;
+                    return RedirectToAction("Index", "Error");
+                }
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel loginModel)
