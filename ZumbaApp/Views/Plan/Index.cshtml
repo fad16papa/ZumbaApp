@@ -1,4 +1,4 @@
-@model ZumbaModels.Models.PlanModel
+@model IEnumerable<ZumbaModels.Models.PlanModel>
 
 @{
 Layout = "_Layout";
@@ -56,17 +56,13 @@ Layout = "_Layout";
             <div class="row justify-content-center">
                 <div class="col">
                     <table class="table table-bordered table-responsive pricing">
-                        <thead>
+                        @foreach (var item in Model)
+                        {
+                              <thead>
                             <tr>
                                 <th scope="col"></th>
                                 <th scope="col">
-                                    <span class="h5">Personal</span>
-                                </th>
-                                <th scope="col">
-                                    <span class="h5">Agency</span>
-                                </th>
-                                <th scope="col">
-                                    <span class="h5">Professional</span>
+                                    <span class="h5">@item.PriceName</span>
                                 </th>
                             </tr>
                         </thead>
@@ -74,19 +70,11 @@ Layout = "_Layout";
                             <tr>
                                 <th scope="row">Price</th>
                                 <td>
-                                    <span class="display-4">$9</span>
-                                    <span class="text-small">per user / month</span>
-                                </td>
-                                <td>
-                                    <span class="display-4">$39</span>
-                                    <span class="text-small">per user / month</span>
-                                </td>
-                                <td>
-                                    <span class="display-4">$79</span>
+                                    <span class="display-4">@item.Price</span>
                                     <span class="text-small">per user / month</span>
                                 </td>
                             </tr>
-                            <tr>
+                            @* <tr>
                                 <th scope="row">Includes Hosting</th>
                                 <td><i class="icon-check text-green"></i>
                                 </td>
@@ -145,7 +133,7 @@ Layout = "_Layout";
                                 </td>
                                 <td><i class="icon-check text-green"></i>
                                 </td>
-                            </tr>
+                            </tr> *@
                             <tr>
                                 <th scope="row"></th>
                                 <td>
@@ -159,6 +147,7 @@ Layout = "_Layout";
                                 </td>
                             </tr>
                         </tbody>
+                        }
                     </table>
                     <span>Looking for bulk pricing? <a href="#">Contact us &rsaquo;</a>
                     </span>

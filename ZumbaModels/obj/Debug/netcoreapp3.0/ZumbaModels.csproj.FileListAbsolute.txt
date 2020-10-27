@@ -1,14 +1,6 @@
 <<<<<<< HEAD
 =======
 >>>>>>> dbe9072b66f2a94c5c5ae5444997ea7c19550901
-D:/.NetCore/ZumbaApp/ZumbaModels/bin/Debug/netcoreapp3.0/ZumbaModels.deps.json
-D:/.NetCore/ZumbaApp/ZumbaModels/bin/Debug/netcoreapp3.0/ZumbaModels.dll
-D:/.NetCore/ZumbaApp/ZumbaModels/bin/Debug/netcoreapp3.0/ZumbaModels.pdb
-D:/.NetCore/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.AssemblyInfoInputs.cache
-D:/.NetCore/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.AssemblyInfo.cs
-D:/.NetCore/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.csproj.CoreCompileInputs.cache
-D:/.NetCore/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.dll
-D:/.NetCore/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/bin/Debug/netcoreapp3.0/ZumbaModels.deps.json
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/bin/Debug/netcoreapp3.0/ZumbaModels.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/bin/Debug/netcoreapp3.0/ZumbaModels.pdb
@@ -17,3 +9,12 @@ D:/.NetCore/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.csproj.CoreCompileInputs.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.pdb
+D:\.NetCore\ZumbaApp\ZumbaModels\bin\Debug\netcoreapp3.0\ZumbaModels.deps.json
+D:\.NetCore\ZumbaApp\ZumbaModels\bin\Debug\netcoreapp3.0\ZumbaModels.dll
+D:\.NetCore\ZumbaApp\ZumbaModels\bin\Debug\netcoreapp3.0\ZumbaModels.pdb
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.AssemblyInfoInputs.cache
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.AssemblyInfo.cs
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.csproj.CoreCompileInputs.cache
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.dll
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.pdb
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.csprojAssemblyReference.cache
