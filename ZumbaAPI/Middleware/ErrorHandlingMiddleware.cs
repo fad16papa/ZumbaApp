@@ -21,9 +21,9 @@ namespace ZumbaAPI.Middleware
         public async Task Invoke(HttpContext context)
         {
             try
-            {       
+            {
                 await _next(context);
-            } 
+            }
             catch (Exception ex)
             {
                 await HandleExceptionAsync(context, ex, _logger);
@@ -51,7 +51,7 @@ namespace ZumbaAPI.Middleware
             context.Response.ContentType = "application/json";
             if (errors != null)
             {
-                var result = JsonSerializer.Serialize(new 
+                var result = JsonSerializer.Serialize(new
                 {
                     errors
                 });

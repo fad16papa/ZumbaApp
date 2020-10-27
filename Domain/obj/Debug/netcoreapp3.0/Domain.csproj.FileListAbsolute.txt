@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-=======
->>>>>>> dbe9072b66f2a94c5c5ae5444997ea7c19550901
-/Users/francisdecena/project/ZumbaApp/Domain/bin/Debug/netcoreapp3.0/Domain.deps.json
-/Users/francisdecena/project/ZumbaApp/Domain/bin/Debug/netcoreapp3.0/Domain.dll
-/Users/francisdecena/project/ZumbaApp/Domain/bin/Debug/netcoreapp3.0/Domain.pdb
-/Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.AssemblyInfoInputs.cache
-/Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.AssemblyInfo.cs
-/Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.csproj.CoreCompileInputs.cache
-/Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.dll
-/Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.pdb
 D:\.NetCore\ZumbaApp\Domain\bin\Debug\netcoreapp3.0\Domain.deps.json
 D:\.NetCore\ZumbaApp\Domain\bin\Debug\netcoreapp3.0\Domain.dll
 D:\.NetCore\ZumbaApp\Domain\bin\Debug\netcoreapp3.0\Domain.pdb
@@ -18,5 +7,3 @@ D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.AssemblyInfo.cs
 D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.csproj.CoreCompileInputs.cache
 D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.dll
 D:\.NetCore\ZumbaApp\Domain\obj\Debug\netcoreapp3.0\Domain.pdb
-/Users/francisdecena/project/ZumbaApp/Domain/obj/Debug/netcoreapp3.0/Domain.csprojAssemblyReference.cache
->>>>>>> 646180c9917a592f64e7e19c419175055923d4ef

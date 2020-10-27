@@ -14,6 +14,8 @@ using ZumbaModels.Models.ApiResponse;
 using Application.Errors;
 using System.Net;
 using Application.User;
+using Domain;
+using System.Net.Http.Headers;
 
 namespace ZumbaApp.Repository.Services
 {
@@ -31,6 +33,83 @@ namespace ZumbaApp.Repository.Services
         {
             _logger = logger;
             _httpClientFactory = httpClientFactory;
+        }
+
+        public async Task<UserResponseModel> GetCurrentUser(string token)
+        {
+            try
+            {
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+
+                responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var result = await responseClient.GetAsync("api/User/");
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new UserResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                var successResponse = await result.Content.ReadAsJsonAsync<UserResponseModel>();
+
+                return new UserResponseModel()
+                {
+                    DisplayName = successResponse.DisplayName,
+                    UserName = successResponse.UserName,
+                    Code = Convert.ToInt32(result.StatusCode)
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in UserService||GetCurrentUser ErrorMessage: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task<Object> GetUserDetails(string userName, string token)
+        {
+            try
+            {
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+
+                responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var result = await responseClient.GetAsync("api/User/" + userName);
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new ResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                var successResponse = await result.Content.ReadAsJsonAsync<AppUser>();
+
+                return new UserDetailsResponseModel()
+                {
+                    UserName = successResponse.UserName,
+                    FirstName = successResponse.FirstName,
+                    LastName = successResponse.LastName,
+                    Email = successResponse.Email,
+                    BirthDate = successResponse.BirthDate,
+                    Country = successResponse.Country,
+                    City = successResponse.City,
+                    DisplayName = successResponse.DisplayName
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in UserService||GetUserDetails ErrorMessage: {ex.Message}");
+                throw ex;
+            }
         }
 
         /// <summary>

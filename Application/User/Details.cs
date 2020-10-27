@@ -31,8 +31,17 @@ namespace Application.User
                 if (user == null)
                     throw new RestException(HttpStatusCode.NotFound, string.Format($"The user cannot be found"));
 
-
-                return user;
+                return new AppUser()
+                {
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    Country = user.Country,
+                    City = user.City,
+                    BirthDate = user.BirthDate,
+                    UserName = user.UserName,
+                    DisplayName = user.DisplayName
+                };
             }
 
         }

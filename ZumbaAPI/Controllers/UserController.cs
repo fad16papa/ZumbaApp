@@ -10,6 +10,18 @@ namespace ZumbaAPI.Controllers
 {
     public class UserController : BaseController
     {
+        [HttpGet]
+        public async Task<ActionResult<User>> CurrentUser()
+        {
+            return await Mediator.Send(new CurrentUser.Query());
+        }
+
+        [HttpGet("{userName}")]
+        public async Task<ActionResult<AppUser>> Details(string userName)
+        {
+            return await Mediator.Send(new Details.Query { UserName = userName });
+        }
+
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<User>> Login(Login.Query query)
@@ -30,15 +42,10 @@ namespace ZumbaAPI.Controllers
             return await Mediator.Send(new List.Query());
         }
 
-        [HttpGet]
-        public async Task<ActionResult<User>> CurrentUser()
+        [HttpPut]
+        public async Task<ActionResult<Unit>> Edit(Edit.Command command)
         {
-            return await Mediator.Send(new CurrentUser.Query());
-        }
-        [HttpGet("{userName}")]
-        public async Task<ActionResult<AppUser>> Details(string userName)
-        {
-            return await Mediator.Send(new Details.Query { UserName = userName });
+            return await Mediator.Send(command);
         }
     }
 }

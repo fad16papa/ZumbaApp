@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ZumbaApp.Repository.Interfaces;
 using ZumbaModels.Models;
+using ZumbaModels.Models.ApiResponse;
 using ZumbaModels.Models.User;
 
 namespace ZumbaApp.Controllers
@@ -58,10 +60,42 @@ namespace ZumbaApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult UserSetting()
+        public async Task<IActionResult> UserSetting()
         {
-            return View();
+            try
+            {
+                var currentUser = await _userInterface.GetCurrentUser(Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]);
+
+                if (currentUser.Code != 200)
+                {
+                    _logger.LogError($"Error encountered in UserController||UserSetting Error Message {currentUser.Message}");
+                    ViewBag.ErrorMessage = currentUser.Message;
+                    return RedirectToAction("Index", "Error");
+                }
+
+                var userDetails = await _userInterface.GetUserDetails(currentUser.UserName, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]));
+
+                return View(userDetails);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in UserController||Login ErrorMessage: {ex.Message}");
+                throw ex;
+            }
         }
+
+        // [HttpPost]
+        // public async Task<IActionResult> UpdateUserSettings(UserDetailsResponseModel model)
+        // {
+        //     try
+        //     {
+        //         return View();
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         throw ex;
+        //     }
+        // }
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel loginModel)
