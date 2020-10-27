@@ -11,5 +11,7 @@ namespace Application.User
         public string City { get; set; }
         public string Country { get; set; }
         public DateTime BirthDate { get; set; }
+        public string DisplayName { get; set; }
+        public string MobileNumber { get; set; }
     }
 }

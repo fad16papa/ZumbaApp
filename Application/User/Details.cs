@@ -40,7 +40,8 @@ namespace Application.User
                     City = user.City,
                     BirthDate = user.BirthDate,
                     UserName = user.UserName,
-                    DisplayName = user.DisplayName
+                    DisplayName = user.DisplayName,
+                    PhoneNumber = user.PhoneNumber
                 };
             }
 

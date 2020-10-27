@@ -102,7 +102,8 @@ namespace ZumbaApp.Repository.Services
                     BirthDate = successResponse.BirthDate,
                     Country = successResponse.Country,
                     City = successResponse.City,
-                    DisplayName = successResponse.DisplayName
+                    DisplayName = successResponse.DisplayName,
+                    MobileNumber = successResponse.PhoneNumber
                 };
             }
             catch (Exception ex)

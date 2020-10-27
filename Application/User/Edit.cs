@@ -22,6 +22,7 @@ namespace Application.User
             public string City { get; set; }
             public DateTime BirthDate { get; set; }
             public string DisplayName { get; set; }
+            public string MobileNumber { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -48,6 +49,7 @@ namespace Application.User
                 user.Country = request.Country ?? user.Country;
                 user.UserName = request.UserName ?? user.UserName;
                 user.DisplayName = request.DisplayName ?? user.DisplayName;
+                user.PhoneNumber = request.MobileNumber ?? user.PhoneNumber;
 
                 var success = await _userManager.UpdateAsync(user);
 

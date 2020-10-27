@@ -41,7 +41,9 @@ namespace Application.User
                     UserName = user.UserName,
                     City = user.City,
                     Country = user.Country,
-                    BirthDate = user.BirthDate
+                    BirthDate = user.BirthDate,
+                    MobileNumber = user.MobileNumber,
+                    DisplayName = user.DisplayName
                 };
             }
         }
