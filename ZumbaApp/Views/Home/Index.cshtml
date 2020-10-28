@@ -2,248 +2,299 @@
     Layout = "_Layout";
 }
 
-<div class="navbar-container">
-    <div class="position-absolute navbar-dark" data-sticky="top">
-        <div class="container">
-            <nav class="row navbar navbar-expand-lg align-items-center">
-                <div class="col-12 col-lg-auto order-lg-2 d-flex justify-content-between">
-                    <button class="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target=".navbar-toggle"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <i class="icon-menu h4"></i>
-                    </button>
-                </div>
-                <!--end of col-->
-                <div class="col-12 col-lg order-lg-1">
-                    <div class="collapse navbar-collapse navbar-toggle">
-                        <ul class="navbar-nav">
-                           
-                        </ul>
-                    </div>
-                </div>
-                <!--end of col-->
-                <div class="col-12 col-lg order-lg-3">
-                    <div class="collapse navbar-collapse navbar-toggle justify-content-end">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a asp-controller="User" asp-action="RegisterPage">Sign up</a>
-                                <span>&nbsp;or&nbsp;</span><a asp-controller="User" asp-action="Login">Sign in</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--end of col-->
-            </nav>
-            <!--end of row-->
-        </div>
-        <!--end of container-->
-    </div>
-</div>
 <div class="main-container">
-    <section class="height-80 bg-dark text-white jarallax"
-             data-jarallax
-             data-speed="0.2">
-        <img alt="Image"
-             src="~/assets/img/zamora/10-1.jpg"
-             class="bg-image opacity-60 jarallax-img" />
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-7 text-center">
-                    <div class="video-play-icon"
-                         data-toggle="modal"
-                         href="#"
-                         data-target="#video-modal">
-                        <i class="icon-controller-play"></i>
-                    </div>
-                    <h1 class="display-3">Ready, Set, Zumba.</h1>
-                </div>
-                <!--end of col-->
+    <section class="bg-dark space-sm">
+        <div class="main-carousel"
+        data-flickity='{ "cellAlign": "center", "contain": true, "prevNextButtons": false, "pageDots":false, "wrapAround":true, "autoPlay":5000, "imagesLoaded":true }'>
+
+            <div class="carousel-cell col-9 col-md-8 col-lg-5 text-center">
+                <a href="#" class="d-block mb-3">
+                    <img alt="Image" src="assets/img/graphic-product-bench.jpg" class="img-fluid rounded" />
+                </a>
+                <span class="h6">Bench - Accounting for creative people</span>
             </div>
-            <!--end of row-->
-        </div>
-        <!--end of container-->
-    </section>
-    <!--end of section-->
-    <section class="space-lg">
-        <div class="container">
-            <ul class="feature-list feature-list-xlg">
-                <li class="row align-items-center justify-content-around">
-                    <div class="col-12 col-md-6 order-md-2">
-                        <img alt="Image"
-                             class="img-fluid rounded"
-                             src="~/assets/img/zamora/4-2.jpg" />
-                    </div>
-                    <!--end of col-->
-                    <div class="col-12 col-md-6 col-lg-5 text-lg-center order-md-1">
-                        <i class="icon-heart text-red display-3"></i>
-                        <h3 class="h1">Boost your heart health</h3>
-                        <p class="lead">
-                            You not only get aerobic benefits (it really gets your heart rate up),
 
-                            you also get anaerobic benefits the kind that help you maintain a good cardiovascular respiratory system.
-                        </p>
-                        <a href="#">Compare plans and features &rsaquo;</a>
-                    </div>
-                    <!--end of col-->
-                </li>
-                <!--end of row-->
-                <li class="row align-items-center justify-content-around">
-                    <div class="col-12 col-md-6 order-1">
-                        <img alt="Image"
-                             class="img-fluid rounded"
-                             src="~/assets/img/zamora/5-2.jpg" />
-                    </div>
-                    <!--end of col-->
-                    <div class="col-12 col-md-6 col-lg-5 text-lg-center order-2">
-                        <i class="icon-direction text-teal display-3"></i>
-                        <h3 class="h1">Imporves coordination</h3>
-                        <p class="lead">
-                            In Zumba, your arms and legs are generally moving in different directions so it requires a good deal of coordination.
-
-                            It will also help to increase your flexibility. 
-                        </p>
-                        <a href="#">View the detailed overview &rsaquo;</a>
-                    </div>
-                    <!--end of col-->
-                </li>
-                <!--end of row-->
-                <li class="row align-items-center justify-content-around">
-                    <div class="col-12 col-md-6 order-md-2">
-                        <img alt="Image"
-                             class="img-fluid rounded"
-                             src="~/assets/img/zamora/9-2.jpg" />
-                    </div>
-                    <!--end of col-->
-                    <div class="col-12 col-md-6 col-lg-5 text-lg-center order-md-1">
-                        <i class="icon-progress-full text-purple display-3"></i>
-                        <h3 class="h1">Great for weight loss</h3>
-                        <p class="lead">
-                            Zumba is a powerful exercise with a 600 to 1,000-calorie burn in just an hour.
-
-                            It also improves your metabolism and help to increase burn fats.
-                        </p>
-                        <a href="#">Tell me more &rsaquo;</a>
-                    </div>
-                    <!--end of col-->
-                </li>
-                <!--end of row-->
-            </ul>
-        </div>
-        <!--end of container-->
-    </section>
-    <!--end of section-->
-    <section>
-        <div class="container">
-            <div class="row justify-content-center text-center section-intro">
-                <div class="col-12 col-md-9 col-lg-8">
-                    <span class="title-decorative"
-                          data-aos="fade-up"
-                          data-aos-delay="10">Simple Pricing</span>
-                    <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">
-                        Let's not break the bank
-                    </h2>
-                    <span class="lead" data-aos="fade-up" data-aos-delay="200">
-                        An opportunity to introduce the major benefits of your product
-                        and set the scene for what's to come
-                    </span>
-                </div>
-                <!--end of col-->
+            <div class="carousel-cell col-9 col-md-8 col-lg-5 text-center">
+                <a href="#" class="d-block mb-3">
+                    <img alt="Image" src="assets/img/graphic-product-kin.jpg" class="img-fluid rounded" />
+                </a>
+                <span class="h6">Kin - The digital fashion assistant</span>
             </div>
-            <!--end of row-->
 
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="pricing-monthly">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card pricing card-lg">
-                                <div class="card-body">
-                                    <h5>Beginner</h5>
-                                    <span class="display-3 price-collapse collapse show">$0</span>
-                                    <span class="text-small">per user / month</span>
-                                    <span class="h6">Includes:</span>
-                                    <ul class="list-unstyled">
-                                        <li>1 Active project</li>
-                                        <li>2 Repositories</li>
-                                        <li>2 Collaborators</li>
-                                    </ul>
-                                    <a asp-controller="User" asp-action="RegisterPage" class="btn btn-lg btn-outline-primary">Sign up now</a>
-                                </div>
-                            </div>
-                            <!--end card-->
-                        </div>
-                        <!--end of col-->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card pricing card-lg">
-                                <div class="card-body">
-                                    <h5>Enthusiast</h5>
-                                    <span class="display-3">$12</span>
-                                    <span class="text-small">per user / month</span>
-                                    <span class="h6">Includes:</span>
-                                    <ul class="list-unstyled">
-                                        <li>1 Active project</li>
-                                        <li>2 Repositories</li>
-                                        <li>2 Collaborators</li>
-                                    </ul>
-                                    <a asp-controller="User" asp-action="RegisterPage" class="btn btn-lg btn-success">Sign up now</a>
-                                </div>
-                            </div>
-                            <!--end card-->
-                        </div>
-                        <!--end of col-->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card pricing card-lg">
-                                <div class="card-body">
-                                    <h5>Party</h5>
-                                    <span class="display-3">$29</span>
-                                    <span class="text-small">per user / month</span>
-                                    <span class="h6">Includes:</span>
-                                    <ul class="list-unstyled">
-                                        <li>Unlimited active projects</li>
-                                        <li>Unlimited repositories</li>
-                                        <li>Unlimited collaborators</li>
-                                    </ul>
-                                    <a asp-controller="User" asp-action="RegisterPage" class="btn btn-lg btn-outline-primary">Sign up now</a>
-                                </div>
-                            </div>
-                            <!--end card-->
-                        </div>
-                        <!--end of col-->
-                    </div>
-                    <!--end of row-->
-                </div>
+            <div class="carousel-cell col-9 col-md-8 col-lg-5 text-center">
+                <a href="#" class="d-block mb-3">
+                    <img alt="Image" src="assets/img/graphic-product-paydar.jpg" class="img-fluid rounded" />
+                </a>
+                <span class="h6">Paydar - Location based touch payments</span>
             </div>
-            <!--end of tab content-->
+
+            <div class="carousel-cell col-9 col-md-8 col-lg-5 text-center">
+                <a href="#" class="d-block mb-3">
+                    <img alt="Image" src="assets/img/graphic-product-pitstop.jpg" class="img-fluid rounded" />
+                </a>
+                <span class="h6">Pitstop - Browser-based project management</span>
+            </div>
+
         </div>
-        <!--end of container-->
     </section>
-    <!--end of section-->
-    <footer class="bg-gray text-light footer-long">
+    <section class="space-sm">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-3">
-                    <img alt="Image" src="assets/img/logo-white.svg" class="mb-4" />
-                    <p class="text-muted">
-                        &copy; 2020 Creativo Rare
-                        <br />This project is for <br />clients view only!
-                    </p>
+                <div class="col text-center">
+                    <div class="mb-3">
+                        <a href="#" class="btn btn-secondary mb-1">Technology</a>
+                        <a href="#" class="btn btn-secondary mb-1">Lifestyle</a>
+                        <a href="#" class="btn btn-secondary mb-1">Marketing</a>
+                        <a href="#" class="btn btn-secondary mb-1">Health &amp; Fitness</a>
+                        <a href="#" class="btn btn-secondary mb-1">Music</a>
+                        <a href="#" class="btn btn-secondary mb-1">Productivity</a>
+                    </div>
+                    <a href="#" class="text-small">Explore all categories &rsaquo;</a>
                 </div>
                 <!--end of col-->
+            </div>
+            <!--end of row-->
         </div>
         <!--end of container-->
-    </footer>
-</div>
-
-<div class="modal fade" id="video-modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-center-viewport">
-        <div class="modal-content">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item"
-                        data-src="https://www.youtube.com/embed/watch?v=KPdN9rL_alM"
-                        allowfullscreen></iframe>
+    </section>
+    <!--end of section-->
+    <section class="space-sm flush-with-above">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 d-flex justify-content-between">
+                    <div>
+                        <span class="text-muted text-small">Results 1 - 12 of 25</span>
+                    </div>
+                    <form class="d-flex align-items-center">
+                        <span class="mr-2 text-muted text-small text-nowrap">Sort by:</span>
+                        <select class="custom-select">
+                            <option value="alpha">Alphabetical</option>
+                            <option value="old-new" selected>Newest</option>
+                            <option value="new-old">Popular</option>
+                            <option value="recent">Recently Updated</option>
+                        </select>
+                    </form>
+                </div>
+                <!--end of col-->
             </div>
+            <!--end of row-->
+            <ul class="row feature-list feature-list-sm">
+
+                <li class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="#">
+                            <img class="card-img-top" src="assets/img/graphic-product-sidekick.jpg"
+                            alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">Sidekick</h4>
+                            <p class="card-text">Holistic fitness tracking</p>
+                        </div>
+                        <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                            <div class="text-small">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                                    <li class="list-inline-item"><i class="icon-message"></i> 14</li>
+                                </ul>
+                            </div>
+                            <div class="dropup">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
+                                type="button" id="SidekickButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                    <i class="icon-dots-three-horizontal"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="SidekickButton">
+                                    <a class="dropdown-item" href="#">Save</a>
+                                    <a class="dropdown-item" href="#">Share</a>
+                                    <a class="dropdown-item" href="#">Comment</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="#">
+                            <img class="card-img-top" src="assets/img/graphic-product-pitstop.jpg" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">Pitstop</h4>
+                            <p class="card-text">Browser-based project management</p>
+                        </div>
+                        <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                            <div class="text-small">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="icon-heart"></i> 90</li>
+                                    <li class="list-inline-item"><i class="icon-message"></i> 34</li>
+                                </ul>
+                            </div>
+                            <div class="dropup">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
+                                type="button" id="PitstopButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                    <i class="icon-dots-three-horizontal"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="PitstopButton">
+                                    <a class="dropdown-item" href="#">Save</a>
+                                    <a class="dropdown-item" href="#">Share</a>
+                                    <a class="dropdown-item" href="#">Comment</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="#">
+                            <img class="card-img-top" src="assets/img/graphic-product-pipeline.jpg"
+                            alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">pipeline.js</h4>
+                            <p class="card-text">Snappy UI interaction library with flexible API</p>
+                        </div>
+                        <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                            <div class="text-small">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="icon-heart"></i> 84</li>
+                                    <li class="list-inline-item"><i class="icon-message"></i> 25</li>
+                                </ul>
+                            </div>
+                            <div class="dropup">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
+                                type="button" id="pipeline.jsButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                    <i class="icon-dots-three-horizontal"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="pipeline.jsButton">
+                                    <a class="dropdown-item" href="#">Save</a>
+                                    <a class="dropdown-item" href="#">Share</a>
+                                    <a class="dropdown-item" href="#">Comment</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="#">
+                            <img class="card-img-top" src="assets/img/graphic-product-paydar.jpg" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">Paydar</h4>
+                            <p class="card-text">Location based touch payments</p>
+                        </div>
+                        <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                            <div class="text-small">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="icon-heart"></i> 253</li>
+                                    <li class="list-inline-item"><i class="icon-message"></i> 19</li>
+                                </ul>
+                            </div>
+                            <div class="dropup">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
+                                type="button" id="PaydarButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                    <i class="icon-dots-three-horizontal"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="PaydarButton">
+                                    <a class="dropdown-item" href="#">Save</a>
+                                    <a class="dropdown-item" href="#">Share</a>
+                                    <a class="dropdown-item" href="#">Comment</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="#">
+                            <img class="card-img-top" src="assets/img/graphic-product-kin.jpg" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">Kin</h4>
+                            <p class="card-text">The digital fashion assistant</p>
+                        </div>
+                        <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                            <div class="text-small">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="icon-heart"></i> 84</li>
+                                    <li class="list-inline-item"><i class="icon-message"></i> 21</li>
+                                </ul>
+                            </div>
+                            <div class="dropup">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
+                                type="button" id="KinButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                    <i class="icon-dots-three-horizontal"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="KinButton">
+                                    <a class="dropdown-item" href="#">Save</a>
+                                    <a class="dropdown-item" href="#">Share</a>
+                                    <a class="dropdown-item" href="#">Comment</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+                <li class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="#">
+                            <img class="card-img-top" src="assets/img/graphic-product-bench.jpg" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">Bench</h4>
+                            <p class="card-text">Accounting for creative people</p>
+                        </div>
+                        <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                            <div class="text-small">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="icon-heart"></i> 373</li>
+                                    <li class="list-inline-item"><i class="icon-message"></i> 62</li>
+                                </ul>
+                            </div>
+                            <div class="dropup">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
+                                type="button" id="BenchButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                    <i class="icon-dots-three-horizontal"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="BenchButton">
+                                    <a class="dropdown-item" href="#">Save</a>
+                                    <a class="dropdown-item" href="#">Share</a>
+                                    <a class="dropdown-item" href="#">Comment</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--end of col-->
+
+            </ul>
+            <!--end of row-->
         </div>
-    </div>
+        <!--end of container-->
+    </section>
 </div>

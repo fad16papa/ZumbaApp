@@ -36,6 +36,8 @@ namespace ZumbaApp.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            //Delete all cookies from ZumbaApp
+            Response.Cookies.Delete(_configuration["ZumbaCookies:ZumbaJwt"]);
             return View();
         }
 

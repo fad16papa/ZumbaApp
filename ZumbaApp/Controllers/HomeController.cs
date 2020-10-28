@@ -23,8 +23,8 @@ namespace ZumbaApp.Controllers
 
         public IActionResult Index()
         {
-            //Delete all cookies from ZumbaApp
-            Response.Cookies.Delete(_configuration["ZumbaCookies:ZumbaJwt"]);
+            ViewBag.ZumbaToken = Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]];
+
             return View();
         }
 
