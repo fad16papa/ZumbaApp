@@ -11,8 +11,8 @@ namespace Persistence
         }
 
         public DbSet<Activity> Activities { get; set; }
-        public DbSet<Plan> Plans { get; set; }
         public DbSet<UserActivity> UserActivities { get; set; }
+        public DbSet<Photo> Photos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -37,19 +37,6 @@ namespace Persistence
                 .HasOne(a => a.Activity)
                 .WithMany(u => u.UserActivities)
                 .HasForeignKey(a => a.ActivityId);
-
-            builder.Entity<UserPlan>(x => x.HasKey(up =>
-            new { up.AppUserId, up.PlanId }));
-
-            builder.Entity<UserPlan>()
-                .HasOne(u => u.AppUser)
-                .WithMany(a => a.UserPlans)
-                .HasForeignKey(u => u.AppUserId);
-
-            builder.Entity<UserPlan>()
-                .HasOne(p => p.Plan)
-                .WithMany(u => u.UserPlans)
-                .HasForeignKey(p => p.PlanId);
         }
     }
 }
