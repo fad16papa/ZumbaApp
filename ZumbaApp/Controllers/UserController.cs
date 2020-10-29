@@ -147,7 +147,7 @@ namespace ZumbaApp.Controllers
                     Response.Cookies.Append(_configuration["ZumbaCookies:ZumbaJwt"], result.Token, cookieOptions);
                 }
 
-                return RedirectToAction("UserProfile", "User");
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {
@@ -189,7 +189,7 @@ namespace ZumbaApp.Controllers
                     Response.Cookies.Append(_configuration["ZumbaCookies:ZumbaJwt"], result.Token, cookieOptions);
                 }
 
-                return RedirectToAction("Index", "Plan");
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {

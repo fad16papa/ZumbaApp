@@ -13,6 +13,7 @@ namespace Domain
         public string City { get; set; }
         public string Country { get; set; }
         public DateTime BirthDate { get; set; }
+        public string ProfileText { get; set; }
         public ICollection<UserActivity> UserActivities { get; set; }
         public ICollection<UserPlan> UserPlans { get; set; }
     }

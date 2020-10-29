@@ -10,7 +10,6 @@ namespace Persistence
         {
         }
 
-        public DbSet<Value> Values { get; set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Plan> Plans { get; set; }
         public DbSet<UserActivity> UserActivities { get; set; }

@@ -1,128 +1,187 @@
 ﻿@model ZumbaModels.Models.RegisterModel
 
 @{
-ViewData["Title"] = "Sign up";
-Layout = "_Layout";
+    ViewData["Title"] = "Sign up";
+    Layout = "_Layout";
 }
 
 <div class="main-container">
-    <section class="fullwidth-split">
-        <div class="container-fluid">
-            <div class="row no-gutters height-100 justify-content-center">
-                <div
-                    class="col-12 col-lg-6 fullwidth-split-image bg-dark d-flex justify-content-center align-items-center">
-                    <img alt="Image" src="~/assets/img/zamora/10-1.jpg" class="bg-image position-absolute opacity-30" />
-                    <div class="col-12 col-sm-8 col-lg-9 text-center pt-5 pb-5"></div>
-                    <!--end of col-->
-                </div>
-                <!--end of col-->
-                <div class="col-12 col-sm-8 col-lg-6 fullwidth-split-text">
-                    <div class="col-12 col-lg-8 align-self-center">
-                        <div class="text-center mb-5">
-                            <div class="row mb-5">
-                                <div class="col text-center">
-                                    <a asp-controller="Home" asp-action="Index">
-                                        <img alt="Image" src="~/assets/img/logo-gray.svg" />
-                                    </a>
-                                </div>
-                                <!--end of col-->
-                            </div>
-                            <h1 class="h2 mb-2">Get started</h1>
-                            <span>Start creating beautiful products immediately</span>
-                        </div>
-                        <form class="mb-4" method="post">
-                            <div><span class="text-danger">@ViewBag.ErrorMessage</span></div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <div><span asp-validation-for="@Model.UserName" class="text-danger"></span>
-                                        </div>
-                                        <label asp-for="@Model.UserName" for="signup-email"></label>
-                                        <input asp-for="@Model.UserName" class="form-control form-control-lg"
-                                            type="text" id="username" placeholder="User Name" autocomplete="off"
-                                            required />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
-                                        <label asp-for="@Model.Email" for="signup-email"></label>
-                                        <input asp-for="@Model.Email" class="form-control form-control-lg" type="email"
-                                            id="signup-email" placeholder="Email Address" autocomplete="off" required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <div><span asp-validation-for="@Model.FirstName" class="text-danger"></span>
-                                        </div>
-                                        <label asp-for="@Model.FirstName" for="signup-email"></label>
-                                        <input asp-for="@Model.FirstName" class="form-control form-control-lg"
-                                            type="text" id="firstname" placeholder="First Name" autocomplete="off"
-                                            required />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <div><span asp-validation-for="@Model.LastName" class="text-danger"></span>
-                                        </div>
-                                        <label asp-for="@Model.LastName" for="signup-email"></label>
-                                        <input asp-for="@Model.LastName" class="form-control form-control-lg"
-                                            type="text" id="lastName" placeholder="Last Name" autocomplete="off"
-                                            required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <div><span asp-validation-for="@Model.Password" class="text-danger"></span>
-                                        </div>
-                                        <label asp-for="@Model.Password" for="signup-password"></label>
-                                        <input asp-for="@Model.Password" class="form-control form-control-lg"
-                                            type="password" id="signup-password" placeholder="Enter a password"
-                                            autocomplete="off" required />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <div><span asp-validation-for="@Model.ConfirmPassword"
-                                                class="text-danger"></span></div>
-                                        <label asp-for="@Model.ConfirmPassword" for="signup-password"></label>
-                                        <input asp-for="@Model.ConfirmPassword" class="form-control form-control-lg"
-                                            type="password" id="confirmpassword" placeholder="Confirm Password"
-                                            autocomplete="off" required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" value="agree" name="agree-terms"
-                                        id="check-agree" required>
-                                    <label class="custom-control-label text-small" for="check-agree">
-                                        I agree to the <a href="#">Terms &amp; Conditions</a>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="text-center mt-4">
-                                <button type="submit" class="btn btn-lg btn-success" asp-controller="User"
-                                    asp-action="RegisterPage">Create Account</button>
-                            </div>
-                        </form>
-                        <div class="text-center">
-                            <span class="text-small">
-                                Already have an account? <a asp-controller="User" asp-action="Login">Log in here</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!--end of col-->
+    <nav aria-label="breadcrumb" role="navigation" class="bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="breadcrumb-item"><a asp-controller="User" asp-action="RegisterPage">Register User</a>
+                        </li>
+                    </ol>
                 </div>
                 <!--end of col-->
             </div>
             <!--end of row-->
         </div>
         <!--end of container-->
+    </nav>
+    <section>
+        <div class="container">
+            <form method="POST" class="row justify-content-around wizard">
+                <ul
+                class="col-12 col-md-auto nav nav-tabs flex-md-column justify-content-between justify-content-md-start">
+                    <li><a href="#first" class="step-circle step-circle-sm">1</a>
+                    </li>
+                    <li><a href="#second" class="step-circle step-circle-sm">2</a>
+                    </li>
+                    <li><a href="#third" class="step-circle step-circle-sm">3</a>
+                    </li>
+                    <li><a href="#fourth" class="step-circle step-circle-sm">4</a>
+                    </li>
+                </ul>
+                <!--end of col-->
+                <div class="col col-lg-9 tab-content">
+                    <div id="first">
+                        <div class="row align-items-center mb-5">
+                            <div class="col-12 col-md-7">
+                                <h6 class="title-decorative">Step One</h6>
+                                <h3 class="h1">Create your account</h3>
+                                <span class="lead">Let's begin by creating your account. You can always change these
+                                    details later</span>
+                            </div>
+                            <!--end of col-->
+                            <div class="col-12 col-md-5">
+                                <img alt="Image" src="~/assets/img/graphic-man-box.svg" class="w-100" />
+                            </div>
+                            <!--end of col-->
+                        </div>
+                        <!--end of row-->
+                        <div><span class="text-danger">@ViewBag.ErrorMessage</span></div>
+                        <div class=" form-row form-group">
+                            <div class="col">
+                                <div><span asp-validation-for="@Model.UserName" class="text-danger"></span></div>
+                                <input asp-for="@Model.UserName" class="form-control form-control-lg" type="text"
+                                id="username" placeholder="User Name" autocomplete="off" />
+                            </div>
+                            <div class="col">
+                                <div><span asp-validation-for="@Model.DisplayName" class="text-danger"></span></div>
+                                <input asp-for="@Model.DisplayName" class="form-control form-control-lg" type="text"
+                                id="DisplayName" placeholder="Display Name" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <div><span asp-validation-for="@Model.FirstName" class="text-danger"></span></div>
+                                <input asp-for="@Model.FirstName" class="form-control form-control-lg" type="text"
+                                id="firstname" placeholder="First Name" autocomplete="off" />
+                            </div>
+                            <div class="col">
+                                <div><span asp-validation-for="@Model.LastName" class="text-danger"></span></div>
+                                <input asp-for="@Model.LastName" class="form-control form-control-lg" type="text"
+                                id="lastname" placeholder="Last Name" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
+                                <input asp-for="@Model.Email" class="form-control form-control-lg" type="email"
+                                name="email" id="login-email" placeholder="Email Address" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <div><span asp-validation-for="@Model.Password" class="text-danger"></span></div>
+                                <input asp-for="@Model.Password" class="form-control form-control-lg" type="password"
+                                id="password" placeholder="Password" autocomplete="off" />
+                                <small>Password must be at least 7 characters</small>
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <div><span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span></div>
+                                <input asp-for="@Model.ConfirmPassword" class="form-control form-control-lg"
+                                type="password" id="confirmpassword" placeholder="Confirm Password"
+                                autocomplete="off" />
+                                <small>Confirm Password should be match with Password</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success sw-btn-next mt-4" type="button">Next Step</button>
+                    </div>
+                    <div id="second">
+                        <div class="row align-items-center mb-5">
+                            <div class="col-12 col-md-7">
+                                <h6 class="title-decorative">Step Two</h6>
+                                <h3 class="h1">Tell us about you</h3>
+                                <span class="lead">Add some detail to your profile to personalise it and let others know
+                                    who you are</span>
+                            </div>
+                            <!--end of col-->
+                            <div class="col-12 col-md-4">
+                                <img alt="Image" src="~/assets/img/graphic-woman-writing-2.svg" class="w-100" />
+                            </div>
+                            <!--end of col-->
+                        </div>
+                        <!--end of row-->
+                        <div class="form-group">
+                            <div><span asp-validation-for="@Model.ProfileText" class="text-danger"></span></div>
+                            <label asp-for="@Model.ProfileText">Profile Text:</label>
+                            <textarea asp-for="@Model.ProfileText" maxlength="500" rows="4"
+                            class="form-control form-control-lg" id="about-me"></textarea>
+                            <small>This information will be shown on your public profile</small>
+                        </div>
+                        <button class="btn btn-success sw-btn-next mt-4" type="button">Next Step</button>
+                    </div>
+                    <div id="third">
+                        <div class="row align-items-center mb-5">
+                            <div class="col-12 col-md-7">
+                                <h6 class="title-decorative">Step Three</h6>
+                                <h3 class="h1">Choose preferences</h3>
+                                <span class="lead">Select some of the options below to personalise your daily news
+                                    feed</span>
+                            </div>
+                            <!--end of col-->
+                            <div class="col-12 col-md-5">
+                                <img alt="Image" src="~/assets/img/graphic-man-computer.svg" class="w-100" />
+                            </div>
+                            <!--end of col-->
+                        </div>
+                        <!--end of row-->
+                        <div>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Design</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Development</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">VR</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Photography</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">User Experience</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Marketing</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Finance</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Technology</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Software</button>
+                            <button class="btn btn-outline-secondary mb-1" data-toggle="button">Engineering</button>
+                        </div>
+                        <button class="btn btn-success sw-btn-next mt-4" type="button">Next Step</button>
+                    </div>
+                    <div id="fourth">
+                        <div class="row align-items-center mb-5">
+                            <div class="col-12 col-md-6">
+                                <h6 class="title-decorative">Step Four</h6>
+                                <h3 class="h1">You're all set</h3>
+                                <span class="lead">We've set up your account and some basic details, now let's move on
+                                    to your dashboard</span>
+                                <button asp-controller="User" asp-action="RegisterPage" type="submit"
+                                class="btn btn-success btn-lg">Go to dashboard</button>
+                            </div>
+                            <!--end of col-->
+                            <div class="col-12 col-md-6">
+                                <img alt="Image" src="~/assets/img/graphic-woman-writing.svg" class="w-100" />
+                            </div>
+                            <!--end of col-->
+                        </div>
+                        <!--end of row-->
+                    </div>
+                </div>
+                <!--end of col-->
+            </form>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
     </section>
     <!--end of section-->
-</div>
+</div>>

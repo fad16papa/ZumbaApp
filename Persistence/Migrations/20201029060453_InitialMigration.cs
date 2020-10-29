@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistence.Migrations
 {
-    public partial class RefereshMigrations : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,7 +62,8 @@ namespace Persistence.Migrations
                     LastName = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: true),
-                    BirthDate = table.Column<DateTime>(nullable: false)
+                    BirthDate = table.Column<DateTime>(nullable: false),
+                    ProfileText = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -91,7 +92,7 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Values",
+                name: "Value",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -100,7 +101,7 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Values", x => x.Id);
+                    table.PrimaryKey("PK_Value", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -258,17 +259,17 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Values",
+                table: "Value",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 1, "Value 101" });
 
             migrationBuilder.InsertData(
-                table: "Values",
+                table: "Value",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 2, "Value 102" });
 
             migrationBuilder.InsertData(
-                table: "Values",
+                table: "Value",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 3, "Value 103" });
 
@@ -344,7 +345,7 @@ namespace Persistence.Migrations
                 name: "UserPlan");
 
             migrationBuilder.DropTable(
-                name: "Values");
+                name: "Value");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

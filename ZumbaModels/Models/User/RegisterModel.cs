@@ -15,6 +15,12 @@ namespace ZumbaModels.Models
         public string UserName { get; set; }
 
         [Required]
+        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in First Name")]
+        [StringLength(50)]
+        [Display(Name = "Display Name")]
+        public string DisplayName { get; set; }
+
+        [Required]
         [EmailAddress(ErrorMessage = "Kindly provide valid email address")]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -45,5 +51,10 @@ namespace ZumbaModels.Models
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [StringLength(500)]
+        [Display(Name = "Profile Text")]
+        public string ProfileText { get; set; }
     }
 }
