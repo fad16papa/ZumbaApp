@@ -15,7 +15,7 @@ namespace ZumbaModels.Models
         public string UserName { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in First Name")]
+        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters allowed in Display Name")]
         [StringLength(50)]
         [Display(Name = "Display Name")]
         public string DisplayName { get; set; }
@@ -26,13 +26,13 @@ namespace ZumbaModels.Models
         public string Email { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in First Name")]
+        [RegularExpression("^([a-zA-Z]*)$", ErrorMessage = "No Special Characters or Numeric allowed in First Name")]
         [StringLength(50)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in Last Name")]
+        [RegularExpression("^([a-zA-Z]*)$", ErrorMessage = "No Special Characters or Numeric allowed in Last Name")]
         [StringLength(50)]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }

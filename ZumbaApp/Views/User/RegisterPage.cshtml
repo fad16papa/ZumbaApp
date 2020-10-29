@@ -57,49 +57,49 @@
                         <div><span class="text-danger">@ViewBag.ErrorMessage</span></div>
                         <div class=" form-row form-group">
                             <div class="col">
-                                <div><span asp-validation-for="@Model.UserName" class="text-danger"></span></div>
                                 <input asp-for="@Model.UserName" class="form-control form-control-lg" type="text"
                                 id="username" placeholder="User Name" autocomplete="off" />
+                                <div><span asp-validation-for="@Model.UserName" class="text-danger"></span></div>
                             </div>
                             <div class="col">
-                                <div><span asp-validation-for="@Model.DisplayName" class="text-danger"></span></div>
                                 <input asp-for="@Model.DisplayName" class="form-control form-control-lg" type="text"
                                 id="DisplayName" placeholder="Display Name" autocomplete="off" />
+                                <div><span asp-validation-for="@Model.DisplayName" class="text-danger"></span></div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col">
-                                <div><span asp-validation-for="@Model.FirstName" class="text-danger"></span></div>
                                 <input asp-for="@Model.FirstName" class="form-control form-control-lg" type="text"
                                 id="firstname" placeholder="First Name" autocomplete="off" />
+                                <div><span asp-validation-for="@Model.FirstName" class="text-danger"></span></div>
                             </div>
                             <div class="col">
-                                <div><span asp-validation-for="@Model.LastName" class="text-danger"></span></div>
                                 <input asp-for="@Model.LastName" class="form-control form-control-lg" type="text"
                                 id="lastname" placeholder="Last Name" autocomplete="off" />
+                                <div><span asp-validation-for="@Model.LastName" class="text-danger"></span></div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col">
-                                <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
                                 <input asp-for="@Model.Email" class="form-control form-control-lg" type="email"
                                 name="email" id="login-email" placeholder="Email Address" autocomplete="off" />
+                                <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col">
-                                <div><span asp-validation-for="@Model.Password" class="text-danger"></span></div>
                                 <input asp-for="@Model.Password" class="form-control form-control-lg" type="password"
                                 id="password" placeholder="Password" autocomplete="off" />
+                                <div><span asp-validation-for="@Model.Password" class="text-danger"></span></div>
                                 <small>Password must be at least 7 characters</small>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col">
-                                <div><span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span></div>
                                 <input asp-for="@Model.ConfirmPassword" class="form-control form-control-lg"
                                 type="password" id="confirmpassword" placeholder="Confirm Password"
                                 autocomplete="off" />
+                                <div><span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span></div>
                                 <small>Confirm Password should be match with Password</small>
                             </div>
                         </div>
@@ -121,10 +121,10 @@
                         </div>
                         <!--end of row-->
                         <div class="form-group">
-                            <div><span asp-validation-for="@Model.ProfileText" class="text-danger"></span></div>
                             <label asp-for="@Model.ProfileText">Profile Text:</label>
                             <textarea asp-for="@Model.ProfileText" maxlength="500" rows="4"
                             class="form-control form-control-lg" id="about-me"></textarea>
+                            <div><span asp-validation-for="@Model.ProfileText" class="text-danger"></span></div>
                             <small>This information will be shown on your public profile</small>
                         </div>
                         <button class="btn btn-success sw-btn-next mt-4" type="button">Next Step</button>

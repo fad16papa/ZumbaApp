@@ -6,19 +6,19 @@ namespace ZumbaModels.Models.ApiResponse
     public class UserDetailsResponseModel
     {
         [Required]
-        [RegularExpression("^([a-zA-Z0-9-]*)$", ErrorMessage = "No Special Characters Allowed")]
+        [RegularExpression("^([a-zA-Z0-9-]*)$", ErrorMessage = "No Special Characters allowed")]
         [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [Display(Name = "UserName")]
         public string UserName { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in First Name")]
+        [RegularExpression("^([a-zA-Z]*)$", ErrorMessage = "No Special Characters or Numeric allowed in First Name")]
         [StringLength(50)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in Last Name")]
+        [RegularExpression("^([a-zA-Z]*)$", ErrorMessage = "No Special Characters or Numeric allowed in Last Name")]
         [StringLength(50)]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
@@ -29,13 +29,13 @@ namespace ZumbaModels.Models.ApiResponse
         public string Email { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in Country")]
+        [RegularExpression("^([a-zA-Z ]*)$", ErrorMessage = "No Special Characters or Numeric allowed in Country")]
         [StringLength(50)]
         [Display(Name = "Country")]
         public string Country { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in City")]
+        [RegularExpression("^([a-zA-Z ]*)$", ErrorMessage = "No Special Characters or Numeric allowed in City")]
         [StringLength(50)]
         [Display(Name = "City")]
         public string City { get; set; }
@@ -44,13 +44,13 @@ namespace ZumbaModels.Models.ApiResponse
         public DateTime BirthDate { get; set; }
 
         [Required]
-        [RegularExpression("^[0-9+]+$", ErrorMessage = "No Special Characters and Alphabets Allowed in MobileNumber")]
+        [RegularExpression("^[0-9+]+$", ErrorMessage = "No Special Characters and Alphabets allowed in MobileNumber")]
         [StringLength(50)]
         [Display(Name = "MobileNumber")]
         public string MobileNumber { get; set; }
 
         [Required]
-        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters Allowed in DisplayName")]
+        [RegularExpression("^([a-zA-Z0-9 .]*)$", ErrorMessage = "No Special Characters allowed in DisplayName")]
         [StringLength(50)]
         [Display(Name = "DisplayName")]
         public string DisplayName { get; set; }

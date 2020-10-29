@@ -15,3 +15,4 @@ D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.AssemblyInf
 D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.csproj.CoreCompileInputs.cache
 D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.dll
 D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.pdb
+D:\.NetCore\ZumbaApp\ZumbaModels\obj\Debug\netcoreapp3.0\ZumbaModels.csprojAssemblyReference.cache
