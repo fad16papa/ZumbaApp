@@ -371,6 +371,7 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/RegisterPage.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/ResetPassword.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserProfile.cshtml.g.cs
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserSetting.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/_ViewImports.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/_ViewStart.cshtml.g.cs
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.RazorTargetAssemblyInfo.cache
@@ -382,4 +383,3 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.cache
-/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/User/UserSetting.cshtml.g.cs

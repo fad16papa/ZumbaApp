@@ -71,27 +71,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Plans",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    PlanName = table.Column<string>(nullable: true),
-                    PlanDescription = table.Column<string>(nullable: true),
-                    UnlimitedSession = table.Column<bool>(nullable: false),
-                    VIPAccess = table.Column<bool>(nullable: false),
-                    Mentorship = table.Column<bool>(nullable: false),
-                    Billing = table.Column<bool>(nullable: false),
-                    Invoicing = table.Column<bool>(nullable: false),
-                    Price = table.Column<string>(nullable: true),
-                    IsActive = table.Column<bool>(nullable: false),
-                    DateCreated = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Plans", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Value",
                 columns: table => new
                 {
@@ -211,6 +190,26 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Photos",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    Url = table.Column<string>(nullable: true),
+                    IsMain = table.Column<bool>(nullable: false),
+                    AppUserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Photos_AspNetUsers_AppUserId",
+                        column: x => x.AppUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserActivities",
                 columns: table => new
                 {
@@ -230,30 +229,6 @@ namespace Persistence.Migrations
                         name: "FK_UserActivities_AspNetUsers_AppUserId",
                         column: x => x.AppUserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserPlan",
-                columns: table => new
-                {
-                    AppUserId = table.Column<string>(nullable: false),
-                    PlanId = table.Column<Guid>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserPlan", x => new { x.AppUserId, x.PlanId });
-                    table.ForeignKey(
-                        name: "FK_UserPlan_AspNetUsers_AppUserId",
-                        column: x => x.AppUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_UserPlan_Plans_PlanId",
-                        column: x => x.PlanId,
-                        principalTable: "Plans",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -311,14 +286,14 @@ namespace Persistence.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Photos_AppUserId",
+                table: "Photos",
+                column: "AppUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserActivities_ActivityId",
                 table: "UserActivities",
                 column: "ActivityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserPlan_PlanId",
-                table: "UserPlan",
-                column: "PlanId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -339,10 +314,10 @@ namespace Persistence.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "UserActivities");
+                name: "Photos");
 
             migrationBuilder.DropTable(
-                name: "UserPlan");
+                name: "UserActivities");
 
             migrationBuilder.DropTable(
                 name: "Value");
@@ -355,9 +330,6 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Plans");
         }
     }
 }

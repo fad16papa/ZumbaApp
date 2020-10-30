@@ -13,7 +13,7 @@ namespace Application.Photos
 {
     public class Add
     {
-        public class Command : IRequest<Photo>
+        public class Command : IRequest<Domain.Photo>
         {
             public IFormFile File { get; set; }
         }
@@ -22,8 +22,7 @@ namespace Application.Photos
         {
             private readonly DataContext _context;
             private readonly IUserAccessor _userAccessor;
-            public IPhotoAccessor _photoAccessor { get; set; }
-
+            private readonly IPhotoAccessor _photoAccessor;
             public Handler(DataContext context, IUserAccessor userAccessor, IPhotoAccessor photoAccessor)
             {
                 _photoAccessor = photoAccessor;
@@ -33,10 +32,9 @@ namespace Application.Photos
 
             public async Task<Photo> Handle(Command request, CancellationToken cancellationToken)
             {
-                //logic goes here
                 var photoUploadResult = _photoAccessor.AddPhoto(request.File);
 
-                var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == _userAccessor.GetCurrentUserName());
+                var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == _userAccessor.GetCurrentUsername());
 
                 var photo = new Photo
                 {

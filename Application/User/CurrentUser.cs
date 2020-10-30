@@ -33,7 +33,7 @@ namespace Application.User
             public async Task<User> Handle(Query request, CancellationToken cancellationToken)
             {
                 //handler logic goes here
-                var user = await _userManager.FindByNameAsync(_userAccessor.GetCurrentUserName());
+                var user = await _userManager.FindByNameAsync(_userAccessor.GetCurrentUsername());
 
                 if (user == null)
                 {

@@ -9,7 +9,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201029060453_InitialMigration")]
+    [Migration("20201030141753_Initial Migration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -132,45 +132,25 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Domain.Plan", b =>
+            modelBuilder.Entity("Domain.Photo", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Billing")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("AppUserId")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Invoicing")
+                    b.Property<bool>("IsMain")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Mentorship")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("PlanDescription")
+                    b.Property<string>("Url")
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("PlanName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Price")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("UnlimitedSession")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("VIPAccess")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Plans");
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("Domain.UserActivity", b =>
@@ -186,21 +166,6 @@ namespace Persistence.Migrations
                     b.HasIndex("ActivityId");
 
                     b.ToTable("UserActivities");
-                });
-
-            modelBuilder.Entity("Domain.UserPlan", b =>
-                {
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("PlanId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("AppUserId", "PlanId");
-
-                    b.HasIndex("PlanId");
-
-                    b.ToTable("UserPlan");
                 });
 
             modelBuilder.Entity("Domain.Value", b =>
@@ -362,6 +327,13 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Domain.Photo", b =>
+                {
+                    b.HasOne("Domain.AppUser", null)
+                        .WithMany("Photos")
+                        .HasForeignKey("AppUserId");
+                });
+
             modelBuilder.Entity("Domain.UserActivity", b =>
                 {
                     b.HasOne("Domain.Activity", "Activity")
@@ -373,21 +345,6 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.AppUser", "AppUser")
                         .WithMany("UserActivities")
                         .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.UserPlan", b =>
-                {
-                    b.HasOne("Domain.AppUser", "AppUser")
-                        .WithMany("UserPlans")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Plan", "Plan")
-                        .WithMany("UserPlans")
-                        .HasForeignKey("PlanId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
