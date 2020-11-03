@@ -182,6 +182,16 @@ placeholder="Select a date" data-flatpickr data-alt-input="true" />
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
+                                        <label asp-for="@Model.ProfileText">Profile Text:</label>
+                                        <textarea asp-for="@Model.ProfileText" maxlength="500" rows="4"
+class="form-control form-control-lg" id="about-me"></textarea>
+                                        <div><span asp-validation-for="@Model.ProfileText" class="text-danger"></span>
+                                        </div>
+                                        <small>This information will be shown on your public profile</small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
                                         <button id="btnUpdateUser" asp-controller="User" asp-action="UserSetting"
 class="btn btn-primary" type="submit" value="Save changes">Save
                                             changes</button>

@@ -55,6 +55,10 @@ namespace ZumbaModels.Models.ApiResponse
         [Display(Name = "DisplayName")]
         public string DisplayName { get; set; }
 
+        [StringLength(500)]
+        [Display(Name = "Profile Text")]
+        public string ProfileText { get; set; }
+
         public string Message { get; set; }
 
         public int Code { get; set; }

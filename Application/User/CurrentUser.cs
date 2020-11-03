@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,9 +26,9 @@ namespace Application.User
 
             public Handler(UserManager<AppUser> userManager, IJwtGenerator jwtGenerator, IUserAccessor userAccessor)
             {
-                _userManager = userManager;
-                _jwtGenerator = jwtGenerator;
                 _userAccessor = userAccessor;
+                _jwtGenerator = jwtGenerator;
+                _userManager = userManager;
             }
 
             public async Task<User> Handle(Query request, CancellationToken cancellationToken)
@@ -45,7 +46,7 @@ namespace Application.User
                     DisplayName = user.DisplayName,
                     UserName = user.UserName,
                     Token = _jwtGenerator.CreateToken(user),
-                    Image = null,
+                    Image = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
                 };
             }
         }
