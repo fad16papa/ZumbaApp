@@ -103,7 +103,8 @@ namespace ZumbaApp.Repository.Services
                     Country = successResponse.Country,
                     City = successResponse.City,
                     DisplayName = successResponse.DisplayName,
-                    MobileNumber = successResponse.PhoneNumber
+                    MobileNumber = successResponse.PhoneNumber,
+                    ProfileText = successResponse.ProfileText
                 };
             }
             catch (Exception ex)
@@ -165,6 +166,8 @@ namespace ZumbaApp.Repository.Services
                 var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
 
                 var result = await responseClient.PostAsJsonAsync<RegisterModel>("api/User/register", registerModel);
+
+                result.Content.ReadAsStringAsync().ToString();
 
                 if (result.StatusCode != HttpStatusCode.OK)
                 {

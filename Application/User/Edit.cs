@@ -23,6 +23,7 @@ namespace Application.User
             public DateTime BirthDate { get; set; }
             public string DisplayName { get; set; }
             public string MobileNumber { get; set; }
+            public string ProfileText { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -50,6 +51,7 @@ namespace Application.User
                 user.UserName = request.UserName ?? user.UserName;
                 user.DisplayName = request.DisplayName ?? user.DisplayName;
                 user.PhoneNumber = request.MobileNumber ?? user.PhoneNumber;
+                user.ProfileText = request.ProfileText ?? user.ProfileText;
 
                 var success = await _userManager.UpdateAsync(user);
 

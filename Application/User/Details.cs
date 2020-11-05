@@ -41,7 +41,8 @@ namespace Application.User
                     BirthDate = user.BirthDate,
                     UserName = user.UserName,
                     DisplayName = user.DisplayName,
-                    PhoneNumber = user.PhoneNumber
+                    PhoneNumber = user.PhoneNumber,
+                    ProfileText = user.ProfileText
                 };
             }
 
