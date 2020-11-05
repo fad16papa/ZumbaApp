@@ -43,7 +43,7 @@ namespace Application.User
                     Country = user.Country,
                     BirthDate = user.BirthDate,
                     MobileNumber = user.MobileNumber,
-                    DisplayName = user.DisplayName
+                    DisplayName = user.DisplayName,
                 };
             }
         }
