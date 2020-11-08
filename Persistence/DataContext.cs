@@ -10,6 +10,7 @@ namespace Persistence
         {
         }
 
+        public DbSet<Value> Values { get; set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<UserActivity> UserActivities { get; set; }
         public DbSet<Photo> Photos { get; set; }
@@ -26,7 +27,7 @@ namespace Persistence
             );
 
             builder.Entity<UserActivity>(x => x.HasKey(ua =>
-            new { ua.AppUserId, ua.ActivityId }));
+               new { ua.AppUserId, ua.ActivityId }));
 
             builder.Entity<UserActivity>()
                 .HasOne(u => u.AppUser)

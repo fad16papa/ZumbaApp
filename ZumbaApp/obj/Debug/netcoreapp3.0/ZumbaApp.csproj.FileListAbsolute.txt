@@ -202,6 +202,7 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/ZumbaApp.Views.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/ZumbaApp.Views.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/AspNetCore.Http.Extensions.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Castle.Core.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/FluentValidation.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/FluentValidation.AspNetCore.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/FluentValidation.DependencyInjectionExtensions.dll
@@ -222,6 +223,7 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.EntityFrameworkCore.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.EntityFrameworkCore.Proxies.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.EntityFrameworkCore.Sqlite.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -251,8 +253,11 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/MySqlConnector.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Newtonsoft.Json.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/NuGet.Frameworks.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Pomelo.JsonObject.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/SQLitePCLRaw.batteries_v2.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/SQLitePCLRaw.nativelibrary.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/SQLitePCLRaw.core.dll
