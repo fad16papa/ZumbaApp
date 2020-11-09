@@ -43,7 +43,7 @@ namespace ZumbaAPI.Controllers
         [Authorize]
         public async Task<ActionResult<Unit>> Delete(Guid id)
         {
-            return await Mediator.Send(new Delete.Command{Id = id});
+            return await Mediator.Send(new Delete.Command { Id = id });
         }
     }
 }
