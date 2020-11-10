@@ -10180,6 +10180,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/Shared/_LoginLayout.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginLayout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/User/RegisterPage.cshtml",
       "TargetPath": "Views\\User\\RegisterPage.cshtml",
       "FileKind": "mvc"

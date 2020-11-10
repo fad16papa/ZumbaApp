@@ -9,7 +9,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201108164307_InitialMigration")]
+    [Migration("20201110125632_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -157,7 +157,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("Comment");
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Domain.Photo", b =>
@@ -192,6 +192,9 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("DateJoined")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<bool>("IsHost")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("AppUserId", "ActivityId");
 
                     b.HasIndex("ActivityId");
@@ -211,7 +214,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("TargetId");
 
-                    b.ToTable("UserFollowing");
+                    b.ToTable("Followings");
                 });
 
             modelBuilder.Entity("Domain.Value", b =>

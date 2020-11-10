@@ -1,7 +1,7 @@
 ﻿@model ZumbaModels.Models.LoginModel
 
 @{
-    Layout = "_Layout";
+    Layout = "_LoginLayout";
 }
 
 <div class="main-container">
@@ -30,15 +30,15 @@
                                     <div class="form-group">
                                         <label asp-for="@Model.Email" for="login-email"></label>
                                         <input asp-for="@Model.Email" class="form-control form-control-lg" type="email"
-                                        name="email" id="login-email" placeholder="Email Address" autocomplete="off"
-                                        required />
+                                            name="email" id="login-email" placeholder="Email Address" autocomplete="off"
+                                            required />
                                         <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
                                     </div>
                                     <div class="form-group">
                                         <label asp-for="@Model.Password" for="login-password"></label>
                                         <input asp-for="@Model.Password" class="form-control form-control-lg"
-                                        type="password" name="password" id="login-password"
-                                        placeholder="Enter a password" autocomplete="off" required />
+                                            type="password" name="password" id="login-password"
+                                            placeholder="Enter a password" autocomplete="off" required />
                                         <div><span asp-validation-for="@Model.Password" class="text-danger"></span>
                                         </div>
                                         <small>
@@ -49,14 +49,14 @@
                                     <div>
                                         <div class="custom-control custom-checkbox align-items-center">
                                             <input type="checkbox" class="custom-control-input" value="box-1"
-                                            name="box-1" checked id="check-remember">
+                                                name="box-1" checked id="check-remember">
                                             <label class="custom-control-label text-small" for="check-remember">Remember
                                                 me next time</label>
                                         </div>
                                     </div>
                                     <div class="text-center mt-3">
                                         <button type="submit" class="btn btn-lg btn-primary" asp-controller="User"
-                                        asp-action="Login">Log in</button>
+                                            asp-action="Login">Log in</button>
                                     </div>
                                 </form>
                             </div>

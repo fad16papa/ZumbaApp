@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OoZ6V9q4CNDFmdoQ35izUCebhMSMRQoa7Nq7/rIsd94ICqfHytYdDbnAyGs3zE3elZCIMsTydRCGtNzkzR7zCg==",
+  "dgSpecHash": "ZCX37HnxfI/ItOeFZDzX1nCsx5MpUfh5cdTtG81cnNkVeFMZWdCOkKN/O/UrundAnrrJVjw4ygN02kvu6bvfeQ==",
   "success": true,
   "projectFilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/ZumbaApp.csproj",
   "expectedPackageFiles": [
     "/Users/francisdecena/.nuget/packages/aspnetcore.http.extensions/1.0.1/aspnetcore.http.extensions.1.0.1.nupkg.sha512",
+    "/Users/francisdecena/.nuget/packages/automapper/9.0.0/automapper.9.0.0.nupkg.sha512",
+    "/Users/francisdecena/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/7.0.0/automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/castle.core/4.2.1/castle.core.4.2.1.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/fluentvalidation/8.5.1/fluentvalidation.8.5.1.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/fluentvalidation.aspnetcore/8.5.1/fluentvalidation.aspnetcore.8.5.1.nupkg.sha512",

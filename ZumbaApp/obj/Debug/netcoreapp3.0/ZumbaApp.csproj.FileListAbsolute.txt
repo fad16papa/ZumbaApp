@@ -202,6 +202,8 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/ZumbaApp.Views.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/ZumbaApp.Views.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/AspNetCore.Http.Extensions.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/AutoMapper.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/Castle.Core.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/FluentValidation.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/bin/Debug/netcoreapp3.0/FluentValidation.AspNetCore.dll
@@ -388,3 +390,4 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.cache
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_LoginLayout.cshtml.g.cs

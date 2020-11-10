@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "u3rjGL6gQAjN3YZbcMQmwuUCmHnCvfOl/dmcq0izUkEu1n/rrqMdqOOHwZwz+uhct5sphp1qvrQk7bMqf1P0gw==",
+  "dgSpecHash": "nZ4nD9UOQl6br17oZEbjO5LVoLrN4MYOtFqVqrOUdXAnkKtBcWfe2K9QhtNEhdd9U13wXLNj8+H10FYx+OTAcg==",
   "success": true,
   "projectFilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaAPI/ZumbaAPI.csproj",
   "expectedPackageFiles": [
+    "/Users/francisdecena/.nuget/packages/automapper/9.0.0/automapper.9.0.0.nupkg.sha512",
+    "/Users/francisdecena/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/7.0.0/automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/castle.core/4.2.1/castle.core.4.2.1.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/cloudinarydotnet/1.13.1/cloudinarydotnet.1.13.1.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/fluentvalidation/8.5.1/fluentvalidation.8.5.1.nupkg.sha512",
