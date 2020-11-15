@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Application.Interfaces;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -16,6 +17,16 @@ namespace Application.Blogs
             public string Title { get; set; }
             public string Description { get; set; }
             public string Content { get; set; }
+        }
+
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.Title).NotEmpty();
+                RuleFor(x => x.Description).NotEmpty();
+                RuleFor(x => x.Content).NotEmpty();
+            }
         }
 
         public class Handler : IRequestHandler<Command>
