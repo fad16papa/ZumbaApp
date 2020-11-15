@@ -15,4 +15,3 @@ D:/.NetCore/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.csprojAssem
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.csproj.CoreCompileInputs.cache
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.pdb
-/Users/francisdecena/project/ZumbaApp/ZumbaModels/obj/Debug/netcoreapp3.0/ZumbaModels.csprojAssemblyReference.cache
