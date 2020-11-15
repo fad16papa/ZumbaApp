@@ -93,6 +93,8 @@ D:/.NetCore/ZumbaApp/ZumbaAPI/obj/Debug/netcoreapp3.0/ZumbaAPI.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.AspNetCore.Identity.UI.Views.V3.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.AspNetCore.Identity.UI.Views.V4.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.Data.SqlClient.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.Data.Sqlite.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.DotNet.PlatformAbstractions.dll
@@ -112,6 +114,7 @@ D:/.NetCore/ZumbaApp/ZumbaAPI/obj/Debug/netcoreapp3.0/ZumbaAPI.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Microsoft.IdentityModel.Tokens.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/MySqlConnector.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Newtonsoft.Json.dll
+/Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Newtonsoft.Json.Bson.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/Pomelo.JsonObject.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaAPI/bin/Debug/netcoreapp3.0/SQLitePCLRaw.batteries_v2.dll
