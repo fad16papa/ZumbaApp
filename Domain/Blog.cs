@@ -10,7 +10,6 @@ namespace Domain
         public string Description { get; set; }
         public string Content { get; set; }
         public DateTime DateCreated { get; set; }
-        public virtual AppUser AppUser { get; set; }
         public virtual ICollection<BlogPhoto> BlogPhotos { get; set; }
     }
 }
