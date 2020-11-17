@@ -11,6 +11,7 @@ namespace Domain
         public AppUser()
         {
             Photos = new Collection<Photo>();
+            Blogs = new Collection<Blog>();
         }
 
         public string DisplayName { get; set; }

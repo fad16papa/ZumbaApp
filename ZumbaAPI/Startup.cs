@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Application.Activities;
 using Application.Blogs;
 using Application.Interfaces;
+using Application.Photos;
 using AutoMapper;
 using Domain;
 using FluentValidation.AspNetCore;
