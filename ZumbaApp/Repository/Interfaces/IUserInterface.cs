@@ -14,7 +14,6 @@ namespace ZumbaApp.Repository.Interfaces
         Task<LoginResponseModel> LoginUser(LoginModel loginModel);
         Task<UserDetailsResponseModel> GetUserDetails(string userName, string token);
         Task<UserResponseModel> GetCurrentUser(string token);
-
         Task<UserDetailsResponseModel> UpdateUserDetails(UserDetailsResponseModel model, string token);
     }
 }
