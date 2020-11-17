@@ -11,6 +11,7 @@ namespace ZumbaApp.Repository.Interfaces
         Task<IEnumerable<Blog>> GetBlogs(string token);
         Task<Blog> GetBlog(Guid id, string token);
         Task<ResponseModel> CreateBlog(Blog blog, string token);
-
+        Task<BlogsEditResponse> EditBlog(BlogsEditResponse model, string token);
+        Task<ResponseModel> Delete(Blog blog, string token);
     }
 }
