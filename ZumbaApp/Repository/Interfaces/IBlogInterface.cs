@@ -8,10 +8,10 @@ namespace ZumbaApp.Repository.Interfaces
 {
     public interface IBlogInterface
     {
-        Task<IEnumerable<Blog>> GetBlogs(string token);
-        Task<Blog> GetBlog(Guid id, string token);
+        Task<object> GetBlogs(string token);
+        Task<object> GetBlog(Guid id, string token);
         Task<BlogResponse> CreateBlog(Blog blog, string token);
-        Task<BlogsEditResponse> EditBlog(BlogsEditResponse model, string token);
-        Task<ResponseModel> Delete(Blog blog, string token);
+        Task<ResponseModel> EditBlog(Guid Id, BlogsEditResponse model, string token);
+        Task<ResponseModel> Delete(Guid Id, string token);
     }
 }

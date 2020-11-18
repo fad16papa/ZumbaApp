@@ -31,7 +31,7 @@ namespace ZumbaApp.Repository.Services
 
                 responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                var result = await responseClient.PostAsJsonAsync<Blog>("api/User/", blog);
+                var result = await responseClient.PostAsJsonAsync<Blog>("api/Blogs/", blog);
 
                 result.Content.ReadAsStringAsync().ToString();
 
@@ -46,6 +46,7 @@ namespace ZumbaApp.Repository.Services
                 }
 
                 var successResponse = await result.Content.ReadAsJsonAsync<Blog>();
+
                 return new BlogResponse()
                 {
                     Title = successResponse.Title,
@@ -62,24 +63,138 @@ namespace ZumbaApp.Repository.Services
             }
         }
 
-        public Task<ResponseModel> Delete(Blog blog, string token)
+        public async Task<ResponseModel> Delete(Guid Id, string token)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+
+                responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var result = await responseClient.DeleteAsync("api/Blogs/" + Id);
+
+                result.Content.ReadAsStringAsync().ToString();
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new ResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                return new ResponseModel()
+                {
+                    Code = Convert.ToInt32(result.StatusCode)
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in BlogService||Delete ErrorMessage: {ex.Message}");
+                throw ex;
+            }
         }
 
-        public Task<BlogsEditResponse> EditBlog(BlogsEditResponse model, string token)
+        public async Task<ResponseModel> EditBlog(Guid Id, BlogsEditResponse model, string token)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+
+                responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var result = await responseClient.PutAsJsonAsync<BlogsEditResponse>("api/Blogs/" + Id, model);
+
+                result.Content.ReadAsStringAsync().ToString();
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new ResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                return new ResponseModel()
+                {
+                    Code = Convert.ToInt32(result.StatusCode)
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in BlogService||EditBlog ErrorMessage: {ex.Message}");
+                throw ex;
+            }
         }
 
-        public Task<Blog> GetBlog(Guid id, string token)
+        public async Task<object> GetBlog(Guid id, string token)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+
+                responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var result = await responseClient.GetAsync("api/Blogs/" + id);
+
+                result.Content.ReadAsStringAsync().ToString();
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new ResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                var blog = await result.Content.ReadAsJsonAsync<Blog>();
+
+                return blog;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in BlogService||GetBlog ErrorMessage: {ex.Message}");
+                throw ex;
+            }
         }
 
-        public Task<IEnumerable<Blog>> GetBlogs(string token)
+        public async Task<object> GetBlogs(string token)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+
+                responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var result = await responseClient.GetAsync("api/Blogs/");
+
+                result.Content.ReadAsStringAsync().ToString();
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                    return new ResponseModel()
+                    {
+                        Message = faliedResponse.Errors.ToString(),
+                        Code = Convert.ToInt32(result.StatusCode)
+                    };
+                }
+
+                var blogs = await result.Content.ReadAsJsonAsync<List<Blog>>();
+
+                return blogs;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in BlogService||GetBlogs ErrorMessage: {ex.Message}");
+                throw ex;
+            }
         }
     }
 }
