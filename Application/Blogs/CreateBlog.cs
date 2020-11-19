@@ -17,6 +17,7 @@ namespace Application.Blogs
             public string Title { get; set; }
             public string Description { get; set; }
             public string Content { get; set; }
+            public string BlogType { get; set; }
         }
 
         public class CommandValidator : AbstractValidator<Command>
@@ -26,6 +27,7 @@ namespace Application.Blogs
                 RuleFor(x => x.Title).NotEmpty();
                 RuleFor(x => x.Description).NotEmpty();
                 RuleFor(x => x.Content).NotEmpty();
+                RuleFor(x => x.BlogType).NotEmpty();
             }
         }
 
@@ -50,6 +52,7 @@ namespace Application.Blogs
                     Title = request.Title,
                     Description = request.Description,
                     Content = request.Content,
+                    BlogType = request.BlogType,
                     DateCreated = DateTime.Now
                 };
 

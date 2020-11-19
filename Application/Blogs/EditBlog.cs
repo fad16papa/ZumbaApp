@@ -16,6 +16,7 @@ namespace Application.Blogs
             public string Title { get; set; }
             public string Description { get; set; }
             public string Content { get; set; }
+            public string BlogType { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -36,6 +37,11 @@ namespace Application.Blogs
                 {
                     throw new RestException(HttpStatusCode.NotFound, "Not found");
                 }
+
+                blog.Title = request.Title ?? blog.Title;
+                blog.Description = request.Description ?? blog.Description;
+                blog.Content = request.Content ?? blog.Content;
+                blog.BlogType = request.BlogType ?? blog.BlogType;
 
                 var success = await _context.SaveChangesAsync() > 0;
 
