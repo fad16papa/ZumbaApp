@@ -31,6 +31,8 @@ namespace ZumbaApp
         {
             #region Dependency Injection
             services.AddTransient<IUserInterface, UserService>();
+            services.AddTransient<IBlogInterface, BlogService>();
+            services.AddTransient<IBlogsPhotoInterface, BlogsPhotoService>();
             #endregion
 
             //Add middleware for IHttpClientFactory

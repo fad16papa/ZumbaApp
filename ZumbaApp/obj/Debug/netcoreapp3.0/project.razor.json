@@ -10220,6 +10220,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/Blogs/Index.cshtml",
+      "TargetPath": "Views\\Blogs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/Plan/Index.cshtml",
       "TargetPath": "Views\\Plan\\Index.cshtml",
       "FileKind": "mvc"

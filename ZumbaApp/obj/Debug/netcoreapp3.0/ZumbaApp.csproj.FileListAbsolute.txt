@@ -391,3 +391,4 @@ D:/.NetCore/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.dll
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.pdb
 /Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/ZumbaApp.genruntimeconfig.cache
+/Users/francisdecena/project/ZumbaApp/ZumbaApp/obj/Debug/netcoreapp3.0/Razor/Views/Blogs/Index.cshtml.g.cs
