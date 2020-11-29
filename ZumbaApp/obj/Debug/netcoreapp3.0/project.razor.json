@@ -10210,6 +10210,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/Shared/Components/UserAvartar/Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\UserAvartar\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaApp/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

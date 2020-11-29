@@ -9,9 +9,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/ZumbaAPI/bin/Debug/netcoreapp3.0/ZumbaAPI.dll",
+      "program": "${workspaceFolder}/ZumbaApp/bin/Debug/netcoreapp3.0/ZumbaApp.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/ZumbaAPI",
+      "cwd": "${workspaceFolder}/ZumbaApp",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",

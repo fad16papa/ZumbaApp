@@ -52,8 +52,17 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="media flex-wrap mb-0 align-items-center">
-                                <img alt="Image" src="~/assets/img/avatar-male-3.jpg"
-                                    class="avatar avatar-lg mb-3 mb-md-0" />
+                                @if (Context.Request.Cookies["AvatarReference"] != null)
+                                {
+                                    <img alt="Image" src="@Context.Request.Cookies["AvatarReference"]"
+                                        class="avatar avatar-lg mb-3 mb-md-0" />
+                                }
+                                else
+                                {
+                                    <img alt="Image" src="~/assets/img/avatar-male-3.jpg"
+                                        class="avatar avatar-lg mb-3 mb-md-0" />
+                                }
+
                                 <div class="media-body">
                                     <form>
                                         <label class="custom-file mb-2" for="file2">
