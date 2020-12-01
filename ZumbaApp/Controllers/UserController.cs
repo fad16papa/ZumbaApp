@@ -146,7 +146,9 @@ namespace ZumbaApp.Controllers
                     };
 
                     Response.Cookies.Append(_configuration["ZumbaCookies:ZumbaJwt"], result.Token, cookieOptions);
-                    Response.Cookies.Append(_configuration["ZumbaCookies:UserAvatar"], result.Image, cookieOptions);
+
+                    if (result.Image != null)
+                        Response.Cookies.Append(_configuration["ZumbaCookies:UserAvatar"], result.Image, cookieOptions);
 
                 }
 
