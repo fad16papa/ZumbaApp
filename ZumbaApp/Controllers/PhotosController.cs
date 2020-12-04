@@ -1,6 +1,8 @@
 using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ZumbaApp.Repository.Interfaces;
 
@@ -10,14 +12,16 @@ namespace ZumbaApp.Controllers
     {
         private readonly ILogger<PhotosController> _logger;
         private readonly IPhotoInterface _photoInterface;
-        public PhotosController(IPhotoInterface photoInterface, ILogger<PhotosController> logger)
+        private readonly IConfiguration _configuration;
+        public PhotosController(IPhotoInterface photoInterface, ILogger<PhotosController> logger, IConfiguration configuration)
         {
+            _configuration = configuration;
             _photoInterface = photoInterface;
             _logger = logger;
         }
 
         [HttpPost]
-        public IActionResult UplaodUserPhoto(IFormFile formFile)
+        public async Task<IActionResult> UplaodUserPhoto(IFormFile formFile)
         {
             try
             {
@@ -27,6 +31,8 @@ namespace ZumbaApp.Controllers
 
                     return RedirectToAction("User", "UserSetting");
                 }
+
+                var result = await _photoInterface.AddUserPhoto(formFile, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]).ToString());
 
                 return RedirectToAction("User", "UserSetting");
             }

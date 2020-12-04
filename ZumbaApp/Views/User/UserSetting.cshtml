@@ -64,11 +64,12 @@
                                 }
 
                                 <div class="media-body">
-                                    <form enctype="multipart/form-data">
+                                    <form method="POST" enctype="multipart/form-data">
                                         <label class="custom-file mb-2" for="file2">
                                             <input type="file" id="file2" class="custom-file-input height-0">
-                                            <span class="btn btn-primary"><i
-                                                    class="icon-upload-to-cloud">&nbsp;</i>Upload</span>
+                                            <span class="btn btn-primary"><i class="icon-upload-to-cloud"
+                                                    asp-controller="Photos"
+                                                    asp-action="UplaodUserPhoto">&nbsp;</i>Upload</span>
                                         </label>
                                         <div>
                                             <small>For best results, use an image at least 256px by 256px in either

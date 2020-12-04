@@ -36,20 +36,56 @@ namespace Application.Photos
 
                 var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == _userAccessor.GetCurrentUsername());
 
-                var photo = new Photo
+                var userPhoto = await _context.Photos.SingleOrDefaultAsync(x => x.UserId == user.Id);
+
+                //if userPhoto exist delete it
+                if (userPhoto != null)
                 {
-                    Url = photoUploadResult.Url,
-                    Id = photoUploadResult.PublicId
-                };
+                    _context.Remove(userPhoto);
 
-                if (!user.Photos.Any(x => x.IsMain))
-                    photo.IsMain = true;
+                    var successDelete = await _context.SaveChangesAsync() > 0;
 
-                user.Photos.Add(photo);
+                    if (successDelete)
+                    {
+                        var photo = new Photo
+                        {
+                            Url = photoUploadResult.Url,
+                            Id = photoUploadResult.PublicId,
+                            UserId = user.Id
+                        };
 
-                var success = await _context.SaveChangesAsync() > 0;
+                        if (!user.Photos.Any(x => x.IsMain))
+                            photo.IsMain = true;
 
-                if (success) return photo;
+                        user.Photos.Add(photo);
+
+                        var successCreate = await _context.SaveChangesAsync() > 0;
+
+                        if (successCreate) return photo;
+
+                        throw new Exception("Problem saving changes");
+                    }
+                }
+                else
+                {
+                    var photo = new Photo
+                    {
+                        Url = photoUploadResult.Url,
+                        Id = photoUploadResult.PublicId,
+                        UserId = user.Id
+                    };
+
+                    if (!user.Photos.Any(x => x.IsMain))
+                        photo.IsMain = true;
+
+                    user.Photos.Add(photo);
+
+                    var successCreate = await _context.SaveChangesAsync() > 0;
+
+                    if (successCreate) return photo;
+
+                    throw new Exception("Problem saving changes");
+                }
 
                 throw new Exception("Problem saving changes");
             }
