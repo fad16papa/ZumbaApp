@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RnbA4RmxGXJrgpYknTcPkXOUkjzmRKuisYV1y2W9jRRBzol6ViNM0RUhpxHGcLrglHNwllY6aaJl5/sf/XWUmA==",
+  "dgSpecHash": "FDcH6SfrJsnJZyhhMNLwaR1aXVcKlHBLBnUZcEcs2cqYoUwK/rYyFZxfOt1sYjLk5slbw7hBr5jN7KLLROe8vg==",
   "success": true,
   "projectFilePath": "/Users/francisdecena/project/ZumbaApp/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -159,8 +159,7 @@
     "/Users/francisdecena/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "/Users/francisdecena/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "/Users/francisdecena/.nuget/packages/microsoft.aspnetcore.app.ref/3.0.1/microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512"
+    "/Users/francisdecena/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

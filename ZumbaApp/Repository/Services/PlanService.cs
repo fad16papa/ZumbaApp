@@ -36,23 +36,23 @@ namespace ZumbaApp.Repository.Services
         {
             try
             {
-               var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
+                var responseClient = _httpClientFactory.CreateClient("ZumbaAPI");
 
-               responseClient.DefaultRequestHeaders.Add("Bearer", token);
+                responseClient.DefaultRequestHeaders.Add("Bearer", token);
 
-               var result = await responseClient.GetAsync("api/Plan");
+                var result = await responseClient.GetAsync("api/Plan");
 
-               if (result.StatusCode != HttpStatusCode.OK)
-               {
-                   
-               }
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
 
-               return await result.Content.ReadAsJsonAsync<IEnumerable<PlanModel>>();
+                }
+
+                return await result.Content.ReadAsJsonAsync<IEnumerable<PlanModel>>();
             }
             catch (Exception ex)
             {
-                
-                throw ex;
+                _logger.LogError($"Error encountered in PlanService||GetAll ErrorMessage: {ex.Message}");
+                throw;
             }
         }
 

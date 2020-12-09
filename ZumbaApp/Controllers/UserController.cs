@@ -90,7 +90,7 @@ namespace ZumbaApp.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserController||Login ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -112,7 +112,8 @@ namespace ZumbaApp.Controllers
             }
             catch (Exception ex)
             {
-                throw ex;
+                _logger.LogError($"Error encountered in UserController||UserSetting ErrorMessage: {ex.Message}");
+                throw;
             }
         }
 

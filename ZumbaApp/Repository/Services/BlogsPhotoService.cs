@@ -53,7 +53,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in BlogsPhotoService||AddBlogPhoto ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
     }

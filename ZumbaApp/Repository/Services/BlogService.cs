@@ -59,7 +59,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in BlogService||CreateBlog ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -93,7 +93,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in BlogService||Delete ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -127,7 +127,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in BlogService||EditBlog ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -160,7 +160,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in BlogService||GetBlog ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -193,7 +193,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in BlogService||GetBlogs ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
     }

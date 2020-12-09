@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hp1DTMkL/SNxhoIqbJq6IkdvzAQ98jkSX3/rd+uaoZsAMCXbRVj+F9uQ+W/Fex2pAYluZUqFnHtf299wlr3WbA==",
+  "dgSpecHash": "Njcgw0L+C6DgjUR1kxnB3+2jsNGXh03R8vVKSdugm+RLOIB5bHZWEfraFjuO72EI1T17GMN/DpCmg08Ft/9xVg==",
   "success": true,
   "projectFilePath": "/Users/francisdecena/project/ZumbaApp/ZumbaModels/ZumbaModels.csproj",
   "expectedPackageFiles": [
@@ -27,8 +27,7 @@
     "/Users/francisdecena/.nuget/packages/system.collections.immutable/1.6.0/system.collections.immutable.1.6.0.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/system.componentmodel.annotations/4.6.0/system.componentmodel.annotations.4.6.0.nupkg.sha512",
     "/Users/francisdecena/.nuget/packages/system.diagnostics.diagnosticsource/4.6.0/system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512",
-    "/Users/francisdecena/.nuget/packages/system.threading.tasks.extensions/4.5.2/system.threading.tasks.extensions.4.5.2.nupkg.sha512",
-    "/Users/francisdecena/.nuget/packages/microsoft.aspnetcore.app.ref/3.0.1/microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512"
+    "/Users/francisdecena/.nuget/packages/system.threading.tasks.extensions/4.5.2/system.threading.tasks.extensions.4.5.2.nupkg.sha512"
   ],
   "logs": []
 }

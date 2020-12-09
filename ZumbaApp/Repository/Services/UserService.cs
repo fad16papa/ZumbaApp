@@ -110,7 +110,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserService||GetUserDetails ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -150,7 +150,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserService||LoginUser ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -192,7 +192,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserService||RegisterUser ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
 
@@ -223,7 +223,7 @@ namespace ZumbaApp.Repository.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in UserService||UpdateUserDetails ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
     }

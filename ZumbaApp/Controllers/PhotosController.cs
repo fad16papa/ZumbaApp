@@ -39,7 +39,7 @@ namespace ZumbaApp.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Error encountered in PhotosController||UplaodUserPhoto ErrorMessage: {ex.Message}");
-                throw ex;
+                throw;
             }
         }
     }

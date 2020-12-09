@@ -7,6 +7,6 @@
     <PackageReference Include="CloudinaryDotNet" Version="1.13.1"/>
   </ItemGroup>
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
   </PropertyGroup>
 </Project>
