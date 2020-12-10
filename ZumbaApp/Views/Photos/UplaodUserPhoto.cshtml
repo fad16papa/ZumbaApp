@@ -5,40 +5,35 @@
 }
 
 <!-- Modal -->
-<div class="modal fade" id="UploadPhotoModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
-    aria-labelledby="UploadPhotoModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-center-viewport" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="UploadPhotoModalLabel">Modal title</h5>
+            <div class="modal-header modal-header-borderless justify-content-end">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true"><i class="icon-cross"></i>
+                    </span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form enctype="multipart/form-data" method="POST">
-                    <div class="form-group">
-                        <label asp-for="PhotoFile" class="col-sm-3 col-form-label">Please upload file here</label>
-                        <div class="col-sm-12">
-                            <div class="custom-file">
-                                <input asp-for="PhotoFile" class="custom-file-input" type="file">
-                                <label class="custom-file-label">Choose File...</label>
-                                <span asp-validation-for="PhotoFile" class="text-danger"></span>
+            <div class="modal-body d-flex justify-content-center">
+                <div class="text-center w-75">
+                    <form enctype="multipart/form-data" method="POST">
+                        <div class="form-group">
+                            <span asp-for="PhotoFile" class="col-sm-3 col-form-label my-2">Please upload your
+                                photo</span>
+                            <div class="col-sm-12">
+                                <div class="custom-file">
+                                    <input asp-for="PhotoFile" class="custom-file-input" type="file">
+                                    <label class="custom-file-label">Choose File...</label>
+                                    <span asp-validation-for="PhotoFile" class="text-danger"></span>
+                                </div>
                             </div>
                         </div>
-                        <div class="m-3">
-                            <button id="btnUpload" class="btn btn-primary" asp-controller="Photos"
-                                asp-action="UplaodUserPhoto" type="submit" value="Upload">
-                                Upload
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
+                    </form>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Upload</button>
+            <div class="modal-footer modal-footer-borderless justify-content-center">
+                <button type="button" class="btn btn-primary my-2" data-dismiss="modal">Upload</button>
+                <button type="button" class="btn btn-danger my-2" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
