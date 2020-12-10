@@ -33,6 +33,7 @@ namespace ZumbaApp
             services.AddTransient<IUserInterface, UserService>();
             services.AddTransient<IBlogInterface, BlogService>();
             services.AddTransient<IBlogsPhotoInterface, BlogsPhotoService>();
+            services.AddTransient<IPhotoInterface, PhotoService>();
             #endregion
 
             //Add middleware for IHttpClientFactory

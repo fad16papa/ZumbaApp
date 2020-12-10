@@ -20,6 +20,20 @@ namespace ZumbaApp.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
+        public IActionResult UplaodUserPhoto()
+        {
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in PhotosController||UplaodUserPhoto ErrorMessage: {ex.Message}");
+                throw;
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> UplaodUserPhoto(IFormFile formFile)
         {
