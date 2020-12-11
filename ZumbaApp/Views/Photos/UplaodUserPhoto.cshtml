@@ -5,7 +5,7 @@
 }
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="UploadPhotoModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-center-viewport" role="document">
         <div class="modal-content">
             <div class="modal-header modal-header-borderless justify-content-end">
@@ -23,18 +23,22 @@
                             <div class="col-sm-12">
                                 <div class="custom-file">
                                     <input asp-for="PhotoFile" class="custom-file-input" type="file">
-                                    <label class="custom-file-label">Choose File...</label>
+                                    <label class="custom-file-label">Choose File .jpg, .jpeg or .png</label>
                                     <span asp-validation-for="PhotoFile" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
+                        <button id="btnUploadUserPhoto" type="submit" class="btn btn-primary my-2"
+                            asp-controller="Photos" asp-action="UplaodUserPhoto">Upload</button>
+                        <button type="button" class="btn btn-danger my-2" data-dismiss="modal">Cancel</button>
                     </form>
                 </div>
             </div>
-            <div class="modal-footer modal-footer-borderless justify-content-center">
-                <button type="button" class="btn btn-primary my-2" data-dismiss="modal">Upload</button>
+            @* <div class="modal-footer modal-footer-borderless justify-content-center">
+                <button id="btnUploadUserPhoto" type="submit" class="btn btn-primary my-2" data-dismiss="modal"
+                asp-controller="Photos" asp-action="UplaodUserPhoto">Upload</button>
                 <button type="button" class="btn btn-danger my-2" data-dismiss="modal">Cancel</button>
-            </div>
+                </div> *@
         </div>
     </div>
 </div>

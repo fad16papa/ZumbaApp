@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using ZumbaApp.Models;
 using ZumbaApp.Repository.Interfaces;
 
 namespace ZumbaApp.Controllers
@@ -35,20 +36,20 @@ namespace ZumbaApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UplaodUserPhoto(IFormFile formFile)
+        public async Task<IActionResult> UplaodUserPhoto(PhotoModel photoModel)
         {
             try
             {
-                if (formFile.Length <= 0)
+                if (!ModelState.IsValid)
                 {
                     ViewBag.PhotoUploadError = "Please upload a photo";
 
-                    return RedirectToAction("User", "UserSetting");
+                    return RedirectToAction("UserSetting", "User");
                 }
 
-                var result = await _photoInterface.AddUserPhoto(formFile, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]).ToString());
+                var result = await _photoInterface.AddUserPhoto(photoModel.PhotoFile, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]).ToString());
 
-                return RedirectToAction("User", "UserSetting");
+                return RedirectToAction("UserSetting", "User");
             }
             catch (Exception ex)
             {

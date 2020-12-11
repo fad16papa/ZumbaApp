@@ -18,4 +18,3 @@ function UploadPhotoModal() {
         DisplayErrorModal(errorHeader, errorBody);
     });
 }
-

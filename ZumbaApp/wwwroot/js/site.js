@@ -14,4 +14,12 @@ $(document).ready(function () {
             `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
         );
     });
+
+    // This will run the spinner when the user click the register button in RegisterPage
+    $("#btnUploadUserPhoto").click(function () {
+        // add spinner to button
+        $(this).html(
+            `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+        );
+    });
 });
