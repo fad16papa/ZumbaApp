@@ -6,6 +6,6 @@ namespace ZumbaApp.Repository.Interfaces
 {
     public interface IPhotoInterface
     {
-        Task<ResponseModel> AddUserPhoto(IFormFile formFile, string token);
+        Task<UserPhotoResponse> AddUserPhoto(IFormFile formFile, string token);
     }
 }

@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Application.Errors;
 using AspNetCore.Http.Extensions;
+using Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using ZumbaApp.Repository.Interfaces;
@@ -22,7 +23,7 @@ namespace ZumbaApp.Repository.Services
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<ResponseModel> AddUserPhoto(IFormFile formFile, string token)
+        public async Task<UserPhotoResponse> AddUserPhoto(IFormFile formFile, string token)
         {
             try
             {
@@ -48,19 +49,21 @@ namespace ZumbaApp.Repository.Services
                     if (result.StatusCode != HttpStatusCode.OK)
                     {
                         var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
-                        return new ResponseModel()
+                        return new UserPhotoResponse()
                         {
                             Message = faliedResponse.Errors.ToString(),
                             Code = Convert.ToInt32(result.StatusCode)
                         };
                     }
 
-                    var successResponse = await result.Content.ReadAsJsonAsync<ResponseModel>();
+                    var successResponse = await result.Content.ReadAsJsonAsync<Photo>();
 
-                    return new ResponseModel()
+                    return new UserPhotoResponse()
                     {
-                        Code = successResponse.Code,
-                        Message = successResponse.Message
+                        Id = successResponse.Id,
+                        Url = successResponse.Url,
+                        UserId = successResponse.UserId,
+                        Code = Convert.ToInt32(result.StatusCode)
                     };
                 }
             }

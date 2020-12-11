@@ -44,7 +44,7 @@ namespace ZumbaApp
                 string setBaseUrl = Configuration["URLConnection:ZumbaAPIUrl"].ToString();
 
                 options.BaseAddress = new Uri(setBaseUrl);
-                options.Timeout = TimeSpan.FromHours(2);
+                options.Timeout = TimeSpan.FromDays(1);
             });
 
             services.Configure<CookiePolicyOptions>(options =>

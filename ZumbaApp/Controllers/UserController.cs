@@ -38,6 +38,7 @@ namespace ZumbaApp.Controllers
         {
             //Delete all cookies from ZumbaApp
             Response.Cookies.Delete(_configuration["ZumbaCookies:ZumbaJwt"]);
+            Response.Cookies.Delete(_configuration["ZumbaCookies:UserAvatar"]);
             return View();
         }
 
@@ -139,17 +140,10 @@ namespace ZumbaApp.Controllers
                         return View();
                     }
 
-                    //Save the return JWT to sessionStorage
-                    var cookieOptions = new CookieOptions()
-                    {
-                        Expires = DateTime.Now.AddHours(2),
-                        IsEssential = true
-                    };
-
-                    Response.Cookies.Append(_configuration["ZumbaCookies:ZumbaJwt"], result.Token, cookieOptions);
+                    Response.Cookies.Append(_configuration["ZumbaCookies:ZumbaJwt"], result.Token);
 
                     if (result.Image != null)
-                        Response.Cookies.Append(_configuration["ZumbaCookies:UserAvatar"], result.Image, cookieOptions);
+                        Response.Cookies.Append(_configuration["ZumbaCookies:UserAvatar"], result.Image);
 
                 }
 

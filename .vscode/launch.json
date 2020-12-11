@@ -5,13 +5,39 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": ".NET Core Launch (web)",
+      "name": ".NET Core Launch (ZumbaAPI)",
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
       "program": "${workspaceFolder}/ZumbaAPI/bin/Debug/netcoreapp5.0/ZumbaAPI.dll",
       "args": [],
       "cwd": "${workspaceFolder}/ZumbaAPI",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
+    },
+    {
+      "name": ".NET Core Launch (ZumbaApp)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/ZumbaApp/bin/Debug/netcoreapp5.0/ZumbaApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/ZumbaApp",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
