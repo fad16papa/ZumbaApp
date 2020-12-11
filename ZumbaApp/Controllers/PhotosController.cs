@@ -44,7 +44,7 @@ namespace ZumbaApp.Controllers
                 {
                     ViewBag.PhotoUploadError = "Please upload a photo";
 
-                    return RedirectToAction("UserSetting", "User");
+                    return View();
                 }
 
                 var result = await _photoInterface.AddUserPhoto(photoModel.PhotoFile, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]).ToString());
