@@ -49,6 +49,11 @@ namespace ZumbaApp.Controllers
 
                 var result = await _photoInterface.AddUserPhoto(photoModel.PhotoFile, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]).ToString());
 
+                if (result.Code != 200)
+                {
+                    return RedirectToAction("Index", "Error");
+                }
+
                 if (HttpContext.Request.Cookies.ContainsKey("AvatarReference"))
                     Response.Cookies.Delete(_configuration["ZumbaCookies:UserAvatar"]);
 
