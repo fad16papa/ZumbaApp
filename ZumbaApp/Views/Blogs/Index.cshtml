@@ -1,3 +1,5 @@
+@model IEnumerable<Domain.Blog>
+
 @{
     Layout = "_Layout";
 }
@@ -41,37 +43,41 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white">
-                            <th scope="row">
-                                <div class="media align-items-center">
-                                    daniel.cameron@wingman.co
-                                </div>
-                            </th>
-                            <td>San Francisco, USA</td>
-                            <td>Software Development</td>
-                            <td>November 29, 2020</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button
-                                        class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
-                                        type="button" id="dropdownMenuButton-1" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="icon-dots-three-horizontal"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-sm">
-                                        <a class="dropdown-item" href="#">Contact</a>
-                                        <a class="dropdown-item" href="#">Assign</a>
-                                        <a class="dropdown-item" href="#">Share</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Remove</a>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="bg-white">
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        @item.Title
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="table-divider">
-                            <th></th>
-                            <td></td>
-                        </tr>
+                                </th>
+                                <td>@item.Description</td>
+                                <td>@item.BlogType</td>
+                                <td>@item.DateCreated</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button
+                                            class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow"
+                                            type="button" id="dropdownMenuButton-1" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon-dots-three-horizontal"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-sm">
+                                            <a class="dropdown-item" href="#">Contact</a>
+                                            <a class="dropdown-item" href="#">Assign</a>
+                                            <a class="dropdown-item" href="#">Share</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Remove</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-divider">
+                                <th></th>
+                                <td></td>
+                            </tr>
+                        }
+
                     </tbody>
                 </table>
             </div>
