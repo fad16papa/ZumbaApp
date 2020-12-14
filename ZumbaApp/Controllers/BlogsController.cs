@@ -25,5 +25,17 @@ namespace ZumbaApp.Controllers
 
             return View(blogs);
         }
+
+        [HttpGet]
+        public IActionResult CreateBlog()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CraeteBlog()
+        {
+            return View();
+        }
     }
 }

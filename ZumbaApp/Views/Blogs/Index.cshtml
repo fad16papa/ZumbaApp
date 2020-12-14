@@ -1,4 +1,4 @@
-@model IEnumerable<Domain.Blog>
+@model IEnumerable<ZumbaModels.Models.ApiResponse.BlogResponse>
 
 @{
     Layout = "_Layout";
@@ -19,7 +19,8 @@
             </div>
             <!--end of col-->
             <div class="col-auto">
-                <button class="btn btn-primary">Create Blog</button>
+                <a class="btn btn-primary" type="button" asp-asp-controller="Blogs" asp-action="CreateBlog">Create
+                    Blog</a>
             </div>
             <!--end of col-->
         </div>

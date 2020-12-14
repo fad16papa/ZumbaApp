@@ -20,6 +20,10 @@ namespace ZumbaModels.Models.ApiResponse
         public string Description { get; set; }
 
         [Required]
+        [Display(Name = "Blog Type")]
+        public string BlogType { get; set; }
+
+        [Required]
         [Display(Name = "Content")]
         public string Content { get; set; }
 

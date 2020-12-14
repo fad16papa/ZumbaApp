@@ -1,0 +1,128 @@
+@model Domain.Blog
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="main-container">
+    <section class="bg-white space-sm pb-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                    <h1 class="h2">My Blog</h1>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <!--end of section-->
+    <section class="flush-with-above space-0">
+        <div class="bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#general"
+                                    role="tab" aria-selected="true">General</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end of col-->
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </div>
+    </section>
+    <section class="flush-with-above height-80 d-block">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="general" role="tabpanel">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <h5>Start creating your blog today.</h5>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-12 col-md-4 order-md-2">
+                            <div class="alert alert-info text-small" role="alert">
+                                <i class="icon-shield"></i>
+                                <span>
+                                    Your information is always kept encrypted and can never be accessed by third
+                                    parties.
+                                </span>
+                                <a href="#">See our privacy policy</a>
+                            </div>
+                        </div>
+                        <!--end of col-->
+                        <div class="col-12 col-md-8 order-md-1">
+                            <form class="row" method="POST">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label asp-for="Title">Title:
+                                            <span class="text-red">*</span>
+                                        </label>
+                                        <input asp-for="Title" class="form-control form-control-lg" type="text"
+                                            autocomplete="off" />
+                                        <small>Give your blog a unique and catchy title.</small>
+                                        <span asp-validation-for="Title" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label asp-for="Description">Description:
+                                            <span class="text-red">*</span>
+                                        </label>
+                                        <input asp-for="Description" class="form-control form-control-lg" type="text"
+                                            autocomplete="off" />
+                                        <small>Give some quick intro for your blog.</small>
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label asp-for="BlogType">BlogType:
+                                            <span class="text-red">*</span>
+                                        </label>
+                                        <input asp-for="BlogType" class="form-control form-control-lg" type="text"
+                                            autocomplete="off" />
+                                        <small>Choose in what catgeory is your blog.</small>
+                                        <span asp-validation-for="BlogType" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label asp-for="Content">Content:
+                                            <span class="text-red">*</span>
+                                        </label>
+                                        <textarea id="mytextarea" asp-for="BlogType"
+                                            class="form-control form-control-lg" type="text"
+                                            autocomplete="off">Hello!</textarea>
+                                        <span asp-validation-for="Content" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <button id="btnUpdateUser" asp-controller="User" asp-action="UserSetting"
+                                            class="btn btn-primary" type="submit" value="Save changes">Create</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </div>
+            <!--end of tab pane-->
+        </div>
+        <!--end of tabs content-->
+    </section>
+    <!--end of section-->
+</div>

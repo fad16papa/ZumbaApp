@@ -186,7 +186,7 @@ namespace ZumbaApp.Repository.Services
                     };
                 }
 
-                var blogs = await result.Content.ReadAsJsonAsync<List<Blog>>();
+                var blogs = await result.Content.ReadAsJsonAsync<List<BlogResponse>>();
 
                 return blogs;
             }
