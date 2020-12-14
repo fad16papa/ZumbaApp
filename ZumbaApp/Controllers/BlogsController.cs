@@ -1,8 +1,11 @@
+using System;
 using System.Threading.Tasks;
+using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ZumbaApp.Repository.Interfaces;
+using ZumbaModels.Models.ApiResponse;
 
 namespace ZumbaApp.Controllers
 {
@@ -21,21 +24,66 @@ namespace ZumbaApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var blogs = await _blogInterface.GetBlogs(Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]);
+            try
+            {
+                var blogs = await _blogInterface.GetBlogs(Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]);
 
-            return View(blogs);
+                return View(blogs);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in BlogsController||CreateBlog ErrorMessage: {ex.Message}");
+                throw;
+            }
         }
 
         [HttpGet]
         public IActionResult CreateBlog()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in BlogsController||CreateBlog ErrorMessage: {ex.Message}");
+                throw;
+            }
         }
 
         [HttpPost]
-        public IActionResult CraeteBlog()
+        public async Task<IActionResult> CraeteBlog(BlogResponse blogResponse)
         {
-            return View();
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(blogResponse);
+                }
+
+                var blog = new Blog()
+                {
+                    Title = blogResponse.Title,
+                    Description = blogResponse.Description,
+                    BlogType = blogResponse.BlogType,
+                    Content = blogResponse.Content,
+                    DateCreated = DateTime.Now
+                };
+
+                var result = await _blogInterface.CreateBlog(blog, (Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]).ToString());
+
+                if (result.Code != 200)
+                {
+                    return RedirectToAction("Index", "Error");
+                }
+
+                return RedirectToAction("Blogs", "Index");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error encountered in BlogsController||CreateBlog ErrorMessage: {ex.Message}");
+                throw;
+            }
         }
     }
 }
