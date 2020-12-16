@@ -52,13 +52,13 @@ namespace ZumbaApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CraeteBlog(BlogResponse blogResponse)
+        public async Task<IActionResult> CreateBlog(BlogResponse blogResponse)
         {
             try
             {
                 if (!ModelState.IsValid)
                 {
-                    return View(blogResponse);
+                    return View();
                 }
 
                 var blog = new Blog()

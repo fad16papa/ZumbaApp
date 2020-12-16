@@ -190,7 +190,8 @@
                                     <div class="form-group">
                                         <label asp-for="@Model.ProfileText">Profile Text:</label>
                                         <textarea asp-for="@Model.ProfileText" maxlength="500" rows="4"
-                                            class="form-control form-control-lg" id="about-me"></textarea>
+                                            class="form-control form-control-lg" id="about-me"
+                                            placeholder="Tell something about yourself."></textarea>
                                         <div><span asp-validation-for="@Model.ProfileText" class="text-danger"></span>
                                         </div>
                                         <small>This information will be shown on your public profile</small>

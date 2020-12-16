@@ -16,7 +16,7 @@
             </div>
             <div class="modal-body d-flex justify-content-center">
                 <div class="text-center w-75">
-                    <form enctype="multipart/form-data" method="POST">
+                    <form enctype="multipart/form-data" method="POST" id="formUploadPhoto">
                         <div class="form-group">
                             <span asp-for="PhotoFile" class="col-sm-3 col-form-label my-5">Please upload your
                                 photo</span>
@@ -28,8 +28,10 @@
                                 </div>
                             </div>
                         </div>
+                        @* <button id="btnUploadUserPhoto" type="submit" class="btn btn-primary my-2"
+                            asp-controller="Photos" asp-action="UplaodUserPhoto">Upload</button> *@
                         <button id="btnUploadUserPhoto" type="submit" class="btn btn-primary my-2"
-                            asp-controller="Photos" asp-action="UplaodUserPhoto">Upload</button>
+                            onclick="UploadPhoto()">Upload</button>
                         <button type="button" class="btn btn-danger my-2" data-dismiss="modal">Cancel</button>
                     </form>
                 </div>

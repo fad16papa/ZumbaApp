@@ -27,7 +27,7 @@
         <div class="container">
             <form method="POST" class="row justify-content-around wizard">
                 <ul
-                class="col-12 col-md-auto nav nav-tabs flex-md-column justify-content-between justify-content-md-start">
+                    class="col-12 col-md-auto nav nav-tabs flex-md-column justify-content-between justify-content-md-start">
                     <li><a href="#first" class="step-circle step-circle-sm">1</a>
                     </li>
                     <li><a href="#second" class="step-circle step-circle-sm">2</a>
@@ -58,38 +58,38 @@
                         <div class=" form-row form-group">
                             <div class="col">
                                 <input asp-for="@Model.UserName" class="form-control form-control-lg" type="text"
-id="username" placeholder="User Name" autocomplete="off" />
+                                    id="username" placeholder="User Name" autocomplete="off" />
                                 <div><span asp-validation-for="@Model.UserName" class="text-danger"></span></div>
                             </div>
                             <div class="col">
                                 <input asp-for="@Model.DisplayName" class="form-control form-control-lg" type="text"
-id="DisplayName" placeholder="Display Name" autocomplete="off" />
+                                    id="DisplayName" placeholder="Display Name" autocomplete="off" />
                                 <div><span asp-validation-for="@Model.DisplayName" class="text-danger"></span></div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col">
                                 <input asp-for="@Model.FirstName" class="form-control form-control-lg" type="text"
-id="firstname" placeholder="First Name" autocomplete="off" />
+                                    id="firstname" placeholder="First Name" autocomplete="off" />
                                 <div><span asp-validation-for="@Model.FirstName" class="text-danger"></span></div>
                             </div>
                             <div class="col">
                                 <input asp-for="@Model.LastName" class="form-control form-control-lg" type="text"
-id="lastname" placeholder="Last Name" autocomplete="off" />
+                                    id="lastname" placeholder="Last Name" autocomplete="off" />
                                 <div><span asp-validation-for="@Model.LastName" class="text-danger"></span></div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col">
                                 <input asp-for="@Model.Email" class="form-control form-control-lg" type="email"
-name="email" id="login-email" placeholder="Email Address" autocomplete="off" />
+                                    name="email" id="login-email" placeholder="Email Address" autocomplete="off" />
                                 <div><span asp-validation-for="@Model.Email" class="text-danger"></span></div>
                             </div>
                         </div>
                         <div class="form-row form-group">
                             <div class="col">
                                 <input asp-for="@Model.Password" class="form-control form-control-lg fa" type="password"
-id="password" placeholder="Password" autocomplete="off" />
+                                    id="password" placeholder="Password" autocomplete="off" />
                                 <div><span asp-validation-for="@Model.Password" class="text-danger"></span></div>
                                 <small>Password must be at least 7 characters</small>
                             </div>
@@ -97,8 +97,8 @@ id="password" placeholder="Password" autocomplete="off" />
                         <div class="form-row form-group">
                             <div class="col">
                                 <input asp-for="@Model.ConfirmPassword" class="form-control form-control-lg"
-type="password" id="confirmpassword" placeholder="Confirm Password"
-autocomplete="off" />
+                                    type="password" id="confirmpassword" placeholder="Confirm Password"
+                                    autocomplete="off" />
                                 <div><span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span></div>
                                 <small>Confirm Password should be match with Password</small>
                             </div>
@@ -123,7 +123,7 @@ autocomplete="off" />
                         <div class="form-group">
                             <label asp-for="@Model.ProfileText">Profile Text:</label>
                             <textarea asp-for="@Model.ProfileText" maxlength="500" rows="4"
-class="form-control form-control-lg" id="about-me"></textarea>
+                                class="form-control form-control-lg" id="about-me"></textarea>
                             <div><span asp-validation-for="@Model.ProfileText" class="text-danger"></span></div>
                             <small>This information will be shown on your public profile</small>
                         </div>
@@ -166,7 +166,7 @@ class="form-control form-control-lg" id="about-me"></textarea>
                                 <span class="lead">We've set up your account and some basic details, now let's move on
                                     to your dashboard</span>
                                 <button id="btnRegisterUser" asp-controller="User" asp-action="RegisterPage"
-type="submit" class="btn btn-success btn-lg">Go to dashboard</button>
+                                    type="submit" class="btn btn-success btn-lg">Go to dashboard</button>
                             </div>
                             <!--end of col-->
                             <div class="col-12 col-md-6">

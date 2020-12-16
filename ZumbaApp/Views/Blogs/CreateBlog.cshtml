@@ -1,4 +1,4 @@
-@model Domain.Blog
+@model ZumbaModels.Models.ApiResponse.BlogResponse
 
 @{
     Layout = "_Layout";
@@ -102,12 +102,13 @@
                                         </label>
                                         <textarea id="mytextarea" asp-for="Content" class="form-control form-control-lg"
                                             type="text" autocomplete="off">Hello!</textarea>
+                                        <small>Start writing your ideas.</small>
                                         <span asp-validation-for="Content" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <button id="btnCreateBlog" asp-controller="Blogs" asp-action="CraeteBlog"
+                                        <button id="btnCreateBlog" asp-controller="Blogs" asp-action="CreateBlog"
                                             class="btn btn-primary" type="submit" value="Create">Create</button>
                                     </div>
                                 </div>
