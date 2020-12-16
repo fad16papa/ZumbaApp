@@ -100,16 +100,15 @@
                                         <label asp-for="Content">Content:
                                             <span class="text-red">*</span>
                                         </label>
-                                        <textarea id="mytextarea" asp-for="BlogType"
-                                            class="form-control form-control-lg" type="text"
-                                            autocomplete="off">Hello!</textarea>
+                                        <textarea id="mytextarea" asp-for="Content" class="form-control form-control-lg"
+                                            type="text" autocomplete="off">Hello!</textarea>
                                         <span asp-validation-for="Content" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <button id="btnUpdateUser" asp-controller="User" asp-action="UserSetting"
-                                            class="btn btn-primary" type="submit" value="Save changes">Create</button>
+                                        <button id="btnCreateBlog" asp-controller="Blogs" asp-action="CraeteBlog"
+                                            class="btn btn-primary" type="submit" value="Create">Create</button>
                                     </div>
                                 </div>
                             </form>

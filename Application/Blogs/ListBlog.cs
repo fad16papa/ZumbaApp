@@ -32,7 +32,7 @@ namespace Application.Blogs
             {
                 var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == _userAccessor.GetCurrentUsername());
 
-                return user.Blogs.ToList();
+                return user.Blogs.OrderByDescending(x => x.DateCreated).ToList();
             }
         }
     }

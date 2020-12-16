@@ -77,7 +77,7 @@ namespace ZumbaApp.Controllers
                     return RedirectToAction("Index", "Error");
                 }
 
-                return RedirectToAction("Blogs", "Index");
+                return RedirectToAction("Index", "Blogs");
             }
             catch (Exception ex)
             {
