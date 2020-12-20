@@ -37,6 +37,7 @@
             <!--end of container-->
         </div>
     </section>
+    <!--end of section-->
     <section class="flush-with-above height-80 d-block">
         <div class="tab-content">
             <div class="tab-pane fade show active" id="general" role="tabpanel">
@@ -100,8 +101,9 @@
                                         <label asp-for="Content">Content:
                                             <span class="text-red">*</span>
                                         </label>
-                                        <textarea id="mytextarea" asp-for="Content" class="form-control form-control-lg"
-                                            type="text" autocomplete="off">Hello!</textarea>
+                                        <textarea id="mytextarea" rows="6" asp-for="Content"
+                                            class="form-control form-control-lg" type="text"
+                                            autocomplete="off">Hello!</textarea>
                                         <small>Start writing your ideas.</small>
                                         <span asp-validation-for="Content" class="text-danger"></span>
                                     </div>
