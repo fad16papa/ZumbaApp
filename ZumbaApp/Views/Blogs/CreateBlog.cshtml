@@ -50,6 +50,34 @@
                     </div>
                     <!--end of row-->
                     <div class="row">
+                        <div class="col-12">
+                            <div class="media flex-wrap mb-3 align-items-center">
+                                @if (Context.Request.Cookies["AvatarReference"] != null)
+                                {
+                                    <img alt="Image" src="@Context.Request.Cookies["AvatarReference"]"
+                                        class="avatar avatar-lg mb-3 mb-md-0" />
+                                }
+                                else
+                                {
+                                    <img alt="Image" src="~/assets/img/user-image-default.jpg"
+                                        class="avatar avatar-lg mb-3 mb-md-0" />
+                                }
+                                <div class="media-body">
+                                    <label class="custom-file mb-2" for="userphoto">
+                                        <span id="userphoto" class="btn btn-primary" onclick="UploadPhotoModal()"><i
+                                                class="icon-upload-to-cloud">&nbsp;</i>Upload</span>
+                                    </label>
+                                    <div>
+                                        <small>For best results, use an image at least 500px by 500px in either
+                                            .jpg or .png format</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
                         <div class="col-12 col-md-4 order-md-2">
                             <div class="alert alert-info text-small" role="alert">
                                 <i class="icon-shield"></i>
@@ -111,7 +139,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <button id="btnCreateBlog" asp-controller="Blogs" asp-action="CreateBlog"
-                                            class="btn btn-primary" type="submit" value="Create">Create</button>
+                                            class="btn btn-primary" type="submit" value="Create">Submit</button>
                                     </div>
                                 </div>
                             </form>
