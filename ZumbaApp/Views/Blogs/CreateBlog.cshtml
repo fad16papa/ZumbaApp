@@ -115,11 +115,13 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label asp-for="BlogType">BlogType:
+                                        <label asp-for="BlogType">Category:
                                             <span class="text-red">*</span>
                                         </label>
-                                        <input asp-for="BlogType" class="form-control form-control-lg" type="text"
-                                            autocomplete="off" />
+                                        <select asp-for="BlogType" class="form-control"
+                                            asp-items="Html.GetEnumSelectList<ZumbaApp.Models.Enums.BlogtypeModel>()"
+                                            required>
+                                        </select>
                                         <small>Choose in what catgeory is your blog.</small>
                                         <span asp-validation-for="BlogType" class="text-danger"></span>
                                     </div>

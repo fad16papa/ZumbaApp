@@ -4,6 +4,7 @@ using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using ZumbaApp.Models.Enums;
 using ZumbaApp.Repository.Interfaces;
 using ZumbaModels.Models.ApiResponse;
 
@@ -61,11 +62,13 @@ namespace ZumbaApp.Controllers
                     return View();
                 }
 
+                BlogtypeModel blogtypeModel = (BlogtypeModel)Enum.Parse(typeof(BlogtypeModel), blogResponse.BlogType);
+
                 var blog = new Blog()
                 {
                     Title = blogResponse.Title,
                     Description = blogResponse.Description,
-                    BlogType = blogResponse.BlogType,
+                    BlogType = blogtypeModel.ToString(),
                     Content = blogResponse.Content,
                     DateCreated = DateTime.Now
                 };
