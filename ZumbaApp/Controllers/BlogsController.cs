@@ -39,6 +39,12 @@ namespace ZumbaApp.Controllers
         }
 
         [HttpGet]
+        public IActionResult ViewBlog()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult CreateBlog()
         {
             try
