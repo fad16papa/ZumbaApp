@@ -39,9 +39,16 @@ namespace ZumbaApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult ViewBlog()
+        public async Task<IActionResult> ViewBlog(string blogId)
         {
-            return View();
+            var blog = await _blogInterface.GetBlog(blogId, Request.Cookies[_configuration["ZumbaCookies:ZumbaJwt"]]);
+
+            if (blog == null)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+
+            return View(blog);
         }
 
         [HttpGet]
