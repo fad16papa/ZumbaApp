@@ -131,7 +131,7 @@ namespace ZumbaApp.Repository.Services
             }
         }
 
-        public async Task<object> GetBlog(string id, string token)
+        public async Task<object> GetBlog(Guid id, string token)
         {
             try
             {
