@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using ZumbaApp.Helper;
@@ -10,5 +11,6 @@ namespace ZumbaApp.Models
         [DataType(DataType.Upload)]
         [ValidateFile(new string[] { ".jpg", ".jpeg", ".png" })]
         public IFormFile PhotoFile { get; set; }
+        public string Id { get; set; }
     }
 }

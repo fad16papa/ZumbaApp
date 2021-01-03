@@ -1,0 +1,57 @@
+@model ZumbaApp.Models.PhotoModel
+
+@{
+    Layout = null;
+}
+
+<!-- Modal -->
+<div class="modal fade" id="UploadPhotoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-center-viewport" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal-header-borderless justify-content-end">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="icon-cross"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <div class="text-center w-75">
+                    <form enctype="multipart/form-data" method="POST" id="formUploadPhoto">
+                        <div class="form-group">
+                            <span asp-for="PhotoFile" class="col-sm-3 col-form-label my-5">Please upload your
+                                photo</span>
+                            <div class="col-sm-12">
+                                <div class="custom-file">
+                                    <input asp-for="PhotoFile" class="custom-file-input" type="file">
+                                    <label class="custom-file-label">Choose File .jpg, .jpeg or .png</label>
+                                    <span asp-validation-for="PhotoFile" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btnUploadUserPhoto" type="submit" class="btn btn-primary my-2"
+                            onclick="UploadBlogPhoto()">Upload</button>
+                        <button type="button" class="btn btn-danger my-2" data-dismiss="modal">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // This will run the spinner when the user click the register button in RegisterPage
+        $("#btnUploadUserPhoto").click(function () {
+            // add spinner to button
+            $(this).html(
+                `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Uploading...`
+            );
+        });
+    });
+
+    //This will show the file name when the user upload a file
+    $('input[type="file"]').change(function (e) {
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+    });
+</script>

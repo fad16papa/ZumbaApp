@@ -1,10 +1,12 @@
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using ZumbaModels.Models.ApiResponse;
 
 namespace ZumbaApp.Repository.Interfaces
 {
     public interface IBlogsPhotoInterface
     {
-        Task<object> AddBlogPhoto(string token, Guid Id);
+        Task<BlogPhotoResponse> AddBlogPhoto(IFormFile formFile, string Id, string token);
     }
 }

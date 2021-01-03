@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Application.Errors;
 using AspNetCore.Http.Extensions;
 using Castle.Core.Logging;
+using Domain;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using ZumbaApp.Repository.Interfaces;
 using ZumbaModels.Models.ApiResponse;
@@ -22,7 +24,7 @@ namespace ZumbaApp.Repository.Services
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<object> AddBlogPhoto(string token, Guid Id)
+        public async Task<BlogPhotoResponse> AddBlogPhoto(IFormFile formFile, string Id, string token)
         {
             try
             {
@@ -30,24 +32,41 @@ namespace ZumbaApp.Repository.Services
 
                 responseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                var result = await responseClient.DeleteAsync("api/BlogsPhoto/" + Id);
+                var fileName = ContentDispositionHeaderValue.Parse(formFile.ContentDisposition).FileName.Trim('"');
 
-                result.Content.ReadAsStringAsync().ToString();
-
-                if (result.StatusCode != HttpStatusCode.OK)
+                using (var content = new MultipartFormDataContent())
                 {
-                    var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
-                    return new ResponseModel()
+                    content.Add(new StreamContent(formFile.OpenReadStream())
                     {
-                        Message = faliedResponse.Errors.ToString(),
+                        Headers =
+                    {
+                        ContentLength = formFile.Length,
+                        ContentType = new MediaTypeHeaderValue(formFile.ContentType)
+                    }
+                    }, "File", fileName);
+
+                    var result = await responseClient.PostAsync("api/Photos/", content);
+
+                    if (result.StatusCode != HttpStatusCode.OK)
+                    {
+                        var faliedResponse = await result.Content.ReadAsJsonAsync<RestException>();
+                        return new BlogPhotoResponse()
+                        {
+                            Message = faliedResponse.Errors.ToString(),
+                            Code = Convert.ToInt32(result.StatusCode)
+                        };
+                    }
+
+                    var successResponse = await result.Content.ReadAsJsonAsync<BlogPhoto>();
+
+                    return new BlogPhotoResponse()
+                    {
+                        Id = successResponse.Id,
+                        Url = successResponse.Url,
+                        BlogId = successResponse.BlogId,
                         Code = Convert.ToInt32(result.StatusCode)
                     };
                 }
-
-                return new ResponseModel()
-                {
-                    Code = Convert.ToInt32(result.StatusCode)
-                };
 
             }
             catch (Exception ex)

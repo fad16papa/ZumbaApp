@@ -35,22 +35,58 @@ namespace Application.BlogsPhoto
             {
                 var photoUploadResult = _photoAccessor.AddPhoto(request.File);
 
-                var user = await _context.Blogs.SingleOrDefaultAsync(x => x.Id == request.Id);
+                var blog = await _context.Blogs.SingleOrDefaultAsync(x => x.Id == request.Id);
 
-                var blogPhoto = new BlogPhoto
+                var blogPhoto = await _context.BlogPhotos.SingleOrDefaultAsync(x => x.BlogId == blog.Id.ToString());
+
+                //if blogPhoto exist delete it
+                if (blogPhoto != null)
                 {
-                    Url = photoUploadResult.Url,
-                    Id = photoUploadResult.PublicId
-                };
+                    _context.Remove(blogPhoto);
 
-                if (!user.BlogPhotos.Any(x => x.IsMain))
-                    blogPhoto.IsMain = true;
+                    var successDelete = await _context.SaveChangesAsync() > 0;
 
-                user.BlogPhotos.Add(blogPhoto);
+                    if (successDelete)
+                    {
+                        var photo = new BlogPhoto
+                        {
+                            Url = photoUploadResult.Url,
+                            Id = photoUploadResult.PublicId,
+                            BlogId = blog.Id.ToString()
+                        };
 
-                var success = await _context.SaveChangesAsync() > 0;
+                        if (!blog.BlogPhotos.Any(x => x.IsMain))
+                            photo.IsMain = true;
 
-                if (success) return blogPhoto;
+                        blog.BlogPhotos.Add(photo);
+
+                        var successCreate = await _context.SaveChangesAsync() > 0;
+
+                        if (successCreate) return photo;
+
+                        throw new Exception("Problem saving changes");
+                    }
+                }
+                else
+                {
+                    var photo = new BlogPhoto
+                    {
+                        Url = photoUploadResult.Url,
+                        Id = photoUploadResult.PublicId,
+                        BlogId = blog.Id.ToString()
+                    };
+
+                    if (!blog.BlogPhotos.Any(x => x.IsMain))
+                        photo.IsMain = true;
+
+                    blog.BlogPhotos.Add(photo);
+
+                    var successCreate = await _context.SaveChangesAsync() > 0;
+
+                    if (successCreate) return photo;
+
+                    throw new Exception("Problem saving changes");
+                }
 
                 throw new Exception("Problem saving changes");
             }
